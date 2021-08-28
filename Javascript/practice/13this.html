@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        #div1 { width: 100px; height: 100px; background-color: red; position: absolute;}
+
+        #switchCard { width: 500px; height: 450px; margin: 50px auto; border: 1px solid black;}
+        #switchCard .header { width: 155px; margin: 5px; float: left; text-align: center; background-color: #eee; font-size: 36px; padding: 5px; cursor: pointer;}
+        #switchCard .header.active { background-color: orange;}
+        #switchCard .content p { display: none; font-size: 22px; padding: 10px; clear: both;}
+        #switchCard .content p:first-child { display: block;}
+    </style>
+</head>
+<body>
+    <!-- 拖拽改造 -->
+    <!-- <div id="div1"></div> -->
+    <!-- <script>
+        // var oDiv = document.getElementById("div1");
+        // oDiv.onmousedown = function(ev){
+        //     var e = ev || window.event;
+        //     // console.log(e.offsetX + "," + e.offsetY);
+        //     var offsetX = e.clientX - oDiv.offsetLeft;
+        //     var offsetY = e.clientY - oDiv.offsetTop;
+
+        //     document.onmousemove = function(ev){
+        //         let e = ev || window.event;
+        //         oDiv.style.left = e.clientX - offsetX + 'px';
+        //         oDiv.style.top = e.clientY - offsetY + 'px';
+        //     }
+
+        // }
+        // document.onmouseup = function(){
+        //     document.onmousemove = null;
+        // }
+
+        // function Drag(id){
+        //     this.oDiv = document.getElementById(id);
+        //     var _this = this;
+        //     this.oDiv.onmousedown = function(ev){
+        //         _this.funcDown(ev);
+        //     }
+        //     document.onmouseup = function(ev){
+        //         _this.funcUp(ev);
+        //     }
+        // }
+        // Drag.prototype.funcDown = function(ev){
+        //     var e = ev || window.event;
+        //     this.offsetX = e.clientX - this.oDiv.offsetLeft;
+        //     this.offsetY = e.clientY - this.oDiv.offsetTop;
+
+        //     var _this = this;
+        //     document.onmousemove = function(ev){
+        //         _this.funcMove();
+        //     }
+        // }
+        // Drag.prototype.funcMove = function(ev){
+        //     let e = ev || window.event;
+        //     this.oDiv.style.left = e.clientX - this.offsetX + 'px';
+        //     this.oDiv.style.top = e.clientY - this.offsetY + 'px';
+        // }
+        // Drag.prototype.funcUp = function(){
+        //     document.onmousemove = null;
+        // }
+
+        function Drag(id){
+            this.oDiv = document.getElementById(id);
+            this.oDiv.onmousedown = this.funcDown.bind(this);
+            document.onmouseup = this.funcUp.bind(this);
+        }
+        Drag.prototype.funcDown = function(ev){
+            var e = ev || window.event;
+            this.offsetX = e.clientX - this.oDiv.offsetLeft;
+            this.offsetY = e.clientY - this.oDiv.offsetTop;
+
+            document.onmousemove = this.funcMove.bind(this);
+        }
+        Drag.prototype.funcMove = function(ev){
+            let e = ev || window.event;
+            this.oDiv.style.left = e.clientX - this.offsetX + 'px';
+            this.oDiv.style.top = e.clientY - this.offsetY + 'px';
+        }
+        Drag.prototype.funcUp = function(){
+            document.onmousemove = null;
+        }
+
+        // new Drag("div1");
+
+
+        // 限制出界拖拽
+        function LimitDrag(id){
+            // 继承父一级所有属性
+            Drag.apply(this, [id]);
+        }
+
+        // 继承方法  原型链
+        for(let funcName in Drag.prototype){
+            LimitDrag.prototype[funcName] = Drag.prototype[funcName];
+        }
+        LimitDrag.prototype.funcMove = function(ev){
+            var e = ev || window.event;
+            var l = e.clientX - this.offsetX;
+            var t = e.clientY - this.offsetY;
+            if(l < 0){
+                l = 0;
+            }
+            var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            if(l > windowWidth - this.oDiv.offsetWidth){
+                l = windowWidth - this.oDiv.offsetWidth;
+            }
+            if(t < 0){
+                t = 0;
+            }
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            if(t > windowHeight - this.oDiv.offsetHeight){
+                t = windowHeight - this.oDiv.offsetHeight;
+            }
+            this.oDiv.style.left = l + 'px';
+            this.oDiv.style.top = t + 'px';
+        }
+        new LimitDrag("div1");
+    </script> -->
+
+    <!-- 选项卡改造 -->
+    <div id="switchCard">
+        <div class="header_container">
+            <div class="header active">js</div>
+            <div class="header">java</div>
+            <div class="header">c++</div>
+        </div>
+        <div class="content">
+            <p>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。虽然它是作为开发Web页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。</p>
+            <p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程</p>
+            <p>C++是C语言的继承，它既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。C++擅长面向对象程序设计的同时，还可以进行基于过程的程序设计，因而C++就适应的问题规模而论，大小由之。</p>
+        </div>
+    </div>
+    <script>
+        // 有结构限制，className限制
+        function TabSwitch(id){
+            let card = document.getElementById(id);
+            this.headers = card.getElementsByClassName("header");
+            this.contents = card.getElementsByClassName("content")[0].getElementsByTagName("p");
+
+            var _this = this;
+
+            for(let i = 0; i < this.headers.length; i++){
+                this.headers[i].index = i;
+                this.headers[i].onclick = function(){
+                    _this.tab(this);
+                }
+            }
+        }
+
+        TabSwitch.prototype.tab = function(_this){
+            for(let i = 0; i < this.headers.length; i++){
+                this.headers[i].className = 'header';
+                this.contents[i].style.display = 'none';
+            }
+            _this.className = 'header active';
+            this.contents[_this.index].style.display = 'block';
+        }
+
+        new TabSwitch("switchCard");
+    </script>
+</body>
+</html>

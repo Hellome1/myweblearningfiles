@@ -1,0 +1,9 @@
+.container { width: 1080px; margin: 0 auto;}
+#navigationBar { width: 100%; height: 80px; margin: 0 auto; position: fixed; z-index: 10; top: 0; background-color: rgba(255, 255, 255, 0.7);}
+#navigationBar #logo { float: left; height: 80px;}
+#navigationBar #logo a{ display: inline-block; height: 45px; width: 161px;}
+#navigationBar #content { float: right;}
+#navigationBar #content a{ margin-left: 44px; height: 80px; line-height: 80px; color: #777777;}
+#navigationBar #content a:hover { color: #68c4b5;}
+
+.Wcontainer { width: 100%;}

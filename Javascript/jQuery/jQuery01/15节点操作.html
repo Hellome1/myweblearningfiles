@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div id="div1"><em>em</em>div文本</div>
+    <span>span</span>
+    <script>
+        /* 
+            insertBefore() before()
+            insertAfter() after()
+            appendTo() 插入到子节点的末尾 append()
+            prependTo() 插入到子节点的首位 prepend()
+            remove()
+        */
+
+        //找到span节点插入到div的前面
+        // $("span").insertBefore($("div"));
+
+        // $("div").insertAfter($("span"));
+
+        //找到span节点插入到div子节点的末尾
+        // $("span").appendTo($("div"));
+        // 找到span节点插入到div子节点的首位
+        // $("span").prependTo($("div"));
+
+        // $("div").remove();
+
+        //找到span节点插入到div的前面
+        // $("span").insertBefore($("div")).css("backgroundColor", "red");
+
+        //div节点前面是span
+        $("div").before($("span")).css("backgroundColor", "red"); // 配合链式操作，主语不一样
+    </script>
+</body>
+</html>

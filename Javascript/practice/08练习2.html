@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <script src="../function/myfunc.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        ul { list-style: none;}
+
+        .container { width: 500px; height: 500px; margin: 100px auto; background-color: #f5f5f5; overflow: hidden; display: flex; align-items: center; flex-direction: column; justify-content: center;}
+        .box1, .box2 { width: 80%; margin: 10px auto; height: 100px;}
+        .container input { width: 100%; display: block; height: 36px; line-height: 36px; padding: 0 10px 0 10px; outline: none; border-radius: 5px; border: 1px solid black;}
+        .passwordHint, .mailHint { padding: 10px; color: rgb(233, 40, 40);}
+
+        .showTime { width: 600px; height: 100px; text-align: center; line-height: 100px; margin: 100px auto; border: 1px solid black; font-size: 30px;}
+
+        .timer { width: 300px; height: 500px; margin-top: 100px;}
+
+        .btn1 { width: 100px; height: 100px;}
+
+        .nodeOperateContainer { width: 1000px; height: 500px;}
+        .nodeOperateContainer p { margin: 0;}
+        .mh-50 { min-height: 80%;}
+        .nodeOperateContainer_input { font-size: 14px;}
+
+        .block_this { display: none;}
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="box1">
+            <p>请输入邮箱:</p>
+            <input id="mail" type="text" placeholder="邮箱" onblur="checkMail()">
+            <p class="mailHint"></p>
+        </div>
+        <div class="box2">
+            <p>请输入密码:</p>
+            <input id="password" type="text" placeholder="密码" onblur="checkPassword()">
+            <p class="passwordHint"></p>
+        </div>
+    </div> -->
+
+    <!-- 实时显示当前时间 -->
+    <!-- <div class="showTime">显示当前时间</div> -->
+
+    <!-- 计时器 -->
+    <!-- <div class="timer mx-auto d-flex flex-column justify-content-center p-5 bg-light rounded">
+        <div class="timer_time h-25 text-center fs-4">00:00:00</div>
+        <button onclick="timerStart()" class="btn btn-outline-primary my-2">开始</button>
+        <button onclick="timerPause()" class="btn btn-outline-secondary my-2">暂停</button>
+        <button onclick="timerInitializa()" class="btn btn-outline-success my-2">复位</button>
+    </div> -->
+
+    <!-- 页面跳转 -->
+    <!-- <button onclick="window.open('https://www.baidu.com')">open</button>
+    <button onclick="location.assign('https://www.baidu.com')">assign</button>
+    <button onclick="location.replace('https://www.baidu.com')">replace</button>
+    <button onclick="location.reload('https://www.baidu.com')">reload</button> -->
+    
+    <!-- <div id = 'd1' xxx = 'yyy'></div> -->
+
+    <!-- 节点操作练习 -->
+    <!-- <div class="nodeOperateContainer mx-auto">
+        <div class="w-25 h-100 mx-auto bg-light p-3 border rounded mt-5 overflow-auto">
+            <input type="text" placeholder="请输入内容" class="nodeOperateContainer_input py-1 px-2 w-100 rounded border border-secondary">
+            <div class="d-flex justify-content-around my-2">
+                <div id="insert" class="btn btn-outline-primary">插入</div>
+                <div id="del" class="btn btn-outline-primary">删除</div>
+                <div id="copy" class="btn btn-outline-primary">复制</div>
+            </div>
+            <div id="nodeArea" class="border mh-50"></div>
+        </div>
+    </div> -->
+
+    <!-- <div id="thisLearn" class="container">
+        <div class="w-75 h-25">
+            <div class="btn_this btn btn-outline-dark">1</div>
+            <div class="btn_this btn btn-outline-dark">2</div>
+            <div class="btn_this btn btn-outline-dark">3</div>
+        </div>
+        <div class="block_this w-50 h-50 bg-dark text-white">1</div>
+        <div class="block_this w-50 h-50 bg-dark text-white">2</div>
+        <div class="block_this w-50 h-50 bg-dark text-white">3</div>
+    </div> -->
+
+    <script>
+        function checkMail(){
+            let mail = document.getElementById('mail');
+            let hint = document.querySelector('.mailHint');
+            let text = mail.value;
+            let hintTextArr = [];
+            if(text.length < 6 || text.length > 18){
+                hintTextArr.push('长度应为6~18个字符!');
+            }
+            if(text.indexOf('@') == -1){
+                hintTextArr.push('请输入正确的邮箱!');
+            }
+            if(!isABC(text[0])){
+                hintTextArr.push('必须要以字母开头!');
+            }
+            if(hintTextArr.length == 0){
+                hintTextArr.push('＜（＾－＾）＞恭喜!');
+            }
+            hint.innerHTML = hintTextArr.join(' ');
+        }
+
+        function isABC(str){
+            if(str >= 'a' && str <= 'z' || str >= 'A' && str <= 'Z'){
+                return true;
+            }
+            return false;
+        }
+
+        // var d = new Date();
+        // console.log(Date.parse(d));
+
+        function afterOfDate(n){
+            let d = new Date();
+            let day = d.getTime();
+            d.setTime(day + n * 24 * 3600000);
+            return d;
+        }
+
+        // console.log(afterOfDate(10));
+        
+        // 实时显示时间js
+        // nshowTime()
+        // setInterval(() => {
+        //    nshowTime();
+        // }, 1000);
+        // function nshowTime(){
+        //     let showArea = document.querySelector('.showTime');
+        //     showArea.innerHTML = showTime();
+        // }
+
+        function timerStart(){
+            let timeC = document.querySelector('.timer_time');
+            clearInterval(timeC.timer);
+            timeC.timer = setInterval(() => {
+                time = timeC.innerHTML;
+                let arr = time.split(":");
+                arr[2]++;
+                arr[2] = doubleNum(arr[2]);
+                if(arr[2] > 99){
+                    arr[2] = '00';
+                    arr[1]++;
+                    arr[1] = doubleNum(arr[1]);
+                }
+                if(arr[1] > 59){
+                    arr[1] = '00';
+                    arr[0]++;
+                    arr[0] = doubleNum(arr[0]);
+                }
+                if(arr[0] > 59){
+                    timerPause();
+                    timeC.innerHTML = 'overMaxTime!';
+                }else{
+                    timeC.innerHTML = arr.join(':');
+                }
+            }, 10);
+        }
+
+        function timerPause(){
+            let timeC = document.querySelector('.timer_time');
+            clearInterval(timeC.timer);
+        }
+
+        function timerInitializa(){
+            let timeC = document.querySelector('.timer_time');
+            timeC.innerHTML = '00:00:00';
+            timerPause();
+        }
+
+        // function o(){
+        //     open('https://www.baidu.com')
+        // }
+    
+        // let div = document.getElementById('d1');
+        // console.log(div.xxx); // undefined
+        // console.log(div.getAttribute('xxx')); // 'yyy'
+        // div.removeAttribute('xxx');
+
+        // let insert = document.getElementById('insert');
+        // let del = document.getElementById('del');
+        // let copy = document.getElementById('copy');
+        // let input = document.querySelector('.nodeOperateContainer_input');
+        // let nodeArea = document.getElementById('nodeArea');
+        // insert.onclick = function(){
+        //     let newNode = document.createElement('p');
+        //     // text = document.createTextNode(input.value);
+        //     // newNode.appendChild(text);
+        //     newNode.innerHTML = input.value;
+        //     newNode.style.backgroundColor = randomColor();
+        //     nodeArea.appendChild(newNode);
+        //     input.value = '';
+        // }
+        // del.onclick = function(){
+        //     let child = nodeArea.children;
+        //     if(child.length > 0){
+        //         let delNode = child[child.length - 1];
+        //         nodeArea.removeChild(delNode);
+        //     }else{
+        //         alert('no node to del!');
+        //     }
+        //     // let delNode = nodeArea.lastChild;
+        //     // nodeArea.removeChild(delNode);
+        // }
+        // copy.onclick = function(){
+        //     let child = nodeArea.children;
+        //     if(child.length > 0){
+        //         let newNode = child[child.length - 1].cloneNode(true);
+        //         nodeArea.appendChild(newNode);
+        //     }else{
+        //         alert('no node to copy!');
+        //     }
+        //     // let newNode = nodeArea.lastChild.cloneNode(true);
+        //     // nodeArea.appendChild(newNode);
+        // }
+            
+        function THISMaster(){
+            console.log(this);
+        }
+
+        // let btns = document.getElementsByClassName('btn_this');
+        // let blocks = document.getElementsByClassName('block_this');
+        // btns[0].style.backgroundColor = 'orange';
+        // blocks[0].style.display = 'block';
+        // for(let i = 0; i < btns.length; i++){
+        //     btns[i].index = i;
+        //     btns[i].onclick = function(){
+        //         for(let j = 0; j < blocks.length; j++){
+        //             blocks[j].style.display = 'none';
+        //             btns[j].style.backgroundColor = '';
+        //         }
+        //         console.log(blocks.length);
+        //         blocks[this.index].style.display = 'block';
+        //         btns[this.index].style.backgroundColor = 'orange';
+        //     }
+        // }
+
+        // console.time('test1');
+        // for(let i = 0; i < 10000; i++){
+        //     let node = document.createElement('div');
+        //     document.body.appendChild(node);
+        // }
+        // console.timeEnd('test1');
+
+        
+    </script>
+</body>
+</html>

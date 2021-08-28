@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0; padding: 0;
+        }
+        ul {
+            list-style: none;
+            float: left;
+            padding-left: 7px;
+        }
+        li {
+            padding-left: 10px;
+            background: url(img/dot.png) no-repeat 0 12px;
+        }
+        #ul2 {
+            margin-bottom: 6px;
+        }
+        #ul1 {
+            display: inline-block;
+            padding-left: 10px;
+        }
+        #ul1 li {
+            padding-left: 10px;
+        }
+        #div1 {
+            margin-top: 11px;
+        }
+        #imgContainer {
+            display: block;
+            float: left;
+        }
+        img {
+            padding-left: 8px;
+        }
+        a {
+            height: 24px;
+            line-height: 24px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #666666;
+        }
+        a:hover {
+            color: #ff8400;
+            text-decoration: underline;
+        }
+        #main h2 #title {
+            font-size: 16px;
+            color: #000000;
+            padding-left: 10px;
+            text-decoration: none;
+        }
+        #main h2 #title:hover {
+            color: #ff8400;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 16px; font-weight: normal;
+        }
+        #main h2 {
+            height: 35px; line-height: 35px; border-bottom: 1px solid  #d9e0ee;
+        }
+        .more {
+            font-family: "宋体";
+            height: 34px;
+            line-height: 34px;
+            width: 54px;
+            text-align: center;
+            border-left: 1px solid  #d9e0ee;
+            border-right: 1px solid #d9e0ee;
+            margin: 0;
+            margin-right: -1px;
+            background-color: #f6f6f6;
+            float: right;
+        }
+        #main {
+            margin: 20px auto;
+            width: 242px;
+            border: 1px solid #d9e0ee;
+            border-top: 3px #ff8400 solid;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>
+            <a href="#" id="title">独家体育</a>
+            <a href="#" class="more">更多>></a>
+        </h2>
+        <div id="div1">
+            <a href="#" id="imgContainer">
+                <img src="img/未标题-1.png" alt="球星庆祝动作"/>
+            </a>
+            <ul id="ul1">
+                <li class="firstli">
+                    <a href="#" class="first">足坛的亦师亦友</a>
+                </li>
+                <li>
+                    <a href="#">勒夫执迷不悟</a>
+                </li>
+                <li>
+                    <a href="#">皇马雪崩!</a>
+                </li>
+                <li class="lastli">
+                    <a href="#" class="last">新疆雪豹实在太难</a>
+                </li>
+            </ul>
+        </div>
+        <ul id="ul2">
+            <li>
+                <a href="#">汤普森重伤 但勇士看起来打算拼到底</a>
+            </li>
+            <li>
+                <a href="#">NBA最疯狂的进攻教父!场均轰下126分</a>
+            </li>
+            <li>
+                <a href="#">霍华德离队内幕曝光!是湖人放弃的他?</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

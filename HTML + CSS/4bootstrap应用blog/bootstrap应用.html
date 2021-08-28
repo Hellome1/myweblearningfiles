@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="iconfont.css">
+    <link rel="stylesheet" href="font-face.css">
+    <link rel="stylesheet" href="base.css">
+    <style>
+        .ffh { font-size: 2.25rem;}
+        a { text-decoration: none;}
+        .icon-sousuo { margin-right: 20px; font-weight: bold; font-size: 22px; line-height: 16px; position: relative; top: 3px;}
+        .an>a { color: #6c757d; text-decoration: underline;}
+
+        #rightCard { width: 200px; min-height: 230px;}
+
+        #nav {overflow-y: hidden; position: relative; z-index: 2;}
+
+        .blogContent a { text-decoration: underline;}
+
+        .fs-min{ font-size: 14px;}
+
+        #footer { background-color: #f6f6f6; padding: 3rem 0 3rem 0;}
+        #footer a { text-decoration: underline;}
+
+        .rside ul { list-style: none; padding: 0; margin: 0;}
+        .rside a { text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="row pt-3 pb-2 align-items-center border-bottom g-0">
+            <a href="#" class="col text-secondary text-decoration-underline">Subscribe</a>
+            <a href="#" class="col text-center text-decoration-underline text-dark"><h2 class="ffh">Large</h2></a>
+            <a href="#" class="col text-end text-secondary"><i class="iconfont icon-sousuo"></i><p class="btn btn-sm btn-outline-secondary" style="display: inline;">Sign up</p></a>
+        </header>
+        <div id="nav">
+            <nav class="d-flex justify-content-between an mb-1">
+                <a href="#" class="py-3  px-1">World</a>
+                <a href="#" class="py-3  px-1">U.S.</a>
+                <a href="#" class="py-3  px-1">Technology</a>
+                <a href="#" class="py-3  px-1">Culture</a>
+                <a href="#" class="py-3  px-1">Business</a>
+                <a href="#" class="py-3  px-1">Politics</a>
+                <a href="#" class="py-3  px-1">Opinion</a>
+                <a href="#" class="py-3  px-1">Science</a>
+                <a href="#" class="py-3  px-1">Health</a>
+                <a href="#" class="py-3  px-1">Style</a>
+                <a href="#" class="py-3  px-1">Travel</a>
+            </nav>
+        </div>
+        <div class="p-4 p-md-5 rounded text-white bg-dark">
+            <div class="col-md-6">
+                <h1 id="testh" class="display-4 fst-italic">Title of a longer featured blog post</h1>
+                <p class="fs-5 fw-light">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+                <a href="#" class="text-white fs-5 fw-bold text-decoration-underline">Continue reading...</a>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6 mb-3 overflowy-hidden">
+                <div class="row g-0 border border-sm rounded shadow-sm">
+                    <div class="col p-4 overflow-auto">
+                        <strong class="d-inline-block mb-2 text-primary">World</strong>
+                        <h3 class="mb-0">Featured post</h3>
+                        <div class="mb-1 text-muted">Nov 12</div>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="text-decoration-underline mt-4">Continue reading</a>
+                    </div>
+                    <div id="rightCard" class="col-auto bg-secondary d-none d-md-flex justify-content-center align-items-center text-white fs-5">
+                        Thumbnail
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3 overflowy-hidden">
+                <div class="row g-0 border border-sm rounded shadow-sm">
+                    <div class="col p-4 overflow-auto">
+                        <strong class="d-inline-block mb-2 text-success">Design</strong>
+                        <h3 class="mb-0">Post title</h3>
+                        <div class="mb-1 text-muted">Nov 11</div>
+                        <p>This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="text-decoration-underline mt-4">Continue reading</a>
+                    </div>
+                    <div id="rightCard" class="col-auto bg-secondary d-none d-md-flex justify-content-center align-items-center text-white fs-5">
+                        Thumbnail
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-8">
+                <h3 class="pt-3 pb-4 border-bottom">From the Firehose</h3>
+                <div class="blogContent mb-5">
+                    <h2 class="display-6 mt-3">Sample blog post</h2>
+                    <p class="text-secondary">January 1, 2014 by <a href="#">Mark</a></p>
+                    <p class="pt-1 border-bottom pb-3">This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+                    <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <h2>Heading</h2>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <p class="fs-min">Example code block</p>
+                    <p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
+                    <h3>Sub-heading</h3>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                    <ol>
+                        <li>Vestibulum id ligula porta felis euismod semper.</li>
+                        <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                        <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
+                    </ol>
+                    <p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
+                </div>
+                <div class="blogContent mb-5">
+                    <h2 class="display-6">Another blog post</h2>
+                    <p class="text-secondary">December 23, 2013 by <a href="#">Jacob</a></p>
+                    <p>Cum sociis natoque penatibus et magnis <a>dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                    <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                </div>
+                <div class="blogContent mb-5">
+                    <h2 class="display-6">New feature</h2>
+                    <p class="text-secondary">December 14, 2013 by <a href="#">Chris</a></p>
+                    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    <ul>
+                        <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
+                        <li>Donec id elit non mi porta gravida at eget metus.</li>
+                        <li>Nulla vitae elit libero, a pharetra augue.</li>
+                    </ul>
+                    <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
+                </div>
+                <div class="mb-5">
+                    <a class="btn btn-outline-primary rounded-pill">Older</a>
+                    <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bg-light p-4">
+                    <h4>About</h4>
+                    <p>Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                </div>
+                <div class="p-4 rside">
+                    <h4>Archives</h4>
+                    <ul>
+                        <li><a href="#">March 2014</a></li>
+                        <li><a href="#">February 2014</a></li>
+                        <li><a href="#">January 2014</a></li>
+                        <li><a href="#">December 2013</a></li>
+                        <li><a href="#">November 2013</a></li>
+                        <li><a href="#">October 2013</a></li>
+                        <li><a href="#">September 2013</a></li>
+                        <li><a href="#">August 2013</a></li>
+                        <li><a href="#">July 2013</a></li>
+                        <li><a href="#">June 2013</a></li>
+                        <li><a href="#">May 2013</a></li>
+                        <li><a href="#">April 2013</a></li>
+                    </ul>
+                </div>
+                <div class="p-4 rside mb-3">
+                    <h4>Elsewhere</h4>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="d-flex flex-column justify-content-center align-items-center border-top">
+        <p class="text-secondary">Blog template built for <a href="#">Bootstrap</a> by <a href="#">@mdo</a>.</p>
+        <a href="#">Back to top</a>
+    </div>
+</body>
+</html>

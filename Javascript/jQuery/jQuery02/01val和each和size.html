@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <input type="text" value="aaa">
+    <input type="text" value="bbb">
+    <input type="text" value="ccc">
+    <script>
+        /* 
+            val() value 获取/设置表单元素的值
+
+            size() 输出获取网页元素的个数
+
+            each()
+        */
+
+        // alert($("input").val());//JQ取值只能取第一个符合条件元素的值
+        // $("input").val("hello world"); //JQ赋值批量操作，会给所有获取到的元素赋值
+
+        /* 
+            css()
+            attr()
+            html()
+            【注】都是批量操作赋值
+        */
+
+      /*   alert($("input").size());
+        alert($("input").length);//JQlength */
+
+        $("input").each(function(index, item){
+            // alert(item + ", " + index);
+            /* 原生方法改变value item.value = value1 */
+
+            // item.value = index;
+            $(item).val(index);
+        })
+    </script>
+</body>
+</html>

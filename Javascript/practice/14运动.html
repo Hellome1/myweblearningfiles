@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        #div1 { width: 100px; height: 100px; background-color: red; margin-top: 200px; position: absolute;}
+
+        .share { width: 150px; height: 300px; background-color: #eee; display: flex; align-items: center; justify-content: center; position: absolute; left: -150px; top: 400px;}
+        .share span { width: 20px; height: 60px; background-color: orange; position: absolute; left: 150px; top: 100px; line-height: 20px;}
+
+        img { opacity: 0.3; filter: alpha(opacity=30);}
+
+        #brake { width: 100px; height: 100px; background-color: red; margin-top: 200px; position: absolute;}
+        #destination { height: 600px; margin-left: 500px; border-left: 1px solid black; display: block;}
+
+        .buffer_container { height: 2000px;}
+        .buffer_container .bufferMenu { width: 100px; height: 100px; background-color: red; position: absolute; right: 0; top: 0;}
+
+        .multimove { width: 100px; height: 100px; background-color: red; margin-top: 30px; opacity: .3; filter: alpha(opacity=30);}
+
+        #div2 { width: 200px; height: 100px; background-color: red; border: 1px solid black;}
+
+        .multimoveStyle { width: 100px; height: 100px; background-color: red; margin-top: 30px; opacity: 0.5;}
+
+        .chain { width: 100px; height: 100px; background-color: red; margin-top: 30px;}
+    </style>
+</head>
+<body>
+    <!-- 认识运动 -->
+    <!-- <button id="btn1">开始运动</button>
+    <div id="div1"></div>
+    <script>
+        var oBtn = document.getElementById("btn1");
+        var oDiv = document.getElementById("div1");
+
+        var speed = 5;
+        var timer = null;
+
+        oBtn.onclick = function(){
+            if(timer){
+                clearInterval(timer);
+                timer = null;
+            }
+            if(oDiv.offsetLeft < 500){
+                timer = setInterval(function(){
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                    if(oDiv.offsetLeft > 500){
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                }, 30)
+            }
+        }
+    </script> -->
+
+    <!-- 分享到 -->
+    <!-- <div class="share">
+        <span>分享到</span>
+    </div>
+    <script>
+        var oDiv = document.getElementsByClassName("share")[0];
+        oDiv.onmouseover = function(){
+            startMove(0);
+        }
+        oDiv.onmouseout = function(){
+            startMove(-150);
+        }
+
+        var timer = null;
+        // function startMove(){
+        //     clearInterval(timer);
+        //     var speed = 5;
+        //     timer = setInterval(function(){
+        //         if(oDiv.offsetLeft == 0){
+        //             clearInterval(timer);
+        //             timer = null;
+        //         }else{
+        //             oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+        //         }
+        //     }, 30)
+        // }
+        // function startMove2(){
+        //     clearInterval(timer);
+        //     var speed = -5;
+        //     timer = setInterval(function(){
+        //         if(oDiv.offsetLeft == -150){
+        //             clearInterval(timer);
+        //             timer = null;
+        //         }else{
+        //             oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+        //         }
+        //     }, 30)
+        // }
+
+        // 合并
+        function startMove(iTarget){
+            clearInterval(timer);
+            if(oDiv.offsetLeft < iTarget){
+                speed = 5;
+            }else{
+                speed = -5;
+            }
+            timer = setInterval(function(){
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                    timer = null;
+                }else{
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            }, 30)
+        }
+
+    </script> -->
+
+    <!-- 图片淡入淡出 -->
+    <!-- <img src="../img/longzhu.jpg" alt="">
+    <script>
+        let img = document.getElementsByTagName("img")[0];
+        img.onmouseover = function(){
+            startMove(100);
+        }
+        img.onmouseout = function(){
+            startMove(30);
+        }
+
+        // 设置一个中间变量，透明度当前值
+        var alpha = 30;
+        var timer = null;
+        function startMove(iTarget){
+            clearInterval(timer);
+            var speed = 2;
+            speed = iTarget > alpha ? Math.abs(speed) : -Math.abs(speed);
+            timer = setInterval(function(){
+                if(iTarget == alpha){
+                    clearInterval(timer);
+                }else{
+                    alpha += speed;
+                }
+
+                img.style.opacity = alpha / 100;
+                img.style.filter = `alpha(${alpha})`;
+            }, 30)
+
+        }
+    </script> -->
+
+    <!-- 刹车 -->
+    <!-- <button id="btnBrake">开始运动</button>
+    <div id="brake"></div>
+    <span id="destination"></span>
+    <script>
+        var oBtn = document.getElementById("btnBrake");
+        var oDiv = document.getElementById("brake");
+        oBtn.onclick = function(){
+            startMove(500);
+        }
+
+        var timer = null;
+        function startMove(iTarget){
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (iTarget - oDiv.offsetLeft) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(oDiv.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            }, 30)
+        }
+    </script> -->
+
+    <!-- 缓冲菜单 -->
+    <!-- <div class="buffer_container">
+        <div id="bufferMenu" class="bufferMenu"></div>
+    </div>
+    <script>
+        var oDiv = document.getElementById("bufferMenu");
+        // 获取居中的top值
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+        var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+
+        // window.onscroll = function(){
+        //     scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //     windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //     iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2)
+        //     console.log(iH);
+        //     startMove(iH);
+        // }
+
+        var timer = null;
+        // startMove放在timer前会让timer先赋值计时器返回值，在赋值null
+        startMove(iH);
+
+        window.onscroll = function(){
+            oDiv = document.getElementById("bufferMenu");
+            scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+            iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+            startMove(iH);
+        }
+
+        window.onresize = function(){
+            oDiv = document.getElementById("bufferMenu");
+            scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+            iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+            startMove(iH);
+        }
+        function startMove(iTarget){
+            iTarget = parseInt(iTarget);
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (iTarget - oDiv.offsetTop) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(oDiv.offsetTop == iTarget){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.top  = oDiv.offsetTop + speed + 'px';
+                }
+            }, 30)
+        }
+        // function startMove(iTarget){
+        //     iTarget = parseInt(iTarget);
+        //     clearInterval(oDiv.timer);
+        //     oDiv.timer = setInterval(function(){
+        //         var speed = (iTarget - oDiv.offsetTop) / 8;
+        //         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+        //         if(oDiv.offsetTop == iTarget){
+        //             clearInterval(oDiv.timer);
+        //             console.log(1);
+        //         }else{
+        //             oDiv.style.top = oDiv.offsetTop + speed + 'px';
+        //         }
+        //     }, 30)
+        // }
+    </script> -->
+
+    <!-- 多物体运动 -->
+    <!-- <div class="multimove"></div>
+    <div class="multimove"></div>
+    <div class="multimove"></div>
+    <div class="multimove"></div>
+    <script>
+        // var timer = null;
+        var aDivs = document.getElementsByTagName("div");
+
+        for(let i = 0; i < aDivs.length; i++){
+            aDivs[i].alpha = 30;
+            aDivs[i].onmouseover = function(){
+                startMove(this, 100);
+            }
+            aDivs[i].onmouseout = function(){
+                startMove(this, 30);
+            }
+        }
+
+        // function startMove(node, iTarget){
+        //     clearInterval(node.timer);
+        //     node.timer = setInterval(function(){
+        //         var speed = (iTarget - node.offsetWidth) / 8;
+        //         speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+        //         if(node.offsetWidth == iTarget){
+        //             clearInterval(node.timer);
+        //         }else{
+        //             node.style.width = node.offsetWidth + speed + 'px';
+        //         }
+        //     }, 30)
+        // }
+
+        // var alpha = 30;
+        function startMove(node, iTarget){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                var speed = (iTarget - node.alpha) / 30;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if(iTarget == node.alpha){
+                    clearInterval(node.timer);
+                }else{
+                    node.alpha += speed;
+
+                    node.style.opacity = node.alpha / 100;
+                    node.style.filter = "alpha(opacity=" + node.alpha + ")";
+                }
+            }, 30)
+        }
+    </script> -->
+
+    <!-- node.offsetWidth包含border -->
+    <!-- <div id="div2"></div>
+    <script>
+        let div = document.getElementById("div2");
+
+        div.timer = setInterval(function(){
+            let iCur = parseInt(getStyle(div, "width"));
+            if(iCur > 0 && iCur < 500){
+                div.style.width = iCur - 1 + 'px';
+            }else{
+                clearInterval(div.timer);
+            }
+        },30)
+
+        function getStyle(node, cssStyle) {
+            return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+    </script> -->
+
+    <!-- 多物体多样式 -->
+    <!-- <div class="multimoveStyle"></div>
+    <div class="multimoveStyle"></div>
+    <div class="multimoveStyle"></div>
+    <div class="multimoveStyle">ddd</div>
+    <div class="multimoveStyle"></div>
+    <script>
+        let aDivs = document.getElementsByClassName("multimoveStyle");
+        aDivs[0].onclick = function(){
+            startMove(this, "width", 300);
+        }
+        aDivs[1].onclick = function(){
+            startMove(this, "height", 300)
+        }
+        aDivs[2].onclick = function(){
+            startMove(this, "marginLeft", 300)
+        }
+        aDivs[3].onclick = function(){
+            startMove(this, "fontSize", 50)
+        }
+        aDivs[4].onmouseover = function(){
+            startMove(this, "opacity", 100);
+        }
+        aDivs[4].onmouseout = function(){
+            startMove(this, "opacity", 50);
+        }
+
+        function startMove(node, attr, iTarget){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                let iCur = null;
+                if(attr == 'opacity'){
+                    iCur = parseInt(parseFloat(getStyle(node, attr)) * 100);
+                }else{
+                    iCur = parseInt(getStyle(node, attr));
+                }
+                var speed = (iTarget - iCur) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if(iTarget == iCur){
+                    clearInterval(node.timer);
+                }else{
+                    if(attr == 'opacity'){
+                        node.style.opacity = (iCur + speed) / 100;
+                        node.style.filter = "alpha(opacity=" + (iCur + speed) + ")";
+                    }else{
+                        node.style[attr] = iCur + speed + 'px';
+                    }
+                }
+            },30)
+        }
+
+        function getStyle(node, cssStyle) {
+            return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+    </script> -->
+
+    <!-- 链式运动 -->
+    <!-- <div class="chain"></div>
+    <script>
+        let chainDiv = document.querySelector(".chain");
+        chainDiv.onmouseover = function(){
+            startMove(this, "width", 300, function(){
+                startMove(this, "height", 300, function(){
+                    startMove(this, "opacity", 50);
+                })
+            });
+        }
+        chainDiv.onmouseout = function(){
+            startMove(this, "opacity", 100, function(){
+                startMove(this, "height", 100, function(){
+                    startMove(this, "width", 100);
+                })
+            });
+        }
+
+        function show(){
+            console.log("this is show");
+        }
+
+        function startMove(node, attr, iTarget, func){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                let iCur = null;
+                if(attr == 'opacity'){
+                    iCur = parseInt(parseFloat(getStyle(node, attr)) * 100);
+                }else{
+                    iCur = parseInt(getStyle(node, attr));
+                }
+                var speed = (iTarget - iCur) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+                if(iTarget == iCur){
+                    clearInterval(node.timer);
+                    if(func){
+                        func.call(node);
+                    }
+                }else{
+                    if(attr == 'opacity'){
+                        node.style.opacity = (iCur + speed) / 100;
+                        node.style.filter = "alpha(opacity=" + (iCur + speed) + ")";
+                    }else{
+                        node.style[attr] = iCur + speed + 'px';
+                    }
+                }
+            },30)
+        }
+
+        function getStyle(node, cssStyle) {
+            return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+    </script> -->
+
+    <!-- 绕回调this -->
+    <!-- <script>
+        function KFC(food, eatFunc){
+            console.log("您的餐" + food + "准备好了");
+            eatFunc();
+        }
+
+        // function xiaohua(){
+        //     console.log("打包");
+        // }
+        // KFC("老北京鸡肉卷",xiaohua);
+        function xiaoming(){
+            console.log("堂食");
+        }
+        KFC("小辣鸡腿堡",xiaoming);
+    </script> -->
+</body>
+</html>

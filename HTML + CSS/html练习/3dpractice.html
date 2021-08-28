@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+
+        .book { width: 500px; height: 900px; margin: 200px auto; position: relative; perspective: 3000px;}
+        .page1 , .page2 { width: 500px; height: 800px; background-color: rgba(218, 11, 107, 1); position: absolute; transition: 1s;
+        transition-timing-function: ease-in-out; transform: rotateX(45deg); transform-origin: left;}
+        .page1 { z-index: 2; background: grey;}
+
+        .book:hover .page1 { transform:  rotateX(45deg) rotateY(-180deg);}
+        /* .book:hover .page1 { animation: 1s page;} */
+
+        /* @keyframes page {
+            0% { transform: rotate3d(1,0,0,45deg); transform-origin: left;}
+            100% { transform:  rotate3d(1,0,0,45deg) rotate3d(0,1,0,-180deg); transform-origin: left;}
+        } */
+    </style>
+</head>
+<body>
+    <div class="book">
+        <div class="page1"><h3>page111111111111111111111111page</h3></div>
+        <div class="page2"><h3>page2page2page2page2page2page2page2page2</h3></div>
+    </div>
+</body>
+</html>

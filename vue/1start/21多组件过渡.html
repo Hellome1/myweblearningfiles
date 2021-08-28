@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            overflow: hidden;
+        }
+
+        .kerwinbounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        .kerwinbounce-leave-active {
+            animation: bounce-in .5s reverse;
+        }
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <keep-alive>
+            <transition name="kerwinbounce" mode="out-in">
+
+                <component :is="who"></component>
+            </transition>
+        </keep-alive>
+        
+        <footer>
+            <ul>
+                <li><a @click="who='home'">首页</a></li>
+                <li><a @click="who='list'">列表页</a></li>
+                <li><a @click="who='cart'">购物车</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el:"#box",
+            data: {
+                who: "list"
+            },
+            components:{
+                "home": {
+                    template: `
+                        <div>
+                            home    <input type="text">
+                        </div>
+                    `
+                },
+                "list": {
+                    template: `
+                        <div>
+                            list    
+                        </div>
+                    `
+                },
+                "cart": {
+                    template: `
+                        <div>
+                            cart    
+                        </div>
+                    `
+                },
+            }
+        })
+    </script>
+</body>
+</html>

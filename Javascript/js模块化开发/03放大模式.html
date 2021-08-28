@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./moduleA_plus.js"></script>
+    <script src="./moduleA.js"></script>
+</head>
+<body>
+    <script>
+        // 拓展问题
+        // var moduleA = (function(mod){
+        //     var count = 10; //私有变量
+        //     function showA(){ // 私有函数
+        //         count += 20;
+        //         console.log(count);
+        //     }
+        //     function showB(){
+        //         count *= 10;
+        //         console.log(count);
+        //     }
+        //     mod.outA = showA;
+        //     mod.outB = showB;
+            
+        //     // 对外暴露
+        //     return mod;
+        // })(moduleA || {});
+
+        // 必须在声明moduleA之后
+        // moduleA = (function(mod){
+        //    function showC(){
+        //        console.log("hello");
+        //    }
+
+        //    mod.outC = showC;
+        //    return mod;
+        // })(moduleA);
+        // moduleA = (function(mod){
+        //    function showC(){
+        //        console.log("hello");
+        //    }
+
+        //    mod.outC = showC;
+        //    return mod;
+        // })(moduleA || {});
+
+        var moduleB = (function(){
+            var count = 10;
+            function showA(){
+                count += 30;
+                console.log(count);
+            }
+            function showB(){
+                count /= 10;
+                console.log(count);
+            }
+            
+            return {
+                outA: showA,
+                outB: showB
+            }
+        })();
+
+        moduleA.outA();
+        moduleA.outB();
+        moduleA.outC();
+    </script>
+</body>
+</html>

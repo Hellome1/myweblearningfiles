@@ -1,0 +1,155 @@
+$orange1: #ff6700;
+
+#centerArea {
+    background-color: #f5f5f5;
+    padding-bottom: 38px;
+    .container {
+        .section1 {
+            margin: 38px 0 68px 0;
+            padding: 0 0 28px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #e0e0e0;
+            .info {
+                img {
+                    float: left;
+                }
+                .info_d {
+                    float: left;
+                    margin-left: 20px;
+                    .title {
+                        font-size: 24px;
+                        color: #424242;
+                        font-weight: 400;
+                        margin-top: 3px;
+                    }
+                    .desc {
+                        color: #757575;
+                    }
+                }
+            }
+            .url {
+                * {
+                    box-sizing: content-box;
+                }
+                a {
+                    // float: left;
+                    display: inline-block;
+                    width: 180px;
+                    height: 38px;
+                    line-height: 38px;
+                    text-align: center;
+                    margin-left: 12px;
+                    margin-top: 5px;
+                    transition: .3s;
+                }
+                .go_back {
+                    border: 1px solid #b0b0b0;
+                    &:hover {
+                        color: #757575;
+                        border-color: #757575;
+                        background-color: white;
+                    }
+                }
+                .pay {
+                    border: 1px solid $orange1;
+                    background-color: $orange1;
+                    color: white;
+                    &:hover {
+                        border-color: #f25807;
+                        background-color: #f25807;
+                    }
+                }
+            }
+        }
+        .section2 {
+            margin-top: 42px;
+            position: relative;
+            border-top: 1px solid #e0e0e0;
+            .header {
+                text-align: center;
+                h2 {
+                    font-size: 30px;
+                    font-weight: 400;
+                    color: #757575;
+                    position: absolute;
+                    height: 40px;
+                    line-height: 40px;
+                    top: -20px;
+                    left: 372px;
+                    width: 482px;
+                    background-color: #f5f5f5;
+                }
+                margin-bottom: 50px;
+            }
+            .goods_list {
+                ul {
+                    width: 1240px;
+                    li {
+                        float: left;
+                        width: 234px;
+                        height: 300px;
+                        background-color: white;
+                        position: relative;
+                        overflow: hidden;
+                        margin: 14px 14px 0 0;
+                        a {
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            img {
+                                width: 140px;
+                                height: 140px;
+                                margin: 40px auto 20px;
+                            }
+                            .title {
+                                color: #333;
+                                margin: 0 10px 10px;
+                                height: 18px;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                            .price {
+                                margin-bottom: 10px;
+                                color: $orange1;
+                            }
+                            .thumbs_up {
+                                color: #757575;
+                            }
+                            .action {
+                                position: absolute;
+                                width: 100%;
+                                bottom: 16px;
+                                transform: translate3d(0, 200%, 0);
+                                opacity: 0;
+                                transition: .3s;
+                                button {
+                                    width: 120px;
+                                    height: 28px;
+                                    line-height: 28px;
+                                    border: 1px solid $orange1;
+                                    background-color: white;
+                                    color: $orange1;
+                                    cursor: pointer;
+                                    font-size: 12px;
+                                    transition: .2s;
+                                    &:hover {
+                                        color: white;
+                                        background-color: $orange1;
+                                    }
+                                }
+                            }
+                            &:hover {
+                                .action{
+                                    opacity: 1;
+                                    transform: translate3d(0,0,0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

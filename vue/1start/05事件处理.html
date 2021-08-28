@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul @click.self="handleUlClick">
+            <li @click.stop="handleLiClick">111</li>
+            <li @click="handleLiClick">222</li>
+            <li @click.once="handleLiClick">333</li>
+        </ul>
+
+        <a href="https://www.baidu.com" @click.prevent="handleA">baidu</a>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#box",
+            methods:{
+                handleLiClick(ev){
+                    // console.log(ev);
+                    // ev.stopPropagation();
+                    console.log("li clicked");
+                },
+                handleUlClick(){
+                    console.log("ul clicked");
+                },
+                handleA(){
+                    console.log("A was clicked");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

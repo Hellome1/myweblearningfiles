@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+    <style>
+        * {margin: 0; padding: 0;}
+        #div1 { width: 200px; height: 200px; background-color: orange; margin: 30px; }
+        #div2 { width: 100px; height: 100px; background-color: blue; margin: 20px;}
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        /* 
+            offset() 直接获取当前元素，距离最左边的距离，margin不算数，即使父节点有相对定位，也是获取距离可视窗口最左边的距离
+            position() 直接获取，当前元素距离第一个有定位的父节点的距离，margin算在内
+            offsetParent() 查找第一个有定位的父节点
+        */
+
+        // alert($("#div2").offset().left);
+        // alert($("#div2").position().left);
+        // alert($("#div2").position().top);
+
+        // $("#div2").offsetParent().css("backgroundColor", "yellow");
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        div {width: 100px; height: 100px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <button>下载数据</button>
+    <button>GET请求</button>
+    <button>POST请求</button>
+    <div></div>
+    <script>
+        /* 
+            load 方法
+            将url传入以后,将下载到的数据直接填充到元素的innerHTML中
+        */
+
+        $("button").eq(0).click(function(){
+            $("div").load("1.txt #p1", function(data, statusText, xhr){
+                /* 
+                    data 下载到的数据
+                    statusText 下载的状态 success
+                    xhr ajax对象
+                */
+
+                // alert(data + ", " + statusText);
+                // alert(xhr.status);
+
+            });
+        })
+
+        $("button").eq(1).click(function(){
+            $.get("1.get.php", {
+                username: "name",
+                age: 11,
+                password: "dont"
+            }, function(data, statusText, xhr){
+                alert(data);
+            })
+        })
+        $("button").eq(2).click(function(){
+            $.post("1.post.php", {
+                username: "name",
+                age: 11,
+                password: "dont"
+            }, function(data, statusText, xhr){
+                alert(data);
+            })
+        })
+    </script>
+</body>
+</html>

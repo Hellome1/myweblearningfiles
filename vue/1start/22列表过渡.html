@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            overflow: hidden;
+        }
+
+        .kerwinbounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        .kerwinbounce-leave-active {
+            animation: bounce-in .5s reverse;
+        }
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext"> {{mytext}}
+        <button @click="handleAddClick">add</button>
+
+        <transition-group tag="ul" name="kerwinbounce">
+            <li v-for="(data,index) in datalist" :key="data">
+                {{data}} -- {{index}} <button @click="handleDel(index)">del</button>
+            </li>
+        </transition-group>
+    </div>
+
+    <script>
+
+        let vm = new Vue({
+            el:"#box",
+            data: {
+                mytext: "",
+                datalist: []
+            },
+            methods: {
+                handleAddClick(){
+                    this.datalist.push(this.mytext);
+                    this.mytext = "";
+                },
+                handleDel(index){
+                    this.datalist.splice(index,1);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <strong>strong</strong>
+    <em>em</em>
+    <div id="div1">
+        <h2>h2</h2>
+        <p>p</p>
+        <h3>h3</h3>
+        <em>em</em>
+        <div>div</div>
+    </div>
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+    <script>
+        /*
+            index() 获取当前节点在兄弟节点中的下标
+
+            eq(下标) 通过下标获取指定的元素节点
+        */
+        // alert($("h3").index()); //2
+        $("li").eq(3).css("backgroundColor", "red");
+        $("li:eq(4)").css("backgroundColor", "yellow");
+    </script>
+</body>
+</html>

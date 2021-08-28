@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    <style>
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+        <div class="swiper-container a">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="(data,index) in datalist" v-swiper="{index: index, length: datalist.length}">
+                    {{data}}
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <script>
+        Vue.directive("swiper", {
+            inserted(el, bind){
+                if(bind.value.index === bind.value.length - 1){
+                    new Swiper ('.a', {
+                        loop: true,
+                        pagination: {
+                            el: '.swiper-pagination'
+                        }
+                    })
+                }
+            }
+        })
+
+        let vm = new Vue({
+            el:"#box",
+            data:{
+                datalist: []
+            },
+            mounted(){
+                setTimeout(()=>{
+                    this.datalist = ["1111", "2222", "3333"];
+                },2000)
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1607069019488'); /* IE9 */
+  src: url('iconfont.eot?t=1607069019488#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPIAAsAAAAACFAAAAN7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDFAqEGINVATYCJAMQCwoABCAFhG0HRBs7BxEVnN3IfiSmWwzyTfON5bbaKd4ED/91vvch6SioxKR0Jj0zhbiUuSK1+g0QEPZ/a86RKqgJEzVXlLPo0T/kW85fPh38ce+0sbDA5rNvucwxOeoCzBZQQGNtiqxEAvKGsZsIGuJxCMAih2JEnXpNEhhowDgBiH69e3bGyOjQDcUCA0GwYqlGzCaAIafIS8As/n3xkTIZIAkowNQWPep2I/7m65ufanTKaNpRFPzpLICxChRQDGgQnSptPiqKFaOwvP00JUAQjUC++fbmZ0oKU3K5DrbJ3/4fT6JABAGFDgDlZKm6Kj5GIODNNwQS3vyU84BYPdoAomATcEfBZ3ubgSIQCmkdcrSZyXGiWqfVPeXiQ5Y19YgQY44WjGw4DKOzmVlUwsLuqub2mXY4s3Q2Ng62Q7dvu7duJe7cSd69q/1+/7XR16fdHHNjqLtgxfLN+ZyNW1euythmS/6ELWzs5Ca/9Qz31K1ca27XPXs379o7QzdMyJkX7aDVTZ0dGUpiiZ7TDiNHH8pnCVs5WGLZUdtjGz/0wS6b9Vi2stmOZS27u8juJGzTO3YMaHsfJdLeWQU13S/UxvepTW3fqy2gxfME83j+6RqdrjCPDureskfLZEuX8ZVXHbhS+8eLXB9yvfhR+0qq/Nj/7edvj46Pvq3M+N/zuC9HjhS+8EaO8iW2phaeXD5ypF/teaJ1JIwlzzkpHMkk9tVlLXd7aBftmhMxFxTG5sdvx9/fypP7xPtwCKeDJta71M4gwESVlHcAVEX5MbtcAAI+TF5RoGOk2m/DftyGh9/CbblO0z1uIMHg/1h+xyrtC4Fea1eEecFRmgYYAEjAwgJ+aClAGk+mUKTvTAGhSJ+AJBXZQWGQD63xxSCATTkIYhADi6Lqr7ZJawgKoU2giAkSCKJ2gSTMUVBEXUZr/GMIkMFnCBJNgYXi3X7L2KEuOjEqQQv6D52h2SGjRKL4js0yKk4LOfWNHLogVHmZT95wRp5iRvg0tYgDxzTBVToNx5HAM/VoJG9F/LEoXNWbckPTKnLCkCKQBbQ/0DHIzNH6Iip8/g41FiOFGyp6rG+IBV3noJIrO6BvsrlTxa28Enw0akI4wGFkAq6SBY0wRoCvHtRDhsi1AyLeUaHUcl1l+fKK6Q23ARawpU4KJbQIsN04pnoJoZuR9MsmNe8M+f9qBQA=') format('woff2'),
+  url('iconfont.woff?t=1607069019488') format('woff'),
+  url('iconfont.ttf?t=1607069019488') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1607069019488#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconall:before {
+  content: "\e6ef";
+}
+
+.iconbussiness-man:before {
+  content: "\e6f0";
+}
+
+.iconcopy:before {
+  content: "\e6f3";
+}
+

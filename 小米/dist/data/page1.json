@@ -1,0 +1,1124 @@
+{
+	"group_floor": [],
+	"header": {},
+	"sections": [{
+		"body": {
+			"items": [{
+				"action": {
+					"default_line": "",
+					"goodsId": "",
+					"jumptype": "product",
+					"log_code": "311915pcchannelgallery001001#t=ad&act=product&page=channel&pid=13272&page_id=1915&bid=3007496.1&adp=1089&adm=26423",
+					"login": false,
+					"path": "13272",
+					"productId": "13272",
+					"type": "product"
+				},
+				"ad_position_id": 1089,
+				"auto_last": false,
+				"category_key": "",
+				"h": 1240,
+				"img_gif_url": "",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a185350fb3fd731d97f85e377fa34c0a.jpg?w=5120&h=1240&bg=DDE6F5",
+				"img_url_color": "#DDE6F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a185350fb3fd731d97f85e377fa34c0a.jpg?f=webp&w=5120&h=1240&bg=DDE6F5",
+				"material_id": 26423,
+				"type": "image",
+				"video_url": "",
+				"w": 5120
+			}]
+		},
+		"stat": "",
+		"view_type": "gallery"
+	}, {
+		"block_id": "3005439",
+		"body": {
+			"items": [{
+				"label_content": "",
+				"label_title": "明星产品",
+				"logcode_params": []
+			}]
+		},
+		"stat": "",
+		"view_type": "list_label"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001003#t=product&act=other&page=channel&page_id=1915&bid=3719123.1&pid=10000267",
+					"login": false,
+					"path": "10000267",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2b33944db1a5082d123fca20bc126665.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2b33944db1a5082d123fca20bc126665.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "999",
+				"product_brief": "国内首发骁龙 750G处理器，一亿像素夜景相机",
+				"product_id": "10000267",
+				"product_name": "Redmi Note 9 系列",
+				"product_org_price": "999",
+				"product_price": "999",
+				"product_rebate": {},
+				"show_price": "999",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002003#t=product&act=other&page=channel&page_id=1915&bid=3719123.2&pid=12982",
+					"login": false,
+					"path": "12982",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8ab7f9d4703c11a03c8e0161668a1bf.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8ab7f9d4703c11a03c8e0161668a1bf.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "2599",
+				"product_brief": "144Hz[7档]变速高刷屏",
+				"product_id": "12982",
+				"product_name": "Redmi K30S 至尊纪念版",
+				"product_org_price": "2599",
+				"product_price": "2599",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "2599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001005#t=product&act=other&page=channel&page_id=1915&bid=3787215.1&pid=10000244",
+					"login": false,
+					"path": "10000244",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/83d4e418ccdea370034e82da9a22549f.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/83d4e418ccdea370034e82da9a22549f.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "1799",
+				"product_brief": "双5G待机，天玑820处理器",
+				"product_id": "10000244",
+				"product_name": "Redmi 10X 5G",
+				"product_org_price": "1799",
+				"product_price": "1399",
+				"product_rebate": {},
+				"show_price": "1399",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002005#t=product&act=other&page=channel&page_id=1915&bid=3787215.2&pid=10000214",
+					"login": false,
+					"path": "10000214",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48e5c728dc7b2babcfae27b6ae65139f.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48e5c728dc7b2babcfae27b6ae65139f.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3999",
+				"product_brief": "骁龙865/1亿像素相机",
+				"product_id": "10000214",
+				"product_name": "小米10",
+				"product_org_price": "3999",
+				"product_price": "3799",
+				"product_rebate": {},
+				"show_price": "3799",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001007#t=product&act=other&page=channel&page_id=1915&bid=3698294.1&pid=10000224",
+					"login": false,
+					"path": "10000224",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3bc47cc9184a301be4acb7c13f051777.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3bc47cc9184a301be4acb7c13f051777.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "2299",
+				"product_brief": "50倍潜望式变焦 / 轻薄5G手机",
+				"product_id": "10000224",
+				"product_name": "小米10 青春版 5G",
+				"product_org_price": "2299",
+				"product_price": "1999",
+				"product_rebate": {},
+				"show_price": "1999",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002007#t=product&act=other&page=channel&page_id=1915&bid=3698294.2&pid=10000220",
+					"login": false,
+					"path": "10000220",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8df0187c3c30fa0f4a8c493ec743bfa.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8df0187c3c30fa0f4a8c493ec743bfa.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3799",
+				"product_brief": "双模5G，骁龙865，弹出全面屏",
+				"product_id": "10000220",
+				"product_name": "Redmi K30 Pro 变焦版",
+				"product_org_price": "3799",
+				"product_price": "3199",
+				"product_rebate": {},
+				"show_price": "3199",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001009#t=product&act=other&page=channel&page_id=1915&bid=3765743.1&pid=12609",
+					"login": false,
+					"path": "12609",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "5299",
+				"product_brief": "120X 变焦/120W秒充/120Hz屏幕",
+				"product_id": "12609",
+				"product_name": "小米10至尊纪念版",
+				"product_org_price": "5299",
+				"product_price": "5299",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "5299",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002009#t=product&act=other&page=channel&page_id=1915&bid=3765743.2&pid=12605",
+					"login": false,
+					"path": "12605",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a63d85acf71f287c161bd075c2bd359e.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a63d85acf71f287c161bd075c2bd359e.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "1999",
+				"product_brief": "120Hz弹出全面屏，天玑1000+旗舰处理器",
+				"product_id": "12605",
+				"product_name": "Redmi K30 至尊纪念版",
+				"product_org_price": "1999",
+				"product_price": "1999",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "1999",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001011#t=product&act=other&page=channel&page_id=1915&bid=3415723.1&pid=10000181",
+					"login": false,
+					"path": "10000181",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/465ea7594d174311d85ba9b58b4c7137.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/465ea7594d174311d85ba9b58b4c7137.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "999",
+				"product_brief": "千元4800万四摄",
+				"product_id": "10000181",
+				"product_name": "Redmi Note 8",
+				"product_org_price": "999",
+				"product_price": "899",
+				"product_rebate": {},
+				"show_price": "899",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002011#t=product&act=other&page=channel&page_id=1915&bid=3415723.2&pid=12511",
+					"login": false,
+					"path": "12511",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dfbe21ef88b8ff2e0b43cb2fb2cbb77.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dfbe21ef88b8ff2e0b43cb2fb2cbb77.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "599",
+				"product_brief": "5000mAh长循环大电量，6.53\"超大护眼屏幕",
+				"product_id": "12511",
+				"product_name": "Redmi 9A",
+				"product_org_price": "599",
+				"product_price": "599",
+				"product_rebate": {},
+				"show_price": "599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001013#t=product&act=other&page=channel&page_id=1915&bid=3424234.1&pid=10000217",
+					"login": false,
+					"path": "10000217",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d62a97b5c65e2f62ffd7cafcb6dd3361.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d62a97b5c65e2f62ffd7cafcb6dd3361.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3499",
+				"product_brief": "骁龙865 / 270Hz触控采样率",
+				"product_id": "10000217",
+				"product_name": "腾讯黑鲨游戏手机3 ",
+				"product_org_price": "3499",
+				"product_price": "3499",
+				"product_rebate": {},
+				"show_price": "3499",
+				"show_price_qi": false
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002013#t=product&act=other&page=channel&page_id=1915&bid=3424234.2&pid=12517",
+					"login": false,
+					"path": "12517",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d519451453af56f0ff85c9a7faf4ff0.jpg?w=1212&h=716",
+				"img_url_color": "#F4F4F4",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d519451453af56f0ff85c9a7faf4ff0.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "3999",
+				"product_brief": "骁龙865处理器，120Hz刷新率",
+				"product_id": "12517",
+				"product_name": "腾讯黑鲨游戏手机3S",
+				"product_org_price": "3999",
+				"product_price": "3999",
+				"product_rebate": {},
+				"show_price": "3999",
+				"show_price_qi": false
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"block_id": "3014036",
+		"body": {
+			"items": [{
+				"label_content": "",
+				"label_title": "小米手机",
+				"logcode_params": []
+			}]
+		},
+		"stat": "",
+		"view_type": "list_label"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001016#t=product&act=other&page=channel&page_id=1915&bid=3773853.1&pid=12609",
+					"login": false,
+					"path": "12609",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "5299",
+				"product_brief": "120X 变焦/120W秒充/120Hz屏幕",
+				"product_id": "12609",
+				"product_name": "小米10至尊纪念版",
+				"product_org_price": "5299",
+				"product_price": "5299",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "5299",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002016#t=product&act=other&page=channel&page_id=1915&bid=3773853.2&pid=10000214",
+					"login": false,
+					"path": "10000214",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48e5c728dc7b2babcfae27b6ae65139f.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/48e5c728dc7b2babcfae27b6ae65139f.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3999",
+				"product_brief": "骁龙865/1亿像素相机",
+				"product_id": "10000214",
+				"product_name": "小米10",
+				"product_org_price": "3999",
+				"product_price": "3799",
+				"product_rebate": {},
+				"show_price": "3799",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"block_id": "3005448",
+		"body": {
+			"items": [{
+				"label_content": "",
+				"label_title": "红米手机",
+				"logcode_params": []
+			}]
+		},
+		"stat": "",
+		"view_type": "list_label"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_img_text001021#t=product&act=other&page=channel&page_id=1915&bid=3698300.1&pid=12982",
+					"login": false,
+					"path": "12982",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ba7c4eccf6864b9101c28d2ca9cc71e2.jpg?w=1708&h=868",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ba7c4eccf6864b9101c28d2ca9cc71e2.jpg?f=webp&w=1708&h=868",
+				"is_stand_img": false,
+				"market_price": "2599",
+				"product_brief": "144Hz[7档]变速高刷屏，5000mAh大电量",
+				"product_id": "12982",
+				"product_name": "Redmi K30S 至尊纪念版",
+				"product_org_price": "2599",
+				"product_price": "2599",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "2599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_img_text"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001023#t=product&act=other&page=channel&page_id=1915&bid=3698302.1&pid=10000244",
+					"login": false,
+					"path": "10000244",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/83d4e418ccdea370034e82da9a22549f.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/83d4e418ccdea370034e82da9a22549f.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "1799",
+				"product_brief": "双5G待机，天玑820处理器",
+				"product_id": "10000244",
+				"product_name": "Redmi 10X 5G",
+				"product_org_price": "1799",
+				"product_price": "1399",
+				"product_rebate": {},
+				"show_price": "1399",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002023#t=product&act=other&page=channel&page_id=1915&bid=3698302.2&pid=10000245",
+					"login": false,
+					"path": "10000245",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f1565f10244890eb766bce89de75018.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f1565f10244890eb766bce89de75018.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "2299",
+				"product_brief": "双5G待机，天玑820处理器",
+				"product_id": "10000245",
+				"product_name": "Redmi 10X Pro 5G",
+				"product_org_price": "2299",
+				"product_price": "2099",
+				"product_rebate": {},
+				"show_price": "2099",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001025#t=product&act=other&page=channel&page_id=1915&bid=3665324.1&pid=10000220",
+					"login": false,
+					"path": "10000220",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8df0187c3c30fa0f4a8c493ec743bfa.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8df0187c3c30fa0f4a8c493ec743bfa.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3799",
+				"product_brief": "双模5G，骁龙865，弹出全面屏",
+				"product_id": "10000220",
+				"product_name": "Redmi K30 Pro 变焦版",
+				"product_org_price": "3799",
+				"product_price": "3199",
+				"product_rebate": {},
+				"show_price": "3199",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002025#t=product&act=other&page=channel&page_id=1915&bid=3665324.2&pid=10000204",
+					"login": false,
+					"path": "10000204",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b6ea8d70aa2ebeabd41d5596b3498768.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b6ea8d70aa2ebeabd41d5596b3498768.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "2299",
+				"product_brief": "双模5G，120Hz流速屏",
+				"product_id": "10000204",
+				"product_name": "Redmi K30 5G",
+				"product_org_price": "2299",
+				"product_price": "1599",
+				"product_rebate": {},
+				"show_price": "1599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001027#t=product&act=other&page=channel&page_id=1915&bid=3462337.1&pid=12605",
+					"login": false,
+					"path": "12605",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a63d85acf71f287c161bd075c2bd359e.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a63d85acf71f287c161bd075c2bd359e.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "1999",
+				"product_brief": "120Hz弹出全面屏，天玑1000+旗舰处理器",
+				"product_id": "12605",
+				"product_name": "Redmi K30 至尊纪念版",
+				"product_org_price": "1999",
+				"product_price": "1999",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "1999",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002027#t=product&act=other&page=channel&page_id=1915&bid=3462337.2&pid=10000223",
+					"login": false,
+					"path": "10000223",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2137a477dc29ba4dc2d272d555716b.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cd2137a477dc29ba4dc2d272d555716b.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "2699",
+				"product_brief": "双模5G，骁龙865，弹出全面屏",
+				"product_id": "10000223",
+				"product_name": "Redmi K30 Pro",
+				"product_org_price": "2699",
+				"product_price": "2699",
+				"product_rebate": {},
+				"show_price": "2699",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001029#t=product&act=other&page=channel&page_id=1915&bid=3698306.1&pid=10000181",
+					"login": false,
+					"path": "10000181",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/465ea7594d174311d85ba9b58b4c7137.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/465ea7594d174311d85ba9b58b4c7137.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "999",
+				"product_brief": "千元4800万四摄",
+				"product_id": "10000181",
+				"product_name": "Redmi Note 8",
+				"product_org_price": "999",
+				"product_price": "899",
+				"product_rebate": {},
+				"show_price": "899",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002029#t=product&act=other&page=channel&page_id=1915&bid=3698306.2&pid=10000203",
+					"login": false,
+					"path": "10000203",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61466261e8001f3f18991f6abff46ccf.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61466261e8001f3f18991f6abff46ccf.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "1699",
+				"product_brief": "120Hz流速屏，全速热爱",
+				"product_id": "10000203",
+				"product_name": "Redmi K30 4G",
+				"product_org_price": "1699",
+				"product_price": "1299",
+				"product_rebate": {},
+				"show_price": "1299",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001031#t=product&act=other&page=channel&page_id=1915&bid=3462338.1&pid=10000229",
+					"login": false,
+					"path": "10000229",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b923d3280682185c0018b0f027b58b8a.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b923d3280682185c0018b0f027b58b8a.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "999",
+				"product_brief": "5020mAh超长续航，128GB大内存",
+				"product_id": "10000229",
+				"product_name": "Redmi 10X 4G",
+				"product_org_price": "999",
+				"product_price": "999",
+				"product_rebate": {},
+				"show_price": "999",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002031#t=product&act=other&page=channel&page_id=1915&bid=3462338.2&pid=12511",
+					"login": false,
+					"path": "12511",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dfbe21ef88b8ff2e0b43cb2fb2cbb77.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dfbe21ef88b8ff2e0b43cb2fb2cbb77.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "599",
+				"product_brief": "5000mAh长循环大电量，6.53\"超大护眼屏幕",
+				"product_id": "12511",
+				"product_name": "Redmi 9A",
+				"product_org_price": "599",
+				"product_price": "599",
+				"product_rebate": {},
+				"show_price": "599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001033#t=product&act=other&page=channel&page_id=1915&bid=3773855.1&pid=10000180",
+					"login": false,
+					"path": "10000180",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/86d7b80a55842eca69c0929a3ec27bcd.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/86d7b80a55842eca69c0929a3ec27bcd.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "1399",
+				"product_brief": "6400万全场景四摄",
+				"product_id": "10000180",
+				"product_name": "Note 8 Pro",
+				"product_org_price": "1399",
+				"product_price": "1099",
+				"product_rebate": {},
+				"show_price": "1099",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002033#t=product&act=other&page=channel&page_id=1915&bid=3773855.2&pid=10000239",
+					"login": false,
+					"path": "10000239",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3f72c30ff2570bf5226240c4109e23bd.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3f72c30ff2570bf5226240c4109e23bd.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "799",
+				"product_brief": "5020mAh超长续航，1080P 全高清大屏",
+				"product_id": "10000239",
+				"product_name": "Redmi 9",
+				"product_org_price": "799",
+				"product_price": "799",
+				"product_rebate": {},
+				"show_price": "799",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001035#t=product&act=other&page=channel&page_id=1915&bid=3773857.1&pid=10000191",
+					"login": false,
+					"path": "10000191",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/57c4c1fbbee7dc25b0698231b96462e5.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/57c4c1fbbee7dc25b0698231b96462e5.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "799",
+				"product_brief": "5000mAh超长续航",
+				"product_id": "10000191",
+				"product_name": "Redmi 8A",
+				"product_org_price": "799",
+				"product_price": "699",
+				"product_rebate": {},
+				"show_price": "699",
+				"show_price_qi": false
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002035#t=product&act=other&page=channel&page_id=1915&bid=3773857.2&pid=10000190",
+					"login": false,
+					"path": "10000190",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ed972de11f55f4aa09ac8cb174a680a6.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ed972de11f55f4aa09ac8cb174a680a6.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "799",
+				"product_brief": "5000mAh超长续航",
+				"product_id": "10000190",
+				"product_name": "Redmi 8",
+				"product_org_price": "799",
+				"product_price": "799",
+				"product_rebate": {},
+				"show_price": "799",
+				"show_price_qi": false
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_img_text001037#t=product&act=other&page=channel&page_id=1915&bid=3779105.1&pid=10000152",
+					"login": false,
+					"path": "10000152",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cf04420ea9369fc76add20e1973d8515.jpg?w=1708&h=868",
+				"img_url_color": "#C7CAD3",
+				"img_url_webp": "http://i8.mifile.cn/v1/a1/eecdd0cc-4bf6-d0ff-ca3c-6652b6ecd2bd.webp?w=1708&h=868",
+				"is_stand_img": false,
+				"market_price": "799",
+				"product_brief": "骁龙8核处理器，4000mAh超长续航",
+				"product_id": "10000152",
+				"product_name": "Redmi 7A",
+				"product_org_price": "799",
+				"product_price": "549",
+				"product_rebate": {},
+				"show_price": "549",
+				"show_price_qi": false
+			}]
+		},
+		"stat": "",
+		"view_type": "list_img_text"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"block_id": "3415738",
+		"body": {
+			"items": [{
+				"label_content": "",
+				"label_title": "骁龙865",
+				"logcode_params": []
+			}]
+		},
+		"stat": "",
+		"view_type": "list_label"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001043#t=product&act=other&page=channel&page_id=1915&bid=3773861.1&pid=12609",
+					"login": false,
+					"path": "12609",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07d5a196299abf408e7f795899431e0a.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "5299",
+				"product_brief": "120X 变焦/120W秒充/120Hz屏幕",
+				"product_id": "12609",
+				"product_name": "小米10至尊纪念版",
+				"product_org_price": "5299",
+				"product_price": "5299",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "5299",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002043#t=product&act=other&page=channel&page_id=1915&bid=3773861.2&pid=12982",
+					"login": false,
+					"path": "12982",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8ab7f9d4703c11a03c8e0161668a1bf.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c8ab7f9d4703c11a03c8e0161668a1bf.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "2599",
+				"product_brief": "144Hz[7档]变速高刷屏",
+				"product_id": "12982",
+				"product_name": "Redmi K30S 至尊纪念版",
+				"product_org_price": "2599",
+				"product_price": "2599",
+				"product_rebate": {
+					"6": "约返0元"
+				},
+				"show_price": "2599",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001047#t=product&act=other&page=channel&page_id=1915&bid=3415741.1&pid=10000223",
+					"login": false,
+					"path": "10000223",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bf6244caaebbcd43b4f541fc32ff3810.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bf6244caaebbcd43b4f541fc32ff3810.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "2699",
+				"product_brief": "双模5G，骁龙865，弹出全面屏",
+				"product_id": "10000223",
+				"product_name": "Redmi K30 Pro",
+				"product_org_price": "2699",
+				"product_price": "2699",
+				"product_rebate": {},
+				"show_price": "2699",
+				"show_price_qi": true
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002047#t=product&act=other&page=channel&page_id=1915&bid=3415741.2&pid=10000220",
+					"login": false,
+					"path": "10000220",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dc70db2efd09bb00c29745aa2ab9173.jpg?w=1212&h=716",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8dc70db2efd09bb00c29745aa2ab9173.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "3799",
+				"product_brief": "双模5G，骁龙865，弹出全面屏",
+				"product_id": "10000220",
+				"product_name": "Redmi K30 Pro 变焦版",
+				"product_org_price": "3799",
+				"product_price": "3199",
+				"product_rebate": {},
+				"show_price": "3199",
+				"show_price_qi": true
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}, {
+		"body": {
+			"items": [{
+				"action": {
+					"log_code": "311915pcchannellist_two_type4001049#t=product&act=other&page=channel&page_id=1915&bid=3415743.1&pid=10000217",
+					"login": false,
+					"path": "10000217",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d62a97b5c65e2f62ffd7cafcb6dd3361.jpg",
+				"img_url_color": "#F5F5F5",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d62a97b5c65e2f62ffd7cafcb6dd3361.jpg?f=webp",
+				"is_stand_img": false,
+				"market_price": "3499",
+				"product_brief": "骁龙865 / 270Hz触控采样率",
+				"product_id": "10000217",
+				"product_name": "腾讯黑鲨游戏手机3 ",
+				"product_org_price": "3499",
+				"product_price": "3499",
+				"product_rebate": {},
+				"show_price": "3499",
+				"show_price_qi": false
+			}, {
+				"action": {
+					"log_code": "311915pcchannellist_two_type4002049#t=product&act=other&page=channel&page_id=1915&bid=3415743.2&pid=12517",
+					"login": false,
+					"path": "12517",
+					"type": "product"
+				},
+				"btn_txt": "立即购买",
+				"img_url": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d519451453af56f0ff85c9a7faf4ff0.jpg?w=1212&h=716",
+				"img_url_color": "#F4F4F4",
+				"img_url_webp": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1d519451453af56f0ff85c9a7faf4ff0.jpg?f=webp&w=1212&h=716",
+				"is_stand_img": false,
+				"market_price": "3999",
+				"product_brief": "骁龙865处理器，120Hz刷新率",
+				"product_id": "12517",
+				"product_name": "腾讯黑鲨游戏手机3S",
+				"product_org_price": "3999",
+				"product_price": "3999",
+				"product_rebate": {},
+				"show_price": "3999",
+				"show_price_qi": false
+			}]
+		},
+		"stat": "",
+		"view_type": "list_two_type4"
+	}, {
+		"body": {
+			"line_color": "#f5f5f5",
+			"line_height": "28"
+		},
+		"stat": "",
+		"view_type": "divider_line"
+	}],
+	"seo": {
+		"description": "小米商城-直营小米手机、红米手机，囊括小米5，小米Max，小米4S，小米4c，红米Note 3、红米3S，支持移动、联通、电信多个版本，欢迎选购。",
+		"keywords": "小米手机,小米手机价格,小米手机大全,小米平板电脑,小米商城",
+		"title": "小米手机/小米平板 - 小米商城"
+	},
+	"show_video": null
+}

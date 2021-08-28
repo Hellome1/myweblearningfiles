@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="checkbox" v-model="isChecked">记录用户名
+
+        <p>
+            你喜欢的运动？
+            <input type="checkbox" v-model="checkGroup" value="游泳">游泳
+            <input type="checkbox" v-model="checkGroup" value="滑冰">滑冰
+            <input type="checkbox" v-model="checkGroup" value="长跑">长跑
+        </p>
+        {{checkGroup}}
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el:"#box",
+            data:{
+                isChecked:false,
+                checkGroup:[]
+            }
+        })
+    </script>
+</body>
+</html>

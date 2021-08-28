@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+
+        .parent { margin-top: 100px; border: 5px solid black; overflow: hidden;}
+
+        .box1 { width: 100px; height: 500px; background-color: red; float: left; margin-bottom: -1000px; padding-bottom: 1000px;}  
+        .box2 { width: 100px; height: 300px; background-color: blue; float: right; margin-bottom: -1000px; padding-bottom: 1000px;}
+
+        .d1 {  margin-top: 100px; border: 5px solid black; overflow: hidden;}
+        .b1 { width: 100px; height: 500px; background-color: red;}
+        .b2 { width: 100px; height: 300px; float: right; background-color: blue;}
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+    <div class="d1">
+        <div class="b1"></div>
+        <div class="b2"></div>
+    </div>
+</body>
+</html>

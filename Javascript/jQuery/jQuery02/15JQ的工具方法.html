@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        /* 
+            JQ的工具方法和自己封装的JS方法没有任何区别
+                $()下的常用方法
+
+                JQ的方法调用：$().xxx() 必须JQ对象调用这个函数
+                JQ的工具方法：$.xxx()
+
+                    .type() 输出当前数据类型 typeof
+                    .trim()
+                    .inArray()
+                    .proxy()    功能类似于bind
+                    .noConflict()
+                    .$.parseJSON() JSON.parse()
+                    .makeArray() 将伪数组转成数组   Array.from()
+        */
+
+        /* var arr = [10, 20, 30];
+        var str = new String();
+        var d = new Date(); */
+        /* console.log(typeof arr); //object
+        console.log(typeof str); //object
+        console.log(typeof d); //object */
+
+        /* console.log($.type(arr));//array
+        console.log($.type(str));//string
+        console.log($.type(d));//date */
+
+        /* var str = "  he  l lo  ";
+        console.log("|" + str.trim() + "|" ); */
+        // console.log("|" + $.trim(str) + "|" );
+
+        // let arr = [10, 20, 30, 40];
+        // console.log($.inArray(20, arr));
+
+        // let hehe = $.noConflict(); //给$起一个别名
+        // var $ = 10;
+        // hehe(document).click(function(){
+        //     alert("hehe");
+        // })
+
+        // let nodes = document.getElementsByTagName("div");
+        // // console.log(nodes);
+        // // nodes.push("hello");
+        // nodes = $.makeArray(nodes);
+        // nodes.push("hello");
+        // console.log(nodes);
+    </script>
+</body>
+</html>

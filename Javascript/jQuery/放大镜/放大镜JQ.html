@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0;}
+        #small { width: 200px; height: 300px; margin: 80px; border: 1px solid black; float: left; position: relative;}
+        #small img { width: 200px;}
+        #big { width: 400px; height: 400px; float: left; margin: 80px 50px; position: relative; overflow: hidden; display: none; border: 1px solid black; }
+        #big img { width: 1000px; position: absolute;}
+        #mask { width: 100px; height: 100px; background-color: white; opacity: .5; filter: alpha(opacity=50); position: absolute; left: 0px; top: 0; display: none;}
+    </style>
+</head>
+<body>
+    <div id="small">
+        <img src="./zhang-kaiyv-Vpg7hWPL6uM-unsplash.jpg" alt="">
+        <div id="mask"></div>
+    </div>
+    <div id="big">
+        <img src="./zhang-kaiyv-Vpg7hWPL6uM-unsplash.jpg" alt="">
+    </div>
+    <script>
+        $("#small").mouseenter(function(){
+            $("#mask,#big").show();
+        }).mouseleave(function(){
+            $("#mask,#big").hide();
+        }).mousemove(function(ev){
+            var l  = ev.clientX - $(this).offset().left - 50;
+            var t = ev.clientY - $(this).offset().top - 50;
+            if(l < 0){
+                l = 0;
+            }
+            if(l > 100){
+                l = 100;
+            }
+            if(t < 0){
+                t = 0;
+            }
+            if(t > $(this).height() - 100){
+                t = $(this).height() - 100;
+            }
+            //改变遮罩层位置,同时改变发达图片位置
+            $("#mask").css({
+                left: l,
+                top: t
+            })
+
+            $("#big img").css({
+                left: -5 * l,
+                top: -5 * t
+            })
+        })
+    </script>
+</body>
+</html>

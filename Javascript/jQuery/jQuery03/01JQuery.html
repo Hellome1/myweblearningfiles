@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <script src="../jquery-cookie-master/src/jquery.cookie.js"></script>
+</head>
+<body>
+    <button>删除cookie</button>
+    <script>
+        /* 
+            $.cookie()
+
+            具体调用的格式
+            $.cookie(name) 通过name取值
+            $.cookie(name, value) 这置name和value
+            $.cookie(name, value, {
+                可选项
+            })
+            $.cookie(name, null) 删除cookie
+        */
+
+        // $.cookie("变种人", "x教授", {
+        //     expires: 7
+        // })
+
+        alert($.cookie("变种人"));
+
+        $("button").click(function(){
+            $.removeCookie("变种人");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div id="div1" class="box">
+        div1
+        <div id="div2" class="box">
+            div2
+        </div>
+    </div>
+    <script>
+        /* 
+            parent() 获取父节点
+            parents() 获取父节点们
+            closest() 必须传入参数，参数为选择器，只获取第一个符合条件的元素，从自身开始查找
+         */
+
+        //  $("#div2").parent().css("backgroundColor", "red");
+        //  $("#div2").parents().css("backgroundColor", "red");
+        //  $("#div2").parents(".box").css("backgroundColor", "red");
+        // $("#div2").closest(".box").css("backgroundColor", "red");//从自身开始查找
+        $("#div2").closest("#div1").css("backgroundColor", "red");//从自身开始查找
+    </script>
+</body>
+</html>

@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qq飞车</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        #main { background: url(img/guanwang.jpg) no-repeat center 0; min-height: 1000px;}
+        #nav {background: url(img/nav_down_re.png) repeat-x, url(img/nav.png) no-repeat center 0; height: 205px; background-size: auto; position: relative;}
+        #nav .nav_logo { margin: 0px auto; width: 138px; height: 120px; padding-top: 15px; padding-left: 10px;}
+
+        #nav dl { position: absolute; top: 0;}
+        #nav dt { height: 66px;}
+        #nav dt a { width: 100%; height: 100%; display: block; text-indent: -9999px; overflow: hidden;}
+        #nav dd { line-height: 27px; font-size: 12px; text-align: center;}
+        #nav dd a { color: white; position: relative;}
+        #nav dd a:hover { color: #ff4d35; text-decoration: underline;}
+        #nav dd a.hot:after { content: ''; display: block; width: 12px; height: 12px; background: url(img/nav_tips.png) no-repeat 0 -12px; position: absolute; right: -15px; top: 0;}
+        #nav dd a.new:after { content: ''; display: block; width: 12px; height: 12px; background: url(img/nav_tips.png) no-repeat 0 0px; position: absolute; right: -15px; top: 0;}
+        #nav .nav_index { width: 65px; left: 0;}
+        #nav .nav_zl {width: 69px; left: 98px;}
+        #nav .nav_ss {width: 74px; left: 203px;}
+        #nav .nav_hd {width: 68px; left: 325px;}
+        #nav .nav_sc {width: 68px; left: 568px;}
+        #nav .nav_sp {width: 68px; left: 687px;}
+        #nav .nav_wj {width: 68px; left: 802px;}
+        #nav .nav_kf {width: 74px; left: 906px;}
+
+        #link { height:  226px;}
+        #link a { display: block; height: 100%; width: 463px; margin: 0 auto;}
+
+        #banner { height: 276px; background: url(img/top.png) no-repeat;}
+        #banner .banner_left { width: 240px; height: 310px; background: url(img/down_user_spr.png) no-repeat; margin: -20px 0 0 7px;}
+        #banner .banner_download { cursor: pointer;padding-top: 10px; padding-bottom: 10px;}
+        #banner .banner_download p { width: 91px; height: 25px;  background: url(img/down_user_spr.png) no-repeat; margin: 0 auto; text-indent: -9999px; overflow: hidden;}
+        #banner .banner_download p:first-child { background-position: -253px 0; margin-top: 34px;}
+        #banner .banner_download p:last-child { background-position: -252px -30px;}
+        #banner .banner_download:hover   p:first-child { animation: 1s up;}
+        @keyframes up {
+            0% { transform: translateY(-10px); opacity: 0;}
+            100% { transform: translateY(0); opacity: 1;}
+        }
+        #banner .banner_download:hover p:last-child { animation: 1s down;}
+        @keyframes down {
+            0% { transform: translateY(10px); opacity: 0;}
+            100% { transform: translateY(0); opacity: 1;}
+        }
+        #banner .banner_user { margin-left: 10px;}
+        #banner .banner_user .img_c { border-radius: 50%; width: 50px; height: 50px; border: 3px solid #283257; background: url(img/56x56.jpg) no-repeat center -3px; overflow: hidden; margin: 62px auto 0 auto;}
+        #banner .banner_user p { text-align: center; font-size: 12px; color:#e0e4ff; margin-top: 30px;}
+        #banner .banner_user p a { color: #4dffbd;}
+
+        #banner .banner_list {width: 497px; height: 255px; overflow: hidden; margin: 14px 0 0 4px; position: relative;}
+        #banner .corner { width: 12px; height: 12px; z-index: 10; position: absolute;}
+        #banner .corner:nth-of-type(1) { background: url(img/top.png) no-repeat -621px -299px; left: -4px; top: -4px;}
+        #banner .corner:nth-of-type(2) { background: url(img/top.png) no-repeat -633px -299px; left: 487px; top: -2px;}
+        #banner .corner:nth-of-type(3) { background: url(img/top.png) no-repeat -621px -312px; left: -3px; top: 245px;}
+        #banner .corner:nth-of-type(4) { background: url(img/top.png) no-repeat -633px -312px; left: 486px; top: 245px;}
+        #banner .banner_list_ul { width: 5500px; position: absolute; display: none;}
+        #banner .banner_list_ul.active { display: block;}
+        #banner .banner_list_ul li { width: 497px; height: 253px; float: left;}
+        #banner .banner_bottomline { width: 100%; height: 37px; background-color: #131417; opacity: 0.8; border-top: 1px solid #514b55; position: absolute; bottom: 0px; left: 0px;}
+        #banner .banner_bottomline_ul { text-align: center; margin-top: 11px;}
+        #banner .banner_bottomline_ul li { display: inline-block; width: 15px; height: 15px; background: url(img/top.png) no-repeat -603px -299px; cursor: pointer;}
+        #banner .banner_bottomline_ul li.active { background-position: -581px -299px;}
+        #banner .banner_bottomline_leftbtn { width: 12px; height: 22px; position: absolute; left: 11px; top: 10px; background: url(img/top.png) no-repeat -542px -296px; cursor: pointer;}
+        #banner .banner_bottomline_leftbtn:hover { background-position: -542px -325px;}
+        #banner .banner_bottomline_rightbtn { width: 12px; height: 22px; position: absolute; right: 11px; top: 10px; background: url(img/top.png) no-repeat -555px -296px; cursor: pointer;}
+        #banner .banner_bottomline_rightbtn:hover { background-position: -555px -325px;}
+        #banner .banner_ad { position: absolute; width: 83px; height: 19px; background: url(img/top.png) no-repeat -723px -320px; left: 380px; top: 0px;}
+        #banner .banner_ad .office { width: 42px; height: 100%; float: left;}
+        #banner .banner_ad .partner { width: 41px; height: 100%; float: left;}
+        #banner .banner_ad .office.active { background: url(img/top.png) no-repeat -723px -298px;}
+        #banner .banner_ad .partner.active { background: url(img/top.png) no-repeat -765px -298px;}
+
+        #banner .banner_right {width: 209px; height: 255px; position: relative; margin: 13px 0 0 11px;}
+        #banner .banner_right_lt, #banner .banner_right_rt, #banner .banner_right_lb, #banner .banner_right_rb { width: 15px;
+         height: 15px; background: url(img/top.png) no-repeat; position: absolute;}
+        #banner .banner_right_lt { left: -4px; top: -5px; background-position: -681px -298px;}
+        #banner .banner_right_rt { right: -5px; top: -5px; background-position: -696px -298px;}
+        #banner .banner_right_lb { left: -4px; bottom: -5px; background-position: -681px -313px;}
+        #banner .banner_right_rb { right: -5px; bottom: -7px; background-position: -696px -313px;}
+
+        #right_ad { position: fixed; right: 20px; top: 280px; width: 245px; height: 420px; z-index: 10;}
+        #right_ad img { cursor: pointer;}
+        #right_ad .relative_container { position: relative; overflow: auto;}
+        #right_ad img:nth-of-type(1) { float: right;}
+        #right_ad img:nth-of-type(2) { position: absolute; right: 120px; bottom: 0;}
+        #right_ad .imgc { width: 34px; height: 34px; position: absolute; z-index: 5; right: 5px; top: 5px;}
+        
+        #more { clear: both; margin-top: 40px;}
+        #more .vip { margin-left: 13px;}
+        #more .vip a { font-size: 12px;}
+        #more .vip_top { background: url(img/inside_bar.png) no-repeat 0 0; width: 228px; height: 17px; display: block;}
+        #more .vip_mid { background: url(img/inside_bar.png) no-repeat 0 -40px; width: 228px; height: 63px; display: block;}
+        #more .vip_bottom { background: url(img/inside_bar.png) no-repeat 0 -20px; width: 228px; height: 17px; display: block;}
+        #more .vip_content { background: url(img/inside_bar.png) repeat-y -242px 0; text-align: center; width: 228px; padding-top: 10px; padding-bottom: 10px;}
+        #more .vip_content:nth-of-type(2) {padding-top: 0;}
+        #more .vip_video { width: 207px; height: 57px; background: url(img/inside_bar.png) no-repeat 0 -137px; cursor: pointer; margin: 0 auto;
+             position: relative; margin-bottom: 6px;}
+        #more .vip_video:hover { opacity: 0.8;}
+        #more .vip_video:hover i { animation: 0.8s tolittle; animation-fill-mode: forwards;}
+        @keyframes tolittle {
+            0% { transform: scale(1);}
+            100% { transform: scale(0.9);}
+        }
+        #more .vip_zz:hover { opacity: 0.8;}
+        #more .vip_zz:hover i { animation: 0.8s tolittle; animation-fill-mode: forwards;}
+        #more .vip_zz { width: 207px; height: 57px; background: url(img/inside_bar.png) no-repeat 0 -200px; cursor: pointer; margin: 0 auto;
+             position: relative; margin-bottom: 10px;}
+        #more .vip_video i { width: 33px; height: 33px; background: url(img/inside_bar.png) no-repeat 0 -269px; display: block; position: absolute;
+             left: 46px; top: 12px;}
+        #more .vip_zz i { width: 33px; height: 33px; background: url(img/inside_bar.png) no-repeat -41px -269px; display: block; position: absolute;
+             left: 46px; top: 12px;}
+        #more .vip_area1 { width: 208px; height: 88px; margin: 0 auto; box-sizing: border-box; padding: 10px; background-color: #efeff1; position: relative;}
+        #more .mask i { width: 13px; height: 13px; display: block; position: absolute;}
+        #more .mask2 i { width: 29px; height: 10px; display: block; position: absolute;}
+        #more .mask i:nth-of-type(1) { background: url(img/inside_bar.png) no-repeat 0 -105px; left: 0; top: 0;}
+        #more .mask i:nth-of-type(2) { background: url(img/inside_bar.png) no-repeat -15px -105px; right: 0; top: 0;}
+        #more .mask i:nth-of-type(3) { background: url(img/inside_bar.png) no-repeat 0 -121px; left: 0; bottom: 0;}
+        #more .mask i:nth-of-type(4) { background: url(img/inside_bar.png) no-repeat -15px -121px; right: 0; bottom: 0;}
+        #more .mask2 i:nth-of-type(1) { background: url(img/inside_bar.png) no-repeat -30px -105px; left: 90px; top: 0;}
+        #more .mask2 i:nth-of-type(2) { background: url(img/inside_bar.png) no-repeat -30px -117px; left: 90px; bottom: 0;}
+        #more .vip_area1 table { width: 100%;}
+        #more .vip_area1 a { font-size: 14px; height:30px; line-height: 30px; display: block; font-weight: bold;}
+        #more a.hot:after { content: ''; display: block; width: 12px; height: 12px; background: url(img/nav_tips.png) no-repeat 0 -12px; position: absolute; right: -15px; top: 0;}
+        #more a.new:after { content: ''; display: block; width: 12px; height: 12px; background: url(img/nav_tips.png) no-repeat 0 0px; position: absolute; right: -15px; top: 0;}
+        #more .vip_area2 { width: 208px; height: 190px; margin: 0 auto; box-sizing: border-box; padding: 10px; background-color: #efeff1; margin-top: 10px; position: relative;}
+        #more .vip_area2 table { width: 100%;}
+        #more .vip_area2 table a { height: 32px; line-height: 32px;}
+        #more .vip_area3 { width: 208px; height: 156px; margin: 0 auto; box-sizing: border-box; padding: 10px; background-color: #efeff1; position: relative;}
+        #more .vip_area3 table { width: 100%;}
+        #more .vip_area3 table a { height: 32px; line-height: 32px;}
+        #more .vip_more1 { width: 205px; height: 46px; background: url(img/inside_bar.png) no-repeat 0 -306px; cursor: pointer; margin: 0 auto; margin-top: 10px;}
+        #more .vip_more2 { width: 205px; height: 38px; cursor: pointer; margin: 0 auto; margin-top: 5px;}
+        #more .vip_more3 { width: 205px; height: 38px; background: url(img/inside_bar.png) no-repeat 0 -354px; cursor: pointer; margin: 0 auto; margin-top: 5px;}
+        #more .acontainer { width: 165px;}
+        #more .acontainer a:hover { text-decoration: none;}
+        #more .vip_more2 .acontainer { width: 205px; height: 38px; position: absolute; background: url(img/inside_bar.png) no-repeat 0 -354px; padding-right: 20px;}
+        #more .vip_more2 .acontainer:hover { z-index: 10;}
+        #more .vip_more2 a { height: 36px; line-height: 36px;}
+        #more .vip_more2:hover .vip_more2_detail { display: block;}
+        #more .acontainer:hover i { transform: rotate(270deg);}
+        #more .vip_more2 .vip_more2_detail { display: none; background-color: #efeff1; position: absolute; width: 205px; z-index: 5; padding-top: 20px; margin-top: 25px;}
+        #more .vip_more2 .vip_more2_bottom { width: 207px; height: 12px; background: url(img/inside_bar.png) no-repeat -1px -402px; position: absolute;}
+        #more .vip_more2 .vip_more2_detail a { height: 18px; line-height: 18px;}
+        #more .vip_more3 a { height: 36px; line-height: 36px;}
+        #more .vip_more3 .acontainer { width: 205px; height: 38px; position: absolute; background: url(img/inside_bar.png) no-repeat 0 -354px; padding-right: 20px;}
+        #more .vip_more3 .acontainer:hover { z-index: 10;}
+        #more .vip_more3:hover .vip_more3_detail { display: block;}
+        #more .vip_more3 .vip_more3_detail { display: none; background-color: #efeff1; position: absolute; width: 205px; z-index: 5; padding-top: 20px; margin-top: 25px;}
+        #more .vip_more3 .vip_more3_bottom { width: 207px; height: 12px; background: url(img/inside_bar.png) no-repeat -1px -402px; position: absolute;}
+        #more .vip_more3 .vip_more3_detail a { height: 18px; line-height: 18px;}
+        #more .vip_more3 .vip_more3_detail a { height: 18px; line-height: 18px;}
+        #more .acontainer i { width: 4px; height: 8px; display: block; position: absolute; left: 180px; top: 18px; background: url(img/inside_bar.png) 
+        no-repeat -188px -325px; transform: rotate(90deg); transition: .2s;}
+
+        #more .information { padding: 15px; width: 739px;}
+        #more .information .navigation a:hover { text-decoration: none;}
+        #news { width: 480px;}
+        #news .title { width: 480px; height: 27px; background: url(img/title.png) no-repeat 5px 0; margin: 0 0 5px 0;}
+        #news .title i { width: 29px; height: 18px; background: url(img/inside_spr.png) no-repeat 0 -181px; float: right; position: relative; cursor: pointer; margin-right: 5px;}
+        #news .title i:after { content: ''; display: block; width: 5px; height: 5px; background: url(img/inside_spr.png) no-repeat -29px -187px; position: absolute; right: -5px; top: 7px; transition: 1s;}
+        #news .title i:hover:after { transform: rotate(180deg);}
+        #news .navigation { width: 480px; height: 40px; border-top: 1px solid #d4d6d9; padding: 0 10px;}
+        #news .navigation a { width: 88px; display: inline-block; text-align: center; font-size: 14px; font-weight: bold; height: 36px;
+             line-height: 36px; border-top: 2px solid white; position: relative;}
+        #news .navigation a.active { color: #ff3052;}
+        #news .navigation a.active span { width: 12px; height: 6px; background: url(img/inside_spr.png) no-repeat 0 -36px; position: absolute; left: 40px; top: -3px;}
+        #news .content { width: 480px; display: none;}
+        #news .content.active { display: block;}
+        #news .content h3 { width: 370px; height: 24px; margin: 6px auto; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: #ff3052; text-align: center;}
+        #news .content h3 a { color: #ff3052; font-weight: 900;}
+        #news .content ul { font-size: 12px;}
+        #news .content li { width: 465px; height: 24px; line-height: 24px;}
+        #news .content .icoin { margin-right: 8px; color: #464646;}
+        #news .content .icoin:before { content: ''; display: inline-block; width: 10px; height: 6px; background: url(img/inside_spr.png) no-repeat -22px -26px; margin-right: 5px;}
+        #news .content li a { color:#2a2c45;}
+        #news .content .time { float: right; clear: both; color: #92939f;}
+
+        #more .activity { width: 205px; margin-left: 20px;}
+        #more .activity .title { width: 205px; height: 27px; background: url(img/title.png) no-repeat 0 -31px; margin-bottom: 5px;}
+        #more .activity .line { width: 205px; height: 2px; border-top: 1px solid #d4d6d9; display: block; margin-bottom: 10px;}
+        #more .activity img { margin-bottom: 12px; cursor: pointer;}
+
+        #event { width: 480px; margin-top: 15px;}
+        #event .title { width: 480px; height: 27px; background: url(img/title.png) no-repeat 5px -60px; margin: 0 0 5px 0;}
+        #event .navigation { width: 480px; height: 40px; border-top: 1px solid #d4d6d9; padding: 0 10px;}
+        #event .navigation a { width: 150px; display: inline-block; text-align: center; font-size: 14px; font-weight: bold; height: 36px;
+             line-height: 36px; border-top: 2px solid white; position: relative;}
+        #event .navigation a.active { color: #309dff;}
+        #event .navigation a.active span { width: 12px; height: 6px; background: url(img/inside_spr.png) no-repeat 0 -10px; position: absolute; left: 72px; top: -3px;}
+        #event .content { margin: 10px 2px; display: none;}
+        #event .content.active { display: block;}
+        #event .content .text { margin-left: 12px;}
+        #event .content h3 { width: 308px; height: 24px; margin: -3px auto 6px auto; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; color: #309dff;}
+        #event .content h3 a { color: #309dff; font-weight: 900;}
+        #event .content ul { font-size: 12px;}
+        #event .content li { width: 310px; height: 24px; line-height: 24px;}
+        #event .linec { display: block; width: 35px; height: 10px; background: url(img/inside_spr.png) no-repeat -21px 0; margin: 10px 0;}
+        #event .content li a { color:#2a2c45; display: inline-block; width: 265px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+        #event .content .time { float: right; clear: both; color: #92939f;}
+
+        #more .version { width: 205px; margin-left: 20px; margin-top: 15px;}
+        #more .version .title { width: 205px; height: 27px; background: url(img/title.png) no-repeat 0 -187px; margin-bottom: 5px;}
+        #more .version .title i { width: 29px; height: 18px; background: url(img/inside_spr.png) no-repeat 0 -181px; float: right; position: relative; cursor: pointer; margin-right: 5px;}
+        #more .version .title i:after { content: ''; display: block; width: 5px; height: 5px; background: url(img/inside_spr.png) no-repeat -29px -187px; position: absolute; right: -5px; top: 7px; transition: 1s;}
+        #more .version .title i:hover:after { transform: rotate(180deg);}
+        #more .version .line { width: 205px; height: 2px; border-top: 1px solid #d4d6d9; display: block; margin-bottom: 10px;}
+        #more .version img { margin-bottom: 12px; cursor: pointer;}
+
+        #video { width: 100%; margin-top: 15px;}
+        #video .title { width: 100%; height: 27px; background: url(img/title.png) no-repeat 5px -122px; margin: 0 0 5px 0;}
+        #video .title i { width: 29px; height: 18px; background: url(img/inside_spr.png) no-repeat 0 -181px; float: right; position: relative; cursor: pointer; margin-right: 5px;}
+        #video .title i:after { content: ''; display: block; width: 5px; height: 5px; background: url(img/inside_spr.png) no-repeat -29px -187px; position: absolute; right: -5px; top: 7px; transition: 1s;}
+        #video .title i:hover:after { transform: rotate(180deg);}
+        #video .navigation { width: 100%; height: 40px; border-top: 1px solid #d4d6d9; padding: 0 10px;}
+        #video .navigation a { width: 110px; display: inline-block; text-align: center; font-size: 14px; font-weight: bold; height: 36px;
+             line-height: 36px; border-top: 2px solid white; position: relative;}
+        #video .navigation a.active { color: #03bc33;}
+        #video .navigation a.active span { width: 12px; height: 6px; background: url(img/inside_spr.png) no-repeat 0 -20px; position: absolute; left: 50px; top: -3px;}
+        #video .content { display: none;}
+        #video .content.active { display: block;}
+        #video .content li { width: 171px; height: 102px; float: left; margin-top: 15px; margin-left: 8px;}
+        #video .content li:nth-of-type(1) { margin-left: 0px;}
+        #video .content .cover { width: 171px; height: 102px; position: relative;}
+        #video .content .cover img { width: 100%; height: 100%; cursor: pointer;}
+        #video .content .cover:hover .cornerstyle span { width: 35px; height: 35px; background: url(img/inside_spr.png) no-repeat -69px -1px; display: block;
+        position: absolute; left: 66px; top: 33px; animation: .5s video; cursor: pointer;}
+        @keyframes video {
+            0% { transform: scale(1.5); opacity: 0;}
+            100% { transform: scale(1); opacity: 1;}
+        }
+        #video .cornerstyle i { width: 9px; height: 9px; display: block; position: absolute; background: url(img/inside_spr.png) no-repeat 0 -98px;}
+        #video .cornerstyle i:nth-of-type(1) { left: 0; top: 0; transform: rotate(180deg);}
+        #video .cornerstyle i:nth-of-type(2) { right: 0; top: 0; transform: rotate(-90deg);}
+        #video .cornerstyle i:nth-of-type(3) { left: 0; bottom: 0; transform: rotate(90deg);}
+        #video .cornerstyle i:nth-of-type(4) { right: 0; bottom: 0;}
+        #video li a { font-size: 12px; height: 30px; line-height: 30px; text-align: center; color: black; width: 160px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+        #footer { padding-top: 100px;}
+        #footer .container { width: 1030px;}
+        #footer .copyright { margin-bottom: 30px;}
+        #footer .logoArea { width: 350px; height: 70px;}
+        #footer .logoArea img { float: left; margin-right: 10px;}
+        #footer .contentArea { width: 618px; margin-left: 60px; font-size: 12px; color: #929094; line-height: 20px;}
+        #footer .contentArea a {color: #929094;}
+        #footer .contentArea .ul a { height: 24px; line-height: 24px;}
+        #footer .contentArea a.icoine { padding-left: 18px; background: url(img/gswj.png) no-repeat;}
+        #footer .contentArea span { font-size: 14px; color: #666666;}
+
+        #footer .warmPrompt { border-top: 1px solid #ededed; color: #929094; font-size: 12px; text-align: center; min-height: 84px;}
+        #footer .warmPrompt h3 { color: #717171; margin-top: 10px; font-size: 15px;}
+        #footer .warmPrompt ul { margin: 0 auto; margin-top: 3px; width: 690px;}
+        #footer .warmPrompt li { display: inline-block; margin: 0 5px; height: 22px; line-height: 22px;}
+    </style>
+</head>
+<body>
+    <div id="head" class="container-fluid">
+        <div class="container">
+            <div class="head_logo l">
+                <div class="tlogo"></div>
+                <div class="movein">
+                    <img src="img/705b65c99857aac9239fc408f4485e2d.jpg" alt="" class="head_img1">
+                    <img src="img/91404d5fe7bad1374acc497c9967de7b.jpg" alt="" class="head_img2">
+                </div>
+            </div>
+            <div class="head_menu r">
+                <div class="head_menu_czsh l">
+                    <a href="#">成长守护平台</a>
+                </div>
+                <div class="gameTop l">
+                    <div class="head_menu_top l">
+                        <a href="#">腾讯游戏排行榜</a>
+                        <div class="top_details">
+                            <div id = 'top1' class="top1 l">
+                                <div class="head">
+                                    <h3>新品端游排行榜</h3>
+                                </div>
+                                <div class="top1_detail active">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153229-118491.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">1</span>
+                                    <p> FIFA Online 4</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508141437-381692.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">2</span>
+                                    <p> NBA2K Online2</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508160935-603360.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">3</span>
+                                    <p> 天涯明月刀</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153019-826252.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>4</span>
+                                    <p> 剑灵</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508154052-883278.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>5</span>
+                                    <p> 穿越火线</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153559-754724.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>6</span>
+                                    <p> 逆战</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508161105-283672.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>7</span>
+                                    <p> QQ炫舞</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20191120203307-979066.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>8</span>
+                                    <p> 使命召唤Online</p>
+                                </div>
+                            </div>
+                            <div id = 'top2' class="top1 l">
+                                <div class="head">
+                                    <h3>热门端游排行榜</h3>
+                                </div>
+                                <div class="top1_detail active">
+                                    <div class="img_container">
+                                        <img src="img1/20191218150448-940180.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">1</span>
+                                    <p> 英雄联盟</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508154052-883278.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">2</span>
+                                    <p> 穿越火线</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508160833-773030.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">3</span>
+                                    <p> 地下城与勇士</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508160935-603360.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>4</span>
+                                    <p> 天涯明月刀OL</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153434-796808.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>5</span>
+                                    <p> QQ炫舞</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153019-826252.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>6</span>
+                                    <p> 剑灵</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153229-118491.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>7</span>
+                                    <p> FIFA Online4</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508153559-754724.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>8</span>
+                                    <p> 逆战</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508141437-381692.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>9</span>
+                                    <p> NBA2K Online2</p>
+                                </div>
+                            </div>
+                            <div id = 'top3'  class="top1 l">
+                                <div class="head">
+                                    <h3>新品手游排行榜</h3>
+                                </div>
+                                <div class="top1_detail active">
+                                    <div class="img_container">
+                                        <img src="img1/20191218153132-210218.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">1</span>
+                                    <p> 雪鹰领主</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164032-255506.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">2</span>
+                                    <p> 火影忍者</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164226-351553.png" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">3</span>
+                                    <p> 欢乐斗地主</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164349-940023.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>4</span>
+                                    <p> 天天爱消除</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164525-463402.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>5</span>
+                                    <p> QQ飞车</p>
+                                </div>
+                                <div class="head2">
+                                    <h3>热门手游排行榜</h3>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20191120191344-555908.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">1</span>
+                                    <p> 王者荣耀</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20191129182841-480452.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">2</span>
+                                    <p> 和平精英</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164813-686345.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span class="t3">3</span>
+                                    <p> 穿越火线：枪战王者</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164032-255506.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>4</span>
+                                    <p> 火影忍者</p>
+                                </div>
+                                <div class="top1_detail">
+                                    <div class="img_container">
+                                        <img src="img1/20200508164349-940023.jpg" alt="">
+                                        <div class="img_link">
+                                            <h3>进入官网</h3>
+                                            <h3>下载游戏</h3>
+                                        </div>
+                                    </div>
+                                    <span>5</span>
+                                    <p> 天天爱消除</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="st l">
+                        <img src="img/title_sprite.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="container-fluid">
+        <div id="nav" class="container-fluid">
+            <div class="container">
+                <div class="nav_logo">
+                    <a href="#">
+                        <img src="img/inside_logo.png" alt="QQ飞车">
+                    </a>
+                </div>
+                <dl class="nav_index">
+                    <dt>
+                        <a href="#">首页</a>
+                    </dt>
+                </dl>
+                <dl class="nav_zl">
+                    <dt></dt>
+                    <dd><a href="#">新手指引</a></dd>
+                    <dd><a href="#" class="hot">官方漫画</a></dd>
+                    <dd><a href="#" class="new">飞车手游</a></dd>
+                    <dd><a href="#">精美壁纸</a></dd>
+                    <dd><a href="#">游戏下载</a></dd>
+                </dl>
+                <dl class="nav_ss">
+                    <dt></dt>
+                    <dd><a href="#" class="hot">谁是车王</a></dd>
+                    <dd><a href="#">SSC</a></dd>
+                    <dd><a href="#">全国公开赛</a></dd>
+                </dl>
+                <dl class="nav_hd">
+                    <dt></dt>
+                    <dd><a href="#" class="hot">版本专区</a></dd>
+                    <dd><a href="#">合作专区</a></dd>
+                    <dd><a href="#">CDK兑换</a></dd>
+                </dl>
+                <dl class="nav_sc">
+                    <dt></dt>
+                    <dd><a href="#">紫钻专区</a></dd>
+                    <dd><a href="#">道聚城</a></dd>
+                    <dd><a href="#">点券充值</a></dd>
+                </dl>
+                <dl class="nav_sp">
+                    <dt></dt>
+                    <dd><a href="#">视频教学</a></dd>
+                    <dd><a href="#">视频中心</a></dd>
+                </dl>
+                <dl class="nav_wj">
+                    <dt></dt>
+                    <dd><a href="#">官方论坛</a></dd>
+                    <dd><a href="#" class="hot">掌上飞车</a></dd>
+                    <dd><a href="#">兴趣部落</a></dd>
+                    <dd><a href="#">官方微信</a></dd>
+                    <dd><a href="#">官方微博</a></dd>
+                </dl>
+                <dl class="nav_kf">
+                    <dt></dt>
+                    <dd><a href="#">客服中心</a></dd>
+                    <dd><a href="#" class="new">安全信用体系</a></dd>
+                    <dd><a href="#">封号查询</a></dd>
+                    <dd><a href="#">游戏安全评测</a></dd>
+                </dl>
+            </div>
+        </div>
+        <div id="link" class="container">
+            <a href="#"></a>
+        </div>
+        <div id="banner" class="container">
+            <div class="banner_left l">
+                <div class="banner_download">
+                    <p>下载游戏</p>
+                    <p>DOWNLOAD</p>
+                </div>
+                <div class="banner_user">
+                    <div class="img_c"></div>
+                    <p>欢迎<a href="#">登录</a>，进入飞车世界</p>
+                </div>
+            </div>
+            <div class="banner_center l">
+                <div class="banner_list">
+                    <div class="corner"></div>
+                    <div class="corner"></div>
+                    <div class="corner"></div>
+                    <div class="corner"></div>
+                    <ul class="banner_list_ul active">
+                        <li>
+                            <a href="#"><img src="img/6a89cda62f23e731db966b5bb4c46955.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/557b0c7c65ed4c7848f0e8085e01cf64.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/11f25a35e9ba5e8880bb84644db57a0f.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/e10111a54eea2ec4e3df544a24372033.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/b498bcd3f39803b7288a0312731df14d.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/d2e5fadff9cccc321e430b0d2a84b545.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/4f1f434f0a23ab5da59d59ada72134d8.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/34e4277ab1f81609f48a7803f26d8616.jpeg" alt=""></a>
+                        </li>
+                    </ul>
+                    <ul class="banner_list_ul">
+                        <li>
+                            <a href="#"><img src="img/1.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/2.jpeg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/3.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/4.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/5.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/6.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/7.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/8.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                    <div class="banner_bottomline">
+                        <ul class="banner_bottomline_ul">
+                            <li class="active" value="0"></li>
+                            <li value="-497"></li>
+                            <li value="-994"></li>
+                            <li value="-1491"></li>
+                            <li value="-1988"></li>
+                            <li value="-2485"></li>
+                            <li value="-2982"></li>
+                            <li value="-3479"></li>
+                        </ul>
+                        <div class="banner_bottomline_leftbtn" onclick="last()"></div>
+                        <div class="banner_bottomline_rightbtn" onclick="next()"></div>
+                    </div>
+                    <i class="banner_ad">
+                        <i class="office active" onclick="off()"></i>
+                        <i class="partner" onclick="par()"></i>
+                    </i>
+                </div>
+            </div>
+            <div class="banner_right l">
+                <a href="#"><img src="img/78f4ce34996c5454b3e498e36c27590a.jpeg" alt=""></a>
+                <i class="banner_right_lt"></i>
+                <i class="banner_right_rt"></i>
+                <i class="banner_right_lb"></i>
+                <i class="banner_right_rb"></i>
+            </div>
+        </div>
+        <div id="right_ad">
+            <div class="relative_container">
+                <div class="imgc"><img src="img/side_btn_close.png" alt="" onclick="ccc()"></div>
+                <img src="img/232741208554.png" alt="">
+                <img src="img/1362598772452.jpg" alt="">
+            </div>
+                
+        </div>
+        <div id="more" class="container">
+            <div class="vip l">
+                <span class="vip_top"></span>
+                <div class="vip_content">
+                    <div class="vip_video"><i></i></div>
+                    <div class="vip_zz"><i></i></div>
+                    <div class="vip_area1">
+                        <div class="mask">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <table>
+                            <tr>
+                                <td><a href="#">点券充值</a></td>
+                                <td><a href="#">视频中心</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">开通紫钻</a></td>
+                                <td><a href="#">官方论坛</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="vip_area2">
+                        <div class="mask2">
+                            <i></i><i></i>
+                        </div>
+                        <div class="mask">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <table>
+                            <tr>
+                                <td><a href="#" class="hot rel">道聚城</a></td>
+                                <td><a href="#">SSC联赛</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">补丁下载</a></td>
+                                <td><a href="#" class="new rel">新手礼包</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">CDK兑换</a></td>
+                                <td><a href="#">官方微信</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" class="new rel">掌上飞车</a></td>
+                                <td><a href="#" class="hot rel">官方漫画</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">合作专区</a></td>
+                                <td><a href="#"></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <span class="vip_mid"></span>
+                <div class="vip_content">
+                    <div class="vip_area3">
+                        <div class="mask2">
+                            <i></i><i></i>
+                        </div>
+                        <div class="mask">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <table>
+                            <tr>
+                                <td><a href="#">封号查询</a></td>
+                                <td><a href="#">密码找回</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">用户协议</a></td>
+                                <td><a href="#">玩家条例</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">安全中心</a></td>
+                                <td><a href="#">防沉迷</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">家长监控</a></td>
+                                <td><a href="#">点亮皇族</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="vip_more1">
+                        
+                    </div>
+                    <div class="vip_more2">
+                        <div class="acontainer">
+                            <a>QQ飞车合作媒体站点</a>
+                            <i></i>
+                        </div>
+                        <div class="vip_more2_detail">
+                            <p><a href="#">电脑管家游戏福利</a></p>
+                            <p><a href="#">3366小游戏</a></p>
+                            <p><a href="#">17173</a></p>
+                            <p><a href="#">腾讯文学</a></p>
+                            <p><a href="#">腾讯游戏</a></p>
+                            <p><a href="#">多玩游戏网</a></p>
+                            <p><a href="#">爱拍游戏</a></p>
+                            <p><a href="#">U9</a></p>
+                            <p><a href="#">52PK</a></p>
+                            <p><a href="#">131</a></p>
+                            <p><a href="#">178</a></p>
+                            <p><a href="#">5617</a></p>
+                            <p><a href="#">766</a></p>
+                            <p><a href="#">TGBUS</a></p>
+                            <p><a href="#">快车-多来米</a></p>
+                            <p><a href="#">叶子猪</a></p>
+                            <p><a href="#">硅谷动力</a></p>
+                            <p><a href="#">土豆网</a></p>
+                            <p><a href="#">腾讯微博</a></p>
+                            <p><a href="#">太平洋游戏网</a></p>
+                            <div class="vip_more2_bottom"></div>
+                        </div>
+                    </div>
+                    <div class="vip_more3">
+                        <div class="acontainer">
+                            <a>QQ飞车合作伙伴站点</a>
+                            <i></i>
+                        </div>
+                        <div class="vip_more3_detail">
+                            <p><a href="#">赛睿</a></p>
+                            <p><a href="#">北通品牌</a></p>
+                            <p><a href="#">康师傅香爆脆</a></p>
+                            <p><a href="#">AMD</a></p>
+                            <p><a href="#">飞杰科思科技</a></p>
+                            <p><a href="#">深圳格威尔电子</a></p>
+                            <p><a href="#">魔法士干脆面</a></p>
+                            <div class="vip_more3_bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <span class="vip_bottom"></span>
+            </div>
+            <div class="information l">
+                <section id = 'news' class="news l">
+                    <div class="title"><i></i></div>
+                    <div class="details">
+                        <div class="navigation">
+                            <a href="#" title="综合" class="active">综合<span></span></a>
+                            <a href="#" title="活动">活动<span></span></a>
+                            <a href="#" title="公告">公告<span></span></a>
+                            <a href="#" title="赛事">赛事<span></span></a>
+                            <a href="#" title="论坛">论坛<span></span></a>
+                        </div>
+                        <div class="content active">
+                            <h3><a href="#">11月24日不停机更新补丁发布</a></h3>
+                            <ul>
+                                <li><span class="icoin">[谁是车王]</span><a href="#">直播平台冠军赛总决赛 江章闯勇夺决赛冠军</a><span class="time">11/30</span></li>
+                                <li><span class="icoin">[赛事]</span><a href="#">直播平台冠军赛总决赛预告 28日晚5点半锁定直播间</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">飞车机甲喜爱度调查</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">周末折扣宝箱温情来袭，限时5折+3倍概率！</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">商城特卖惊喜更新，总有一款合你心意！</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">关于11月26日20点点券消费券无法正常到账的公告</a><span class="time">11/26</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">飞车机甲喜爱度调查</a></h3>
+                            <ul>
+                                <li><span class="icoin">[活动]</span><a href="#">周末折扣宝箱温情来袭，限时5折+3倍概率！</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">商城特卖惊喜更新，总有一款合你心意！</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">speed洞洞乐开张啦！1Q币领【珍宝阁专属】</a><span class="time">11/26</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">周末折扣宝箱温情来袭，限时5折+3倍概率！</a><span class="time">11/25</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">QQ飞车官号入驻快手，关注即领永久套装！</a><span class="time">11/23</span></li>
+                                <li><span class="icoin">[活动]</span><a href="#">折扣宝箱初冬来袭，限时5折+3倍概率！</a><span class="time">11/20</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">关于11月26日20点点券消费券无法正常到账的公告</a></h3>
+                            <ul>
+                                <li><span class="icoin">[公告]</span><a href="#">车神宝藏活动修复公告</a><span class="time">11/25</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">11月24日不停机更新补丁发布</a><span class="time">11/24</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">11月24日不停机更新公告</a><span class="time">11/24</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">车神宝藏活动玩法异常公告</a><span class="time">11/23</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">关于个人车鉴系统异常及优化公告</a><span class="time">11/19</span></li>
+                                <li><span class="icoin">[公告]</span><a href="#">QQ飞车11月19日全区新版本《绝命车王》补丁发布</a><span class="time">11/19</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">直播平台冠军赛总决赛 江章闯勇夺决赛冠军</a></h3>
+                            <ul>
+                                <li><span class="icoin">[赛事]</span><a href="#">直播平台冠军赛总决赛预告 28日晚5点半锁定直播间</a><span class="time">11/27</span></li>
+                                <li><span class="icoin">[谁是车王]</span><a href="#">直播平台冠军赛虎牙决赛 江章闯摘夺桂冠</a><span class="time">11/24</span></li>
+                                <li><span class="icoin">[赛事]</span><a href="#">直播平台冠军赛斗鱼决赛 战况焦灼胡旭问鼎</a><span class="time">11/24</span></li>
+                                <li><span class="icoin">[SSC]</span><a href="#">SSC2020秋季赛S4报名倒计时 收官之战赛场等你</a><span class="time">11/19</span></li>
+                                <li><span class="icoin">[赛事]</span><a href="#">直播平台冠军赛，11月19日晚19:00起打响！</a><span class="time">11/18</span></li>
+                                <li><span class="icoin">[SSC]</span><a href="#">SSC2020秋季赛S3分站海选晋级名单&奖励发放公告</a><span class="time">11/11</span></li>
+                            </ul>
+                        </div>
+                        <div class="content">
+                            <h3><a href="#">【爆料】【qq飞车官方测试】-?赛道随心造全新赛道跑法大解析?</a></h3>
+                            <ul>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【团队招募】QQ飞车测试团2018年新春招募 </a><span class="time">01/30</span></li>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【团队招募】?﹏QQ飞车<极速梦想测试团>跨年盛大招募  </a><span class="time">01/30</span></li>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【团队招募】QQ飞车赛道设计团2018新年盛大招募</a><span class="time">01/30</span></li>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【分享】周年币拿下穿梭者</a><span class="time">01/30</span></li>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【飞驰之王】Ycbb战丶陈小汪 海洋公园 2.09.66（爆天甲) </a><span class="time">01/30</span></li>
+                                <li><span class="icoin">[论坛精华]</span><a href="#">【极限之王原装版】丶Gz女神丨瑶瑶 猴园春色1.18.27（S）</a><span class="time">01/30</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="activity l">
+                    <div class="title"></div>
+                    <span class="line"></span>
+                    <img src="img/52db50c776dcf56614ebf03afaecaf98.jpeg" alt="">
+                    <img src="img/dd610a9270329ee03de7070134f1ffec.jpeg" alt="">
+                </section>
+                <section id = 'event' class="event l">
+                    <div class="title"></div>
+                    <div class="details">
+                        <div class="navigation">
+                            <a href="#" class="active" title="谁是车王">谁是车王<span></span></a>
+                            <a href="#" title="全国公开赛">全国公开赛<span></span></a>
+                            <a href="#" title="SSC">SSC<span></span></a>
+                        </div>
+                        <div class="content active">
+                            <div class="l">
+                                <img src="img/d5f716295529d2aa08bb165cc422d3c7.jpeg" alt="" style="cursor: pointer;">
+                            </div>
+                            <div class="text l">
+                                <h3><a href="#">直播平台冠军赛总决赛 江章闯勇夺决赛冠军&奖励发放公告</a></h3>
+                                <span class="linec"></span>
+                                <ul>
+                                    <li><a href="#">直播平台冠军赛总决赛 江章闯勇夺决赛冠军</a><span class="time">11/30</span></li>
+                                    <li><a href="#">直播平台冠军赛总决赛预告 28日晚5点半锁定直播间</a><span class="time">11/27</span></li>
+                                    <li><a href="#">直播平台冠军赛虎牙决赛 江章闯摘夺桂冠</a><span class="time">11/24</span></li>
+                                    <li><a href="#">直播平台冠军赛斗鱼决赛 战况焦灼胡旭问鼎</a><span class="time">11/24</span></li>
+                                    <li><a href="#">直播平台冠军赛，11月19日晚19:00起打响！</a><span class="time">11/18</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="l">
+                                <img src="img/7b9c73192c2ba994e63a780ff876a920.jpeg" alt="" style="cursor: pointer;">
+                            </div>
+                            <div class="text l">
+                                <h3><a href="#">全国公开赛S3冠军专访 新星卫冕 黄国发</a></h3>
+                                <span class="linec"></span>
+                                <ul>
+                                    <li><a href="#">全国公开赛S3冠军专访 新星卫冕 黄国发</a><span class="time">11/09</span></li>
+                                    <li><a href="#">公开赛S3总决赛单挑赛 黄国发卫冕冠军</a><span class="time">11/01</span></li>
+                                    <li><a href="#">公开赛S3总决赛四强赛 黄国发、徐瑞晋级单挑战</a><span class="time">11/01</span></li>
+                                    <li><a href="#">公开赛S3总决赛八进四复活赛 曹皓然、徐瑞落座四强</a><span class="time">10/30</span></li>
+                                    <li><a href="#">公开赛S3总决赛八进四B组 黄国发挺进四强</a><span class="time">10/30</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="l">
+                                <img src="img/301a995322c5f82638c3dd2da2f41af3.jpg" alt="" style="cursor: pointer;">
+                            </div>
+                            <div class="text l">
+                                <h3><a href="#">SSC2020春季赛S1分站海选晋级名单&奖励发放公告</a></h3>
+                                <span class="linec"></span>
+                                <ul>
+                                    <li><a href="#">SSC2020秋季赛S4报名倒计时 收官之战赛场等你</a><span class="time">11/19</span></li>
+                                    <li><a href="#">SSC2020秋季赛S3分站海选晋级名单&奖励发放公告</a><span class="time">11/11</span></li>
+                                    <li><a href="#">SSC2020秋季赛S3分站赛开赛在即，一起飞驰吧！</a><span class="time">10/17</span></li>
+                                    <li><a href="#">SSC2020秋季赛S2分站海选晋级名单&奖励发放公告</a><span class="time">10/15</span></li>
+                                    <li><a href="#">关于10月10日SSC秋季赛S3延迟报名的公告</a><span class="time">10/10</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="version l">
+                    <div class="title"><i></i></div>
+                    <span class="line"></span>
+                    <img src="img/424c08d4ca71577e9b89fe60c024889b.jpeg" alt="">
+                    <img src="img/773d0eb2286b30007e299b2ba91e7e04-80.jpg" alt="">
+                </section>
+                <section id = 'video' class="video l">
+                    <div class="title"><i></i></div>
+                    <div class="details">
+                       <div class="navigation">
+                           <a href="#" class="active" title="最新">最新<span></span></a>
+                           <a href="#" title="推荐">推荐<span></span></a>
+                           <a href="#" title="教学">教学<span></span></a>
+                           <a href="#" title="赛车">赛车<span></span></a>
+                           <a href="#" title="赛事1">赛事<span></span></a>
+                           <a href="#" title="官方">官方<span></span></a>
+                       </div>
+                       <div class="content active">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (7).jpg" alt="">
+                                    </div>
+                                    <a href="#">断心解说26：宝刀未老颜值再现经典S巅峰战刀</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (4).jpg" alt="">
+                                    </div>
+                                    <a href="#">鑫鑫 玉龙雪脉1.12.79</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (5).jpg" alt="">
+                                    </div>
+                                    <a href="#">森森：亚特兰蒂斯1.49.36</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (6).jpg" alt="">
+                                    </div>
+                                    <a href="#">鑫鑫 天空之城1.14.63</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="content">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/下载.jpg" alt="">
+                                    </div>
+                                    <a href="#">断心解说八：飞车界中最奇葩的独轮车赤涡黑轮</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/下载 (1).jpg" alt="">
+                                    </div>
+                                    <a href="#">晓凯解说：QQ飞车首发S车至尊爆天甲，性能有望超越所有S车！</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/下载 (2).jpg" alt="">
+                                    </div>
+                                    <a href="#">B车边境实战篇</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/下载 (3).jpg" alt="">
+                                    </div>
+                                    <a href="#">飞车世界中的一百辆s车+T3全家福！史上最全系列！</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="content">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (7).jpg" alt="">
+                                    </div>
+                                    <a href="#">断心解说26：宝刀未老颜值再现经典S巅峰战刀</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (4).jpg" alt="">
+                                    </div>
+                                    <a href="#">鑫鑫 玉龙雪脉1.12.79</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (5).jpg" alt="">
+                                    </div>
+                                    <a href="#">森森：亚特兰蒂斯1.49.36</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/0 (6).jpg" alt="">
+                                    </div>
+                                    <a href="#">鑫鑫 天空之城1.14.63</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="content">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/41.png" alt="">
+                                    </div>
+                                    <a href="#">【飞车研究院】首发T1黄蜂特警，手感真的“绝”~</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/42.jpg" alt="">
+                                    </div>
+                                    <a href="#">【飞车擎报局】T2机甲赛车 白龙马测评</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/43.jpg" alt="">
+                                    </div>
+                                    <a href="#">【QQ飞车】原画师看了想哭的首发T2机甲白龙马测评来袭</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/44.png" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车端手游同款A车赛博战士，这特效i了i了！</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="content">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/51.jpg" alt="">
+                                    </div>
+                                    <a href="#">全国公开赛 S3 总决赛 决赛 黄国发 VS 徐瑞</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/52.jpg" alt="">
+                                    </div>
+                                    <a href="#">全国公开赛 S3 总决赛 四强赛</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/53.jpg" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车全国公开赛S3 总决赛 复活晋级赛</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/54.jpg" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车全国公开赛S3 总决赛 B组</a>
+                               </li>
+                           </ul>
+                       </div>
+                       <div class="content">
+                           <ul>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/61.jpg" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车排位赛S21赛季新增地图《英伦古堡》赛道教学</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/62.jpg" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车排位赛S21赛季新增地图《故园归醉》赛道教学</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/63.jpg" alt="">
+                                    </div>
+                                    <a href="#">QQ飞车9月新版本新赛道轨道物理教学视频</a>
+                               </li>
+                               <li>
+                                    <div class="cover">
+                                        <span class="cornerstyle">
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <i></i>
+                                            <span></span>
+                                        </span>
+                                        <img src="img/coverimg/64.jpg" alt="">
+                                    </div>
+                                    <a href="#">《QS极速幻境》介绍视频</a>
+                               </li>
+                           </ul>
+                       </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="container-fluid c">
+        <div class="container">
+            <div class="copyright clear">
+                <div class="logoArea l">
+                    <img src="img/foot-light.png" alt="">
+                    <img src="img/logo1.png" alt="">
+                    <img src="img/timi.png" alt="">
+                </div>
+                <div class="contentArea l">
+                    <div class="ul">
+                        <a href="#">腾讯互动娱乐</a><span> |</span>
+                        <a href="#">服务条款</a><span> |</span>
+                        <a href="#">隐私保护指引</a><span> |</span>
+                        <a href="#">儿童隐私保护指引</a><span> |</span>
+                        <a href="#">腾讯游戏招聘</a><span> |</span>
+                        <a href="#">腾讯游戏客服</a><span> |</span>
+                        <a href="#">游戏列表</a><span> |</span>
+                        <a href="#">广告服务及商务合作</a>
+                    </div>
+                    <a href="#">腾讯公司版权所有</a>
+                    <p>COPYRIGHT © 1998 - 2020 TENCENT. ALL RIGHTS RESERVED.</p>
+                    <p>著作权人：腾讯科技（深圳）有限公司　出版单位：深圳市腾讯计算机系统有限公司</p>
+                    <div class="ul">
+                        <a href="#" class="icoine">工商网监电子标识</a><span> |</span>
+                        <a href="#">粤网文[2020]3396-195号</a><span> |</span>
+                        <a href="#">（署）网出证（粤）字第054号</a>
+                    </div>
+                    <p>出版物号：ISBN 978-7-900-17941-8|文网备字[2008]008号|全国文化市场统一举报电话：12318</p>
+                </div>
+            </div>
+            <div class="warmPrompt c">
+                <h3>温馨提示：本游戏适合16岁(含)以上玩家娱乐；请您确定已如实进行实名注册；为了您的健康，请合理控制游戏时间。 </h3>
+                <ul>
+                    <li>抵制不良游戏</li>
+                    <li>拒绝盗版游戏</li>
+                    <li>注意自我保护</li>
+                    <li>谨防上当受骗</li>
+                    <li>适度游戏益脑</li>
+                    <li>沉迷游戏伤身</li>
+                    <li>合理安排时间</li>
+                    <li>享受健康生活</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function bannerMove(){
+            let bls = document.getElementsByClassName('banner_list');
+            let bl = bls[0];
+            let ul = document.querySelector('#banner .banner_list_ul.active');
+
+            bl.timer = setInterval(() => {
+                startMove(ul, {left: Math.round((ul.offsetLeft - 497)/ 497) * 497}, function(){
+                    if(ul.offsetLeft < -497 * 7){
+                       startMove(ul, {left: 0});
+                    }
+                })
+            }, 3000);
+        }
+
+        function startMove(node, obj, func){
+            let num = Math.round(obj.left / 497);
+            let lis = document.getElementsByClassName('banner_bottomline_ul')[0].children;
+            switch(num){
+                case -1:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[1].className = 'active';
+                    break;
+                case -2:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[2].className = 'active';
+                    break;
+                case -3:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[3].className = 'active';
+                    break;
+                case -4:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[4].className = 'active';
+                    break;
+                case -5:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[5].className = 'active';
+                    break;
+                case -6:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[6].className = 'active';
+                    break;
+                case -7:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[7].className = 'active';
+                    break;
+                case -8:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[0].className = 'active';
+                    break;
+                case 0:
+                    for(let i = 0; i < lis.length; i++){
+                        lis[i].className = 'none';
+                    }
+                    lis[0].className = 'active';
+                    break;
+            }
+            clearInterval(node.timer);
+            if(num <= 0){
+                node.timer = setInterval(() => {
+                    for(let attr in obj){
+                        var tar = obj[attr];
+                        var icur = node.offsetLeft;
+                        var speed = (icur - tar) / 8;
+                        speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                        if(speed == 0){
+                            clearInterval(node.timer);
+                        }
+                        node.style.left = node.offsetLeft - speed + 'px';
+                        if(func){
+                            func();
+                        }
+                    }
+                }, 15);
+            }
+        }
+
+        function last(){
+            stop();
+            let ul = document.querySelector('#banner .banner_list_ul.active');
+            startMove(ul, {left: Math.round((ul.offsetLeft + 497) / 497) * 497}, function(){
+                if(ul.offsetLeft < -497 * 7){
+                    startMove(ul, {left: 0});
+                }
+            })
+            bannerMove();
+        }
+
+        function next(){
+            stop();
+            let ul = document.querySelector('#banner .banner_list_ul.active');
+            startMove(ul, {left: Math.round((ul.offsetLeft - 497) / 497) * 497}, function(){
+                if(ul.offsetLeft < -497 * 7){
+                    startMove(ul, {left: 0});
+                }
+            })
+            bannerMove();
+        }
+
+        function stop(){
+            let bls = document.getElementsByClassName('banner_list');
+            let bl = bls[0];
+            clearInterval(bl.timer);
+        }
+
+        let lis = document.getElementsByClassName('banner_bottomline_ul')[0].children;
+        for(let i = 0; i < lis.length; i++){
+            lis[i].onmouseover = function(){
+                stop();
+                let ul = document.querySelector('#banner .banner_list_ul.active');
+                startMove(ul,{left: lis[i].value})
+            }
+            lis[i].onmouseout = function(){
+                bannerMove();
+            }
+        }
+
+        function Vtop(){
+            let top1 = document.getElementById('top1').children;
+            let top2 = document.getElementById('top2').children;
+            let top3 = document.getElementById('top3').children;
+            for(let i = 0; i < top1.length; i++){
+                top1[i].value = 1;
+            }
+            for(let i = 0; i < top2.length; i++){
+                top2[i].value = 2;
+            }
+            for(let i = 0; i < top3.length; i++){
+                top3[i].value = 3;
+            }
+        }
+
+        function clearActive(num){
+            if(num == 3){
+                var id = 'top';
+                id += num;
+                let top = document.getElementById(id).children;
+                for(let i = 0; i < top.length; i++){
+                    if(top[i].className == 'top1_detail active'){
+                        top[i].className = 'top1_detail';
+                    }
+                }
+            }else{
+                var id = 'top';
+                id += num;
+                let top = document.getElementById(id).children;
+                for(let i = 0; i < top.length; i++){
+                    if(i != 0){
+                        top[i].className = 'top1_detail';
+                    }
+                }
+            }
+        }
+
+        let top1ds = document.getElementsByClassName('top1_detail');
+        for(let i = 0; i < top1ds.length; i++){
+            top1ds[i].onmouseover = function(){
+                let num = top1ds[i].value;
+                clearActive(num);
+                top1ds[i].className = 'top1_detail active';
+            }
+        }
+
+        function clearNavAc(num){
+            let Navigations = document.getElementsByClassName('navigation');
+            for(let i = 0; i < Navigations.length; i++){
+                if(i == num){
+                    console.log(1);
+                    let Navs = Navigations[i].children;
+                    for(let a = 0; a < Navs.length; a++){
+                        Navs[a].className = 'none';
+                    }
+                }
+            }
+        }
+
+        function Vnavs(){
+            let Navigations = document.getElementsByClassName('navigation');
+            for(let i = 0; i < Navigations.length; i++){
+                let Navs = Navigations[i].children;
+                for(let a = 0; a < Navs.length; a++){
+                    Navs[a].value = i;
+                }
+            }
+        }
+
+        function ccc(){
+            let AD = document.getElementById('right_ad');
+            AD.style.display = 'none';
+        }
+
+        let Navigations = document.getElementsByClassName('navigation');
+        for(let i = 0; i < Navigations.length; i++){
+            let Navs = Navigations[i].children;
+            for(let a = 0; a < Navs.length; a++){
+                Navs[a].onmouseover = function(){
+                    let num = Navs[a].value;
+                    clearNavAc(num);
+                    Navs[a].className = 'active';
+                    let T = Navs[a].title;
+                    let targets = document.querySelectorAll('#news .content');
+                    let targets1 = document.querySelectorAll('#event .content');
+                    let targets2 = document.querySelectorAll('#video .content');
+                    let tnum;
+                    switch(T){
+                        case '综合':
+                            tnum = 0;
+                            for(let i = 0; i < targets.length; i++){
+                                if(i == tnum){
+                                    targets[i].className = 'content active';
+                                }else{
+                                    targets[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '活动':
+                            tnum = 1;
+                            for(let i = 0; i < targets.length; i++){
+                                if(i == tnum){
+                                    targets[i].className = 'content active';
+                                }else{
+                                    targets[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '公告':
+                            tnum = 2;
+                            for(let i = 0; i < targets.length; i++){
+                                if(i == tnum){
+                                    targets[i].className = 'content active';
+                                }else{
+                                    targets[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '赛事':
+                            tnum = 3;
+                            for(let i = 0; i < targets.length; i++){
+                                if(i == tnum){
+                                    targets[i].className = 'content active';
+                                }else{
+                                    targets[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '论坛':
+                            tnum = 4;
+                            for(let i = 0; i < targets.length; i++){
+                                if(i == tnum){
+                                    targets[i].className = 'content active';
+                                }else{
+                                    targets[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '谁是车王':
+                            tnum = 0;
+                            for(let i = 0; i < targets1.length; i++){
+                                if(i == tnum){
+                                    targets1[i].className = 'content active';
+                                }else{
+                                    targets1[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '全国公开赛':
+                            tnum = 1;
+                            for(let i = 0; i < targets1.length; i++){
+                                if(i == tnum){
+                                    targets1[i].className = 'content active';
+                                }else{
+                                    targets1[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case 'SSC':
+                            tnum = 2;
+                            for(let i = 0; i < targets1.length; i++){
+                                if(i == tnum){
+                                    targets1[i].className = 'content active';
+                                }else{
+                                    targets1[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '最新':
+                            tnum = 0;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '推荐':
+                            tnum = 1;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '教学':
+                            tnum = 2;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '赛车':
+                            tnum = 3;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '赛事1':
+                            console.log(1111);
+                            tnum = 4;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                        case '官方':
+                            tnum = 5;
+                            for(let i = 0; i < targets2.length; i++){
+                                if(i == tnum){
+                                    targets2[i].className = 'content active';
+                                }else{
+                                    targets2[i].className = 'content';
+                                }
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+
+        function resetLi(){
+            let lis = document.querySelector('#banner .banner_bottomline_ul').children;
+            for(let i = 0; i < lis.length; i++){
+                if(i == 0){
+                    lis[i].className = 'active';
+                }else{
+                    lis[i].className = 'none';
+                }
+            }
+        }
+
+        function resetOP(o){
+            let office = document.querySelector('#banner .office');
+            let partner = document.querySelector('#banner .partner');
+            if(o == 'o'){
+                office.className = 'office active';
+                partner.className = 'partner';
+            }else{
+                office.className = 'office';
+                partner.className = 'partner active';
+            }
+        }
+
+        function off(){
+            let uls = document.querySelectorAll('#banner .banner_list_ul');
+            let ul1 = uls[0];
+            let ul2 = uls[1];
+            if(ul1.className != 'banner_list_ul active'){
+                resetLi();
+                resetOP('o');
+                stop();
+                ul1.className = 'banner_list_ul active';
+                ul1.style.left = '0px';
+                ul2.className = 'banner_list_ul';
+                bannerMove();
+            }
+        }
+
+        function par(){
+            let uls = document.querySelectorAll('#banner .banner_list_ul');
+            let ul1 = uls[0];
+            let ul2 = uls[1];
+            if(ul2.className != 'banner_list_ul active'){
+                resetLi();
+                resetOP('p');
+                stop();
+                ul1.className = 'banner_list_ul';
+                ul2.className = 'banner_list_ul active';
+                ul2.style.left = '0px';
+                bannerMove();
+            }
+        }
+
+        
+
+        Vtop();
+
+        Vnavs();
+
+        bannerMove();
+    </script>
+</body>
+</html>

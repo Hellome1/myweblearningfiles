@@ -1,0 +1,253 @@
+数据类型：
+    基本数据类型：
+        数字，布尔值，字符串
+        Number、Boolean、String
+    复合数据类型：
+        object、Symbol（ES6-ECMAScript 6.0）
+    特殊数据类型：
+        null undefined NaN
+    console.log(typeof []) // object
+
+强制数据类型转换：
+    Boolean()
+    Number()
+    parseInt()
+    parseFloat()
+
+    Number(null) // 0  Number(undefined) // NaN
+    但: null == undefined  // true
+
+栈结构：
+    先放的在底部，拿的时候先拿上面的也就是后放入的
+    array.push(x,y,z) 给数组的末尾添加元素 返回新数组长度
+    array.pop() 取下数组末尾的一个元素 返回取下的元素
+
+队列结构：
+    从末尾进，从头部出
+    array.push() + array.shift()
+    array.unshift() 给数组的头部添加元素 返回新数组长度
+    array.shift() 丛数组头部取元yuan素 返回去下的元素
+
+数组方法：
+    array.concat() 原数组不会改变 返回新数组
+    array.slice() 原数组不会改变 返回新数组
+    array.splice(start, length, data1, data2...) 增加 删除 修改 返回截取下来的元素组成的数组
+    array.join() 返回用传入符号拼接的字符串
+    array.reverse() 逆序 改变原数组 返回逆序的数组
+    array.sort() 按字符串从小到大排序 改变原数组 返回排序后的数组
+    array.sort(function(value1, value2){
+        return value1 - value2;
+    }) 按数值大小从小到大排序
+     array.sort(function(value1, value2){
+        return value2 - value1;
+    }) 按数值大小从大到小排序
+    array.indexOf()
+    array.forEach(function(item, index, arr){
+        //
+    })
+    arr.map(function(item, index, arr){                        let newArr = arr.map(() => {})
+        //
+    })
+    arr.filter(function(item, index, arr){
+        //
+    })
+    arr.some(function(item, index, arr){
+        //
+    })
+    arr.every(function(item, index, arr){
+        //
+    })
+    arr.reduce(function(prev, next, index, arr){
+        //
+    })
+
+冒泡排序： 
+    前后两个数两两进行比较，如果符合教换条件就交换两个数位置
+选择排序：
+    选出一个位置，这个位置上的数和后面的数进行比较，符合条件就交换
+
+严格模式：
+    当前作用域下 "use strict"
+
+字符串：
+    new String(100) String(100) "100" typeof(new String(100)) // object, typeof(String(100)) // string, typeof("100") // string
+    string.length 
+    中文 utf-8(三个字符表示一个汉字) gbk(两个字符表示一个汉字) 在计数的时候都是当作一个字符计数 "hello北京".length // 7
+    string.charAt() string[] 字符串只读
+    string.big()
+    string.fontcolor()
+    string.sub()
+    string.charCodeAt()
+    string.fromCharCode()
+    string.indexOf()
+    string.lastIndexOf()
+    string.search()
+    string.substring()
+    string.substr()
+    string.slice()
+    string.replace()
+    string.split()
+    string.toLowerCase()
+    string.toUpperCase()
+    string.concat()
+
+时间：
+    d = new.Date() 生成日期对象
+    Date.parse(d) / d.getTime() 将日期对象转成毫秒数
+    
+BOM:
+    browser object model
+
+url:
+    协议://IP(域名)/:端口号/路径/?查询字符串#锚点
+
+事件：
+    鼠标事件
+        click
+        dblclick
+        mouseover
+        mouseout
+        mousemove
+        mousedown
+        mouseup
+        mouseennter
+        mouseleave
+        mouseover mouseout 经过子节点会重复触发
+        mouseennter mouseleave 经过子节点不会重复触发 IE8以后才有
+    键盘事件
+        keydown
+        keyup
+        keypress
+        HTML事件
+    1.window事件
+        load
+        unload
+        scroll
+        resize
+    2.表单事件
+        blur
+        foucs
+        select
+        change
+
+        需添加在form上
+        submit
+        reset
+
+    绑定事件 node.event = func; node.addEventListener('event', func);
+    通过JS绑定事件可以拿到事件对象
+    按下抬起鼠标的事件对象 e.button 0 左键 1 中键 2 右键
+    鼠标事件对象属性
+    clientX clientY pageX pageY screenX screenY
+    键盘事件对象属性
+    shiftKey 按下为true
+    altKey
+    ctrlKey
+    metaKey windows系统按windows true macos系统 command trues
+    keyCode 
+    charCode keypress才有
+    which   which = e.which || e.keyCode  which = e.which || e.charCode
+
+    事件触发对象
+    target = e.target || window.event.srcElement;
+
+    事件冒泡(浏览器自带属性) 阻止方法 e.cancelBubble=true e.stopPropagation()
+
+    阻止默认行为 默认行为 document.oncontextmenu = function(){return false;} a.onclick = function(){return false;}
+    规范阻止方法
+    e.preventDefault();  window.event.returnValue = false; 兼容处理 
+
+    事件监听器 node.addEventListener('event', func) 第三个参数true 事件捕获 false 事件冒泡 默认
+                node.removeEventListener('event', funcName)
+
+正则表达式：
+    new RegExp("hello"); RegExp("hello"); /hello/igm; m换行匹配
+    regExp.test(str) true or false
+    regExp.exec(str) 返回数组
+
+    str.match(regExp) 返回数组
+
+    . 单个任意字符
+    [] 单个范围内的字符
+    [^a] 除开a的字符
+    \w 单个数字字母下划线
+    \W 
+    \d 单个数字
+    \D 
+    \s 空字符
+    \S 
+    a? 0个或者1个a
+    a+ 至少一个a
+    a* 任意个a
+    a{m,n} 只少m个，最多n个
+    a{n} 匹配n个a
+    (abc)+ 匹配至少一个abc
+    ^a 以a开头
+    a$ 以a结尾
+    a|b a或b
+
+本地存储技术：
+    localStorage 1、永久存储 2、最大可以存储5M 3、只能存储string （IE8以下不兼容）
+    cookie 1、可以设置过期时间 2、最大可以存4KB 3、每一个域名下面最多存储50条数据
+    sessionStorage (结合后台使用)
+
+    localStorage
+        setItem(name, value)
+        getItem(name)
+        removeItem(name)
+
+this:
+    指向当前函数的主人
+    func.call(master); function show(x,y){} show.call("call", 10, 20);
+    func.apply(master); show.apply("apply", [10, 20]);
+    都是在调用的时候改变
+    apply小技巧 Math.min.apply(null, arr);
+
+    bind 预设this指向
+    let res = show.bind("bind") // 返回值函数 res(10, 20); 
+
+ECMA6（部分）:
+    let 遇到大括号就形成作用域
+    var 遇到函数的大括号形成作用域
+
+    () => {} 箭头函数的this指向函数主人的上一层
+    var [x, y, z] = [10, 20, 30];
+    var {name, age, sex} = { age: 18, name: "钢铁侠", sex: "男"};
+
+    `` 反引号 ${变量/表达式/函数调用}
+    `我叫${name},今年${age}岁,是一位${sex}性`
+
+    Array.from() 将伪数组转为真数组
+    arr.find() 数组中查找符合条件的元素
+    arr.copyWithin()
+
+    Object.assign(obj1,obj2,obj3) 合并对象 到obj1 , obj2\obj3 没有变化   浅拷贝
+    // 浅拷贝：只拷贝地址
+    // 深拷贝：遇到复合数据类型，重新生成一份进行拷贝
+
+    集合 不重复 无序
+    let a = new Set(); a.add(1) 键和值一样
+    let map = new Map(); map.set("张三","打渔的"); map.get("张三");
+
+构造函数:
+    官方构造函数 Array Object
+    由构造函数构造出的对象共用构造函数原型上的方法
+
+服务器：
+    apache 运行在电脑上，电脑某一个磁盘就对外可见，别人可以通过IP或者域名访问这个位置。
+
+    安装：（集成开发环境）
+        WAMP
+            windows apache mysql php
+        LAMP
+            linux apache mysql php
+        PHPnow
+            apache mysql php
+            htdocs PHPnow 根目录
+                localhost 直接访问本地电脑
+                IP 访问当前电脑的服务器
+
+                默认访问到 index开头的文件
+                    index.php
+                    index.html
+                    index.jsp

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" ref="mytext">
+        <button @click="handleAdd">add</button>
+
+        <child ref="myChild"></child>
+    </div>
+
+    <script>
+        Vue.component("child",{
+            template: `
+                <div>
+                    child    
+                </div>
+            `,
+            data(){
+                return {
+                    childName: "子组件"
+                }
+            }
+        })
+
+        let vm = new Vue({
+            el:"#box",
+            data:{
+                isShow: false
+            },
+            methods:{
+                handleAdd(){
+                    console.log(this.$refs.myChild.childName)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

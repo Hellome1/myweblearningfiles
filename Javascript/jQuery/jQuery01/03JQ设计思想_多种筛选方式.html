@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li class="box">1111</li>
+        <li>1111</li>
+        <li class="box">1111</li>
+        <li>1111</li>
+    </ul>
+    <span title="name">span</span>
+    <div title="name">div</div>
+    <p>p</p>
+    <script>
+        // $("li:eq(2)").css("backgroundColor", "red");
+        // $("li").eq(2).css("backgroundColor", "red");
+
+        // $("li.box").css("backgroundColor", "blue");
+        $("li").filter(".box").css("backgroundColor", "yellow");
+    </script>
+</body>
+</html>

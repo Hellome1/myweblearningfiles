@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        ul { list-style: none;}
+        .clock { width: 300px; height: 300px; border-radius: 50%; border: 1px solid black; margin: 100px auto; position: relative;}
+        ul { width: 100%; height: 100%; position: relative;}
+        ul li { width: 4px; height: 10px; background-color: black; position: absolute; left: 50%; margin-left: -2px; transform-origin: center 150px;}
+        .hour { width: 8px; height: 50px; position: absolute; left: 50%; top: 50%; margin: -50px 0 0 -4px; background-color: black; transform-origin: center bottom;}
+        .minute { width: 4px; height: 80px; position: absolute; left: 50%; top: 50%; margin: -80px 0 0 -2px; background-color: black; transform-origin: center bottom;}
+        .second { width: 2px; height: 120px; position: absolute; left: 50%; top: 50%; margin: -120px 0 0 -1px; background-color: black; transform-origin: center bottom;}
+        .dot { width: 12px; height: 12px; position: absolute; left: 50%; top: 50%; margin: -6px 0 0 -6px; background-color: black; border-radius: 50%; transform-origin: center bottom;}
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <ul>
+            <li></li>
+        </ul>
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+        <div class="dot"></div>
+    </div>
+    <script>
+        let ul = document.getElementsByTagName('ul');
+        ul = ul[0];
+        for(let i = 0; i < 60; i++){
+            let li = document.createElement('li');
+            li.style.transform = 'rotate(' + i * 6 + 'deg)';
+            if( i % 5 == 0){
+                li.style.height = 15 + 'px';
+            }
+            ul.appendChild(li);
+        }
+
+        run();
+        setInterval(() => {
+            run();
+        }, 1000);
+
+        function run(){
+            let d = new Date();
+            let H = d.getHours();
+            let M = d.getMinutes();
+            let S = d.getSeconds();
+            const hour = document.querySelector('.hour');
+            const minute = document.querySelector('.minute');
+            const second = document.querySelector('.second');
+            console.log('h' + H + 'm' + M + 's' + S);
+            second.style.transform = 'rotate(' + S * 6 + 'deg)';
+            let m = Math.floor( S / 10);
+            minute.style.transform = 'rotate(' + (M * 6 + m) + 'deg)';
+            let h = Math.floor( M / 2)
+            hour.style.transform = 'rotate(' +( H * 30 + h ) + 'deg)';
+        }
+    </script>
+</body>
+</html>

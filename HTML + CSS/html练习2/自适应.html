@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        #main { display: flex;}
+        .left { width: 200px; height: 200px; background-color: red;}
+        .center { flex: 1; height: 300px; background-color: yellow;}
+        .right { width: 150px; height: 200px; background-color: blue;}
+
+        .container { width: 80%; margin: 50px auto;}
+        .flexc { display: flex; justify-content: space-around; margin: 10px;}
+        .flexc div { width: 50px; height: 50px; background-color: green;}
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+
+    <div class="container">
+        <div class="flexc">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="flexc">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

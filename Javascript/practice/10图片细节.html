@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        .img1 { width: 487px; height: 303px;}
+        .magnifyingGlass { width: 200px; height: 200px; border: 1px solid black; overflow: hidden; position: relative; float: left; margin-top: 100px; display: none;}
+        .magnifyingGlass img{ position: absolute;}
+        .imgContainer { position: relative; float: left; margin: 100px; height: 303px;}
+        .mask { width: 100px; height: 100px; background-color: rgba(255, 255, 255, 0.3); position: absolute; left: 0; top: 0; display: none;}
+    </style>
+</head>
+<body>
+    <div class="imgContainer">
+        <img src="../img/longzhu.jpg" alt="" class="img1">
+        <div class="mask"></div>
+    </div>
+    <div class="magnifyingGlass"><img src="../img/longzhu.jpg" alt=""></div>
+    <script>
+        let imgC = document.querySelector('.imgContainer');
+        let img1 = document.querySelector('.img1');
+        let mag = document.querySelector('.magnifyingGlass');
+        let magImg = document.querySelector('.magnifyingGlass img');
+        let mask = document.querySelector('.mask');
+        imgC.onmouseover = function(){
+            console.log('over')
+            mag.style.display = 'block';
+            mask.style.display = 'block';
+           
+        }
+        imgC.onmouseout = function(){
+            console.log('out');
+            mag.style.display = 'none';
+            let mask = document.querySelector('.mask');
+            mask.style.display = 'none';
+        }
+        imgC.onmousemove = function(ev){
+            let e = ev || window.event;
+            let l = e.clientX - imgC.offsetLeft - 50;
+            let t = e.clientY - imgC.offsetTop - 50;
+            if(l < 0){
+                l = 0;
+            }
+            if(l > img1.offsetWidth - 100){
+                l = img1.offsetWidth - 100;
+            }
+            if(t < 0){
+                t = 0;
+            }
+            if(t > img1.offsetHeight - 100){
+                t = img1.offsetHeight - 100;
+            }
+            mask.style.left = l + 'px';
+            mask.style.top = t + 'px';
+            magImg.style.left = -l * 2 + 'px';
+            magImg.style.top = -t * 2 + 'px';
+        }
+        // imgC.onmouseenter = function(){
+        //     console.log('over');
+        //     mag.style.display = 'block';
+        //     let mask = document.createElement('div');
+        //     mask.className = 'mask';
+        //     imgC.appendChild(mask);
+        //     imgC.onmousemove = function(ev){
+        //         let e = ev || window.event;
+        //         let l = e.clientX - imgC.offsetLeft - 50;
+        //         let t = e.clientY - imgC.offsetTop - 50;
+        //         if(l < 0){
+        //             l = 0;
+        //         }
+        //         if(l > img1.offsetWidth - 100){
+        //             l = img1.offsetWidth - 100;
+        //         }
+        //         if(t < 0){
+        //             t = 0;
+        //         }
+        //         if(t > img1.offsetHeight - 100){
+        //             t = img1.offsetHeight - 100;
+        //         }
+        //         mask.style.left = l + 'px';
+        //         mask.style.top = t + 'px';
+        //         magImg.style.left = -l * 2 + 'px';
+        //         magImg.style.top = -t * 2 + 'px';
+        //     }
+        // }
+        // imgC.onmouseleave = function(){
+        //     console.log('out');
+        //     mag.style.display = 'none';
+        //     let mask = imgC.getElementsByTagName('div')[0];
+        //     imgC.removeChild(mask);
+        // }
+    </script>
+</body>
+</html>

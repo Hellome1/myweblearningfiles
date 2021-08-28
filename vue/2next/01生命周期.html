@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body {
+            overflow: hidden;
+        }
+
+        .kerwinbounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        .kerwinbounce-leave-active {
+            animation: bounce-in .5s reverse;
+        }
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        
+        <child></child>
+    </div>
+
+    <script>
+        Vue.component("child", {
+            template: `
+                <div id="aaa">
+                    child  --- {{title}}
+                    <button @click="title='111'">change</button>
+                </div>
+            `,
+            data(){
+                return {
+                    title: '000'
+                }
+            },
+            beforeCreate(){
+                console.log("beforeCreate");
+            },
+            created(){
+                console.log("created");
+            },
+            beforeMount(){
+                console.log("beforeMount");
+            },
+            mounted(){
+                console.log("mounted");
+            },
+            beforeUpdate(){
+                console.log("beforeUpdate");
+            },
+            updated(){
+                console.log("updated");
+            },
+            beforeDestroy(){
+                console.log("beforeDestroy");
+            },
+            destroyed(){
+                console.log("destroyed");
+            }
+        })
+
+        let vm = new Vue({
+            el:"#box",
+            data: {
+                mytext: "",
+                datalist: []
+            },
+            methods: {
+                handleAddClick(){
+                    this.datalist.push(this.mytext);
+                    this.mytext = "";
+                },
+                handleDel(index){
+                    this.datalist.splice(index,1);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

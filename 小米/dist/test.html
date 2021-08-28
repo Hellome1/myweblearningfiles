@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="click">dj</div>
+    <script>
+        let c = document.getElementsByClassName("click")[0];
+        let a = document.createEvent("MouseEvents"); a.initMouseEvent("click",true,true,document.defaultView,0,0,0,155,155,false,false,false,false,0,null);
+        //  let timer = setInterval(function(){bod.dispatchEvent(a);}, 1000); console.log(timer); console.log(timer);
+        c.onclick = function(e){
+            console.log(1);
+            console.log(e.clientX);
+            console.log(e.clientY);
+        }
+        c.dispatchEvent(a);
+    </script>
+</body>
+</html>

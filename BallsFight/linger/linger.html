@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>linger</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body { display: flex; justify-content: center; align-items: center; height: 100vh;}
+    .msg-box {width: 300px; height: 500px; border: 1px solid black; position: relative; border-radius: 4px; overflow: hidden;background-color: rgba(0, 0, 0, .05);}
+    .name { padding: 3px; text-align: center; background-color: rgba(255,255,255, .6);}
+    .text-area { overflow: auto; height: calc(100% - 55px);}
+    .scroll{ margin-right: -14px;}
+    .send-box { position: absolute; bottom: 0; width: 100%; display: flex;}
+    #msg {border-radius: 3px; height: 28px; flex: 1; outline: none; padding-left: 2px;}
+    #send { width: 50px; height: 28px;}
+    .outer-msg { margin: 5px 0; position: relative}
+    .outer-msg.r { float: right; clear: both;}
+    .outer-msg.l { float: left; clear: both;}
+    .outer-msg img { width: 35px; height: 35px; border-radius: 5px; position: absolute;}
+    .outer-msg.r img { right: 0; top: 2px;}
+    .outer-msg.l img { left: 0; top: 2px;}
+    .outer-msg p { max-width: 165px; word-break: normal; font-size: 16px;}
+    .p1 { background-color: white; border-radius: 6px; line-height: 28px; display: inline-block; padding: 0 8px; margin-left: 2px; margin: 5px 0 0 37px;}
+    .p2 { background-color: white; border-radius: 6px; line-height: 28px; display: inline-block; padding: 0 8px; margin: 5px 37px 0 0;}
+  </style>
+</head>
+<body>
+  <div class="msg-box">
+    <div class="name">铃儿</div>
+    <div class="text-area">
+      
+    </div>
+    <div class="send-box">
+      <input type="text" id="msg" onkeyup="readysend()">
+      <input type="submit" id="send" value="发送" onclick="sendmsg()">
+    </div>
+  </div>
+  <script>
+    const lover = {
+      name: "铃儿",
+      attribute: "爱陈朝阳",
+      reactWord: "我也爱你",
+      react: function(msg){
+        if(msg.indexOf("我爱你") > -1){
+          return this.reactWord
+        }else if(msg.indexOf("难受") > -1){
+          return "怎么了"
+        }else if(/跟你.*在一起/.test(msg)){
+          return "嗯"
+        }else{
+          return null
+        }
+      }
+    }
+    let sendItem = document.getElementsByClassName("send-box")[0]
+    function readysend(ev){
+      let e = ev || window.event
+      if(e.keyCode == 13){
+        sendmsg()
+      }
+    }
+    function sendmsg(){
+      let randomTime = parseInt(Math.random() * 20) + 1.5
+      console.log(randomTime)
+      let msgBox = document.getElementById("msg")
+      let msg = msgBox.value
+      console.log(msg)
+      createPnode(msg)
+      setTimeout(() => {
+        respond(msg)
+      },randomTime * 1000)
+      msgBox.value = ""
+    }
+    function createPnode(word){
+      let text_area = document.getElementsByClassName("text-area")[0]
+      let div = document.createElement("div")
+      div.className = "outer-msg r"
+      let p = document.createElement("p")
+      let img = document.createElement("img")
+      img.src = "w.webp"
+      p.innerHTML = word
+      p.className = "p2"
+      div.appendChild(p)
+      div.appendChild(img)
+      text_area.appendChild(div)
+      if(text_area.scrollWidth < 298 && text_area.classList.value.indexOf("scroll") == -1){
+        console.log(text_area.classList)
+        text_area.classList.add("scroll")
+      }else if(text_area.scrollWidth == 298){
+        text_area.classList.remove("scroll")
+      }else if(text_area.scrollWidth < 298){
+        text_area.scrollTop = text_area.scrollHeight
+      }
+    }
+    function respond(msg){
+      if(lover.react(msg)){ // 反馈内容不为空才发送
+        console.log(lover.react(msg))
+        let text_area = document.getElementsByClassName("text-area")[0]
+        let div = document.createElement("div")
+        div.className = "outer-msg l"
+        let p = document.createElement("p")
+        let img = document.createElement("img")
+        img.src = "linger.webp"
+        // 改进反馈内容
+        p.innerHTML = lover.react(msg)
+        // p.innerHTML = lover.reactWord
+        p.className = "p1"
+        div.appendChild(img)
+        div.appendChild(p)
+        text_area.appendChild(div)
+        if(text_area.scrollWidth < 298 && text_area.classList.value.indexOf("scroll") == -1){
+          console.log(text_area.classList)
+          text_area.classList.add("scroll")
+        }else if(text_area.scrollWidth == 298){
+          text_area.classList.remove("scroll")
+        }else if(text_area.scrollWidth < 298){
+  
+        }
+      }
+    }
+  </script>
+</body>
+</html>

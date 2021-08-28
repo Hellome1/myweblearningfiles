@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <script>
+        /* 
+            ready 事件
+            $(document).ready() 事件触发在当前的document加载完成以后执行
+
+            document加载完毕实在window加载完毕之前的
+        */
+
+        window.onload = function(){
+            alert("onload");
+        }
+
+        $(function(){
+            // 相当于window.onload
+            alert(1);
+        })
+        $(document).ready(function(){
+            alert(2);
+        })
+    </script>
+</body>
+</html>

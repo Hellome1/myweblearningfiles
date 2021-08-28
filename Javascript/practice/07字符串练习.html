@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        ul { list-style: none;}
+        .testCodeBtn { width: 100px; height: 30px; text-align: center; padding: 5px; float: left; cursor: pointer;}
+        .testCodeArea { width: 100px; height: 30px; text-align: center; line-height: 30px; background-color: #eee; float: left; margin-left: 10px; display: none; border-radius: 2px;}
+
+        .msg { width: 400px; height: 700px; background-color: #eee; margin: 100px auto; border-radius: 5px; position: relative;}
+        .publish { position: absolute; bottom: 2px; right: 3px; width: 60px; height: 30px; padding: 5px;}
+        .publishText { width: calc(100% - 60px); height: 30px; line-height: 30px; padding: 5px; position: absolute; bottom: 2px; outline: none;}
+    </style>
+</head>
+<body>
+    <!-- 验证码模拟 -->
+    <!-- <button onclick="randomTestCode()" class="testCodeBtn">获取验证码</button>
+    <div id="test-code-display-area" class="testCodeArea"></div> -->
+
+    <!-- 敏感词过滤 -->
+    <div class="msg">
+        <input type="text" class="publishText">
+        <button onclick="publish()" class="publish">发布</button>
+    </div>
+    <script>
+        // 传入的只有字母的字符串，每个单词首字母大写，用空格分开，只保留第一个单词首字母大写
+
+        // console.log(wordOfstr('HelloWorldHi'));
+        function wordOfstr(str){
+            let arr = str.split('');
+            for(let i = 1; i < arr.length; i++){
+                if(arr[i] >= 'A' && arr[i] <= 'Z'){
+                    arr[i] = arr[i].toLowerCase();
+                    arr.splice(i,0,' ');
+                }
+            }
+            return  arr.join('');
+        }
+
+        // n位纯数字验证码
+
+        function numTestCode(n){
+            let arr = [];
+            for(let i = 0; i < n; i++){
+                let num = parseInt(Math.random() * 10);
+                arr.push(num);
+            }
+            return arr.join('');
+        }
+        // console.log(numTestCode(6));
+
+        // n位由数字和字母（包含大小写）组成的验证码
+        function testCode(n){
+            let arr = [];
+            for(let i = 0; i < n; i++){
+                let ascnum = parseInt(Math.random() * 123);
+                if(ascnum >= 'a'.charCodeAt(0) && ascnum <= 'z'.charCodeAt(0)){
+                    let letter = String.fromCharCode(ascnum);
+                    arr.push(letter);
+                }else if(ascnum >= 'A'.charCodeAt(0) && ascnum <= 'Z'.charCodeAt(0)){
+                    let letter = String.fromCharCode(ascnum);
+                    arr.push(letter);
+                }else if(ascnum >= '0'.charCodeAt(0) && ascnum <= '9'.charCodeAt(0)){
+                    let num = String.fromCharCode(ascnum);
+                    arr.push(num);
+                }else{
+                    i--;
+                }
+            }
+            return arr.join('');
+        }
+        // console.log(testCode(6));
+
+        function randomTestCode(){
+            let tCode = testCode(6);
+            let area = document.getElementById('test-code-display-area');
+            area.innerHTML = tCode;
+            area.style.display = 'block';
+        }
+
+        // 传入一个数组，返回对称数组
+        function symmetryArr(arr){
+            let copyArr = arr.concat();
+            copyArr.reverse();
+            let newArr = arr.concat(copyArr);
+            return newArr;
+        }
+        // console.log(symmetryArr([1,2,3]));
+
+        // let input = document.querySelector('.publishText');
+        // input.onkeyup = pub;
+        document.querySelector('.publishText').addEventListener('keyup', pub);
+        function pub(ev){
+            // var keyNum = window.event;  // IE8以下
+            let e = ev || window.event;
+            if(e.keyCode == 13){
+                publish();
+            }
+        }
+
+        // 通过JS绑定事件可以拿到事件对象
+        // let btn = document.querySelector('.publish');
+        // btn.onclick = publish;
+        function publish(){
+            let area = document.querySelector('.msg');
+            let input = document.querySelector('.publishText');
+            let msgBox = document.createElement('div');
+            let text = input.value;
+            // let arr = text.split('');
+            // for(let i = 0; i < arr.length; i++){
+            //     let word = arr[i];
+            //     if(word == '靠'){
+            //         arr[i] = "*";
+            //     }
+            // }
+            // text = arr.join('');
+            let arr = [/md/ig,/nt/ig,/sb/ig];
+            for(let i = 0; i < arr.length; i++){
+                text = text.replace(arr[i],'*');
+            }
+            msgBox.innerHTML = text;
+            area.appendChild(msgBox);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>

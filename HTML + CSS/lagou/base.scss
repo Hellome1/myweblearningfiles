@@ -1,0 +1,187 @@
+$HTMLfs: 26.6666667vw;
+
+html{
+    font-size: $HTMLfs;
+}
+
+@mixin fs-16{
+    font-size: 16px;
+}
+body {
+    @include fs-16;
+}
+
+%rA {
+    margin: 0;
+    padding: 0;
+}
+* { @extend %rA;}
+
+$db: block;
+
+img {
+    display: $db;
+}
+
+@mixin an{
+    text-decoration: none;
+    color: #555555;
+}
+
+a { @include an;}
+
+$cg1: #00b38a;
+$cg2: #17b994;
+$cw1: white;
+$cw2: #f5f5f5;
+$c: center;
+$r: right;
+$l: left;
+$ds: display;
+$ml: margin-left;
+$bg: background-color;
+
+header {
+    height: 0.45rem;
+    background-color: $cg1;
+    font-size: 0.2rem;
+    color: $cw1;
+    text-align: $c;
+    line-height: 0.45rem;
+}
+
+.login {
+    height: 0.43rem;
+    #{$ds}: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.14rem;
+    p {
+        #{$ml}: 0.16rem;
+    }
+    div {
+        width: 0.84rem;
+        height: 0.3rem;
+        #{$bg}: $cw2;
+        margin-right: 0.15rem;
+        text-align: center;
+        line-height: 0.3rem;
+        border-radius: 0.15rem;
+    }
+    a {
+        #{$ds}: $db;
+    }
+}
+
+@mixin wh($w,$h){
+    width: $w;
+    height: $h;
+}
+.list {
+    li {
+       height: 0.9rem;
+       border-top: 0.01rem solid #e8e8e8;
+       #{$ds}: flex;
+       align-items: $c;
+    }
+    .list_img {
+        width: 0.6rem;
+        margin: 0 0.1rem 0 0.1rem;
+        img {
+            width: 100%;
+        }
+    }
+    .list_info {
+        flex-grow: 1;
+        h2 {
+            font-size: 0.18rem;
+        }
+        p:first-of-type {
+            font-size: 0.14rem;
+            #{$ds}: flex;
+            justify-content: space-between;
+            margin-top: 0.04rem;
+            span:last-of-type {
+                margin-right: 0.14rem;
+                color: #17b994;
+            }
+        }
+        p:last-of-type {
+            font-size: 0.12rem;
+            color: #888888;
+            margin-top: 0.08rem;
+        }
+    }
+}
+
+.more {
+    height: 0.5rem;
+    background-color: #fafafa;
+    border-top: 0.01rem solid #e8e8e8;
+    text-align: center;
+    line-height: 0.5rem;
+    a {
+        #{$ds}: $db;
+        @include wh(100%,100%);
+    }
+}
+
+footer {
+    height: 1.15rem;
+    text-align: $c;
+    font-size: 0.12rem;
+    line-height: 0.22rem;
+    padding-top: 0.27rem;
+    box-sizing: border-box;
+    margin-bottom: 0.45rem;
+}
+
+.icon-home {
+    font-size: 0.24rem;
+    line-height: 0.18rem;
+    position: relative;
+    top: 0.03rem;
+}
+.icon-wode {
+    font-size: 0.24rem;
+    line-height: 0.18rem;
+    position: relative;
+    top: 0.03rem;
+}
+.icon-sousuo {
+    font-size: 0.2rem;
+    line-height: 0.18rem;
+    position: relative;
+    top: 0rem;
+}
+
+$co: color;
+$cg3: #17b994;
+$cw1: #e8e8e8;
+$cw2: #f6f6f6;
+$cw3: #e7f3f0;
+$s1: 0.01rem solid $cw2;
+$s2: 0.18rem;
+$ai: align-items;
+$jc: justify-content;
+
+.tabbar {
+    @include wh(100%,0.45rem);
+    border-top: $s1;
+    #{$ds}: flex;
+    position: fixed;
+    bottom: 0;
+    #{$bg}: $cw2;
+    font-size: $s2;
+    div {
+        flex: 1;
+        height: 100%;
+        #{$ds}: flex;
+        #{$ai}: $c;
+        #{$jc}: $c;
+    }
+    div.active {
+        #{$bg}: $cw3;
+        #{$co}: $cg3;
+    }
+}

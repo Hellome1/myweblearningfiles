@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box { width: 300px; height: 300px; border: 1px solid black; margin: 20px auto; display: flex;}
+        #box div { width: 50px; height: 50px; color: white; line-height: 50px; background-color: red; text-align: center;}
+        /* #box div:nth-child(2) { order: 1;}
+        #box div:nth-child(3) { order: -1;} */
+        #box div:nth-child(2) { background-color: yellow; color: black; flex-grow: 1;}
+        #box div:nth-child(3) { background-color: blue; color: black; flex-grow: 2;}
+
+        #box2 { width: 300px; height: 300px; border: 1px solid black; margin: 20px auto; display: flex; align-items: center;}
+        #box2 div { width: 50px; height: 50px; color: white; line-height: 50px; background-color: red; text-align: center;}
+        /* #box2 div:nth-child(2) { background: yellow; color: black; flex-basis: 50px; flex-grow: 0;} 空白区域为1 */
+        /* #box2 div:nth-child(2) { background: yellow; color: black; flex-shrink: 2;} shrink设置为0，不收缩默认值1 */
+        /* #box2 div:nth-child(2) { background: yellow; color: black; flex-basis: 50px;} flex-basis优先级大于width */
+        /* #box2 div:nth-child(2) { background: yellow; color: black; flex-basis: 50px; flex: 0 1 auto;} */
+        #box2 div:nth-child(2) { background: yellow; color: black; flex-basis: 50px; align-self: flex-end;}
+    </style>
+</head>
+<body>
+    <!-- <div id="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div> -->
+
+    <div id="box2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>

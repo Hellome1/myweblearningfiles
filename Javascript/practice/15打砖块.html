@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0;}
+
+        .container { width: 600px; height: 600px; border: 1px solid black; margin: 100px auto; position: relative;}
+        #ball { width: 20px; height: 20px; background-color: red; border-radius: 50%; position: absolute; bottom: 20px; left: 290px;}
+        #bat { width: 100px; height: 20px; background-color: blue; position: absolute; bottom: 0; left: 250px;}
+        #brick div{ width: 98px; height: 18px; float: left; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="ball"></div>
+        <div id="bat"></div>
+        <div id="brick">
+        </div>
+    </div>
+    <script>
+        var out = document.querySelector(".container");
+        var ball = document.getElementById('ball');
+        var bat = document.getElementById('bat');
+        var bricks = document.getElementById('brick').getElementsByTagName('div');
+
+        createBrick(60);
+        dragX(bat)
+        var speedX = parseInt(Math.random() * 4) + 3;
+        var speedY = -(parseInt(Math.random() * 4) + 3);
+
+        out.timer = setInterval(function(){
+            ball.style.left = ball.offsetLeft + speedX + 'px';
+            ball.style.top = ball.offsetTop + speedY + 'px';
+            if(ball.offsetLeft > 580 || ball.offsetLeft < 0){
+                speedX = -speedX;
+            }
+            if(ball.offsetTop > 580 || ball.offsetTop < 0){
+                speedY = - speedY;
+            }
+
+            // 判断是否从侧面碰撞
+            if(ball.offsetTop > 560){
+                // 判断碰撞
+                if(knock(bat, ball)){
+                    speedX = -speedX;
+                }
+            }else{
+                if(knock(bat, ball)){
+                    speedY = -speedY;
+                }
+            }
+            // 有BUG
+            for(let i = 0; i < bricks.length; i++){
+                // if(ball.offsetTop < bricks[i].offsetTop){
+                //     if(knock(bricks[i], ball)){
+                //         let newSpeed = parseInt(Math.random() * 4) + 3;
+                //         speedX = speedX > 0 ? -newSpeed : newSpeed;
+                //     }
+                // }else{
+                //     if(knock(bricks[i], ball)){
+                //         let newSpeed = parseInt(Math.random() * 4) + 3;
+                //         speedY = -newSpeed;
+                //     }
+                // }
+
+                if(knock(bricks[i], ball)){
+                    if(bricks[i].xxx){
+                        speedX *= -1;
+                        brick.removeChild(bricks[i]);
+                        break;
+                    }else{
+                        speedY = -speedY;
+    
+                        brick.removeChild(bricks[i]);
+                        break;
+                    }
+                }
+
+                // 判断小球接近状态，如果是左右接近，赋值给对应砖块，若不满足条件，则清除状态
+                if(approachX(ball,bricks[i])){
+                    bricks[i].xxx = 1;
+                }else{
+                    bricks[i].xxx = 0;
+                }
+            }
+            if(ball.offsetTop > 580){
+                clearInterval(out.timer);
+                out.innerHTML = `<p style='margin: 200px auto; width: 100px;'>GAME OVER</p><button onclick='window.location.reload()' style='margin: 10px auto; width: 100px; display: block;'>再来一局</button>`;
+            }
+        },30)
+
+        function dragX(node){
+            node.onmousedown = function(ev){
+                let e = ev || window.event;
+                let offsetX = e.clientX - node.offsetLeft;
+
+                document.onmousemove = function(ev){
+                    let e = ev || window.event;
+                    let l = e.clientX - offsetX;
+
+                    if (l < 0) {
+                        l = 0;
+                    }
+                    if (l > 500) {
+                        l = 500;
+                    }
+
+                    node.style.left = l + 'px';
+                }
+                
+            }
+
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        }
+
+        function createBrick(n){
+            var oBrick = document.getElementById('brick');
+            for(var i = 0; i < n; i++){
+                var node = document.createElement('div');
+                node.style.backgroundColor = randomColor();
+                oBrick.appendChild(node);
+            }
+            // 文档流转换
+            var aBricks = oBrick.getElementsByTagName("div");
+            for(var i = 0; i < aBricks.length; i++){
+                aBricks[i].style.left = aBricks[i].offsetLeft + 'px';
+                aBricks[i].style.top = aBricks[i].offsetTop + 'px';
+            }
+            for(var i = 0; i < aBricks.length; i++){
+                aBricks[i].style.position = 'absolute';
+            }
+        }
+        function randomColor() {
+            return 'rgb(' + parseInt(Math.random() * 256) + ', ' + parseInt(Math.random() * 256) + ', ' + parseInt(Math.random() * 256) + ')';
+        }
+
+        function knock(node1, node2){
+            var l1 = node1.offsetLeft;
+            var r1 = node1.offsetLeft + node1.offsetWidth;
+            var t1 = node1.offsetTop;
+            var b1 = node1.offsetTop + node1.offsetHeight;
+            var l2 = node2.offsetLeft;
+            var r2 = node2.offsetLeft + node2.offsetWidth;
+            var t2 = node2.offsetTop;
+            var b2 = node2.offsetTop + node2.offsetHeight;
+
+            if(l1 > r2){
+                return false;
+            }else if(r1 < l2){
+                return false;
+            }else if(t1 > b2){
+                return false;
+            }else if(b1 < t2){
+                return false;
+            }
+            return true;
+        }
+        // 小球接近的判断，判断是否是左右接近,给附近砖块添加状态,node1特指小球
+        function approachX(node1, node2){
+            var l1 = node1.offsetLeft;
+            var r1 = node1.offsetLeft + node1.offsetWidth;
+            var t1 = node1.offsetTop;
+            var b1 = node1.offsetTop + node1.offsetHeight;
+            var l2 = node2.offsetLeft;
+            var r2 = node2.offsetLeft + node2.offsetWidth;
+            var t2 = node2.offsetTop;
+            var b2 = node2.offsetTop + node2.offsetHeight;
+            // 6为小球最大速度
+            if(b1 >= t2 - 6 && t1 <= b2 + 6){
+                if(l1 > r2 && l1 <= r2 + 6 ){
+                    return true;
+                }else if(r1 < l2 && r1 >= l2 - 6){
+                    return true;
+                }
+            }
+            return false;
+        }
+        // node1特指球
+        // function knockDetail(node1, node2){
+        //     var l1 = node1.offsetLeft;
+        //     var r1 = node1.offsetLeft + node1.offsetWidth;
+        //     var t1 = node1.offsetTop;
+        //     var b1 = node1.offsetTop + node1.offsetHeight;
+        //     var l2 = node2.offsetLeft;
+        //     var r2 = node2.offsetLeft + node2.offsetWidth;
+        //     var t2 = node2.offsetTop;
+        //     var b2 = node2.offsetTop + node2.offsetHeight;
+
+        //     if(r1 > r2 + node1.offsetWidth / 2 && r1 < r2 + node1.offsetWidth || l1 < l2 + node1.offsetWidth / 2 && l1 > l2 + node1.offsetWidth){
+        //         return true
+        //     }
+        //     return false
+        // }
+        function play(){
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

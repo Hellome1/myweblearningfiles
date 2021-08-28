@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+    <script>
+        /*
+            JQuery版本区别
+                1.0     可以兼容到IE8以下
+                2.0     只兼容IE8以上
+                3.0
+                【注】JQuery中文文档更多用法
+
+            JQ设计思想
+                1、模拟css选择网页元素
+        */
+
+        // $("li").css("backgroundColor", "red");
+        // $("li:first").css("backgroundColor", "red");
+        // $("li:last").css("backgroundColor", "red");
+
+        // $("li:even").css("backgroundColor", "red");
+        // $("li:odd").css("backgroundColor", "blue");
+        $("li:eq(2)").css("backgroundColor", "red");
+    </script>
+</body>
+</html>

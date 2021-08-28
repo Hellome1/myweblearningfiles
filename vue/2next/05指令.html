@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .swiper-container {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+       <div v-hello="'red'">11111</div>
+       <div v-hello="'yellow'">11111</div>
+       <div v-hello="mycolor">11111</div>
+        
+    </div>
+
+    <script>
+        // 指令可以拿到真实的dom节点
+        Vue.directive("hello", {
+            inserted(el, bind){
+                // console.log("当前节点插入到父节点了")
+                el.style.background = bind.value;
+            },
+            update(el, bind){
+                el.style.background = bind.value;
+            }
+        })
+
+        let vm = new Vue({
+            el:"#box",
+            data:{
+                mycolor: "red"
+            }
+        })
+    </script>
+</body>
+</html>

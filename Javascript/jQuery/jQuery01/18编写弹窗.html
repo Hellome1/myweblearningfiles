@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+    <style>
+        * {margin: 0; padding: 0;}
+        #div1 { width: 300px; height: 300px; border: 1px solid black; position: relative; display: none;}
+        #close { position: absolute; right: 0px; top: 0px;}
+    </style>
+</head>
+<body style="height: 3000px;">
+    <button id="issue">发布</button>
+    <div id="div1">
+        <input type="text" placeholder="用户名">
+        <input type="text" placeholder="密码">
+        <div id="close">X</div>
+    </div>
+    <script>
+        //计算剧中的top和left值
+        var t = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true)) / 2;
+        var left = ($(window).width() - $("#div1").outerWidth(true)) / 2;
+
+        // console.log(top); //window对象
+        $("#div1").css({
+            top: t,
+            left: left
+        })
+
+        $(window).on("scroll resize", function(){
+            t = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true)) / 2;
+            left = ($(window).width() - $("#div1").outerWidth(true)) / 2;
+            $("#div1").css({
+                top: t,
+                left: left
+            })
+        })
+
+        $("#issue").click(function(){
+            $("#div1").css("display", "block");
+        })
+
+        $("#close").click(function(){
+            $("#div1").css("display", "none");
+        })
+    </script>
+</body>
+</html>

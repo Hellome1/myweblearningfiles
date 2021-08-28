@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createPerson(name, sex){
+            // 1
+            var obj = new Object();
+            // 2
+            obj.name = name;
+            obj.sex = sex;
+            obj.showName = function(){
+                console.log(this.name);
+            }
+            obj.showSex = function(){
+                console.log(this.sex);
+            }
+            // 3
+            return obj;
+        }
+
+        // var p1 = createPerson("hello", "男");
+        // p1.showName();
+        // p1.showSex();
+
+        // 构造函数,一般首字母大写
+        function Person(name, sex){
+            this.name = name;
+            this.sex = sex;
+        }
+
+        Person.prototype.showName = function(){
+            console.log(this.name);
+        }
+        Person.prototype.showSex = function(){
+            console.log(this.sex);
+        }
+
+        function Worker(name , sex , job){
+            Person.call(this, name, sex);
+            this.job = job;
+        }
+        // Worker.prototype = Object.create(Person.prototype);
+        Worker.prototype = new Person();
+        Worker.prototype.showJob = function(){
+            console.log(this.job);
+        }
+
+        // var p1 = new Person('hello', '男');
+        // p1.showName();
+        // p1.showSex();
+        var p2 = new Worker('w1','nan','none');
+        // p2.showName();
+        // p2.showJob();
+    </script>
+    <script>
+        var arr1 = [10, 20, 30, 40, 50];
+        var arr2 = [20, 30, 40, 50, 60];
+
+        // arr1.sum = function(){
+        //     let res = null;
+        //     for(let i = 0; i < this.length; i++){
+        //         res += this[i];
+        //     }
+        //     return res;
+        // }
+        // console.log(arr1.sum());
+        // console.log(arr2.sum()); // arr2.sum is not a function
+
+        // 添加在构造函数原型上的方法是共用的, 官方构造函数Array Object
+        Array.prototype.sum = function(){
+            let res = null;
+            for(let i = 0; i < this.length; i++){
+                res += this[i];
+            }
+            return res;
+        }
+        // console.log(arr1.sum()); // 150
+        // console.log(arr2.sum()); // 200
+        // console.log(arr1.sum == arr2.sum); // true
+    </script>
+    <script>
+        function Dog({name, type, age}){
+            this.name = name;
+            this.type = type;
+            this.age = age;
+        }
+        Dog.prototype = {
+            run: function(){
+                console.log(this.name + "会飞快地奔跑");
+            },
+            showSelf: function(){
+                console.log(`这是一只${this.type}的，${this.age}岁的，叫${this.name}的小狗`);
+            }
+        }
+
+        // 更细分的构造函数
+        function Teddy({name, type, age, color}){
+            // this = new Object();
+            // 1 继承父一级的属性
+            Dog.call(this, {
+                name: name,
+                type: type,
+                age: age
+            });
+            // 添加自己的属性
+            this.color = color;
+            // return this;
+        }
+
+        // Teddy 原型继承
+        // Teddy.prototype = Dog.prototype; 错误的写法，对象指向同一个地址，对Teddy原型修改会影响Dog原型
+        for(let funcName in Dog.prototype){
+            Teddy.prototype[funcName] = Dog.prototype[funcName];
+        }
+        Teddy.prototype.showSelf = function(){
+            console.log(`这是一只${this.type}的，${this.age}岁的，叫${this.name}的小狗,${this.color}`)
+        }
+        Teddy.prototype.showColor = function(){
+            console.log(this.color);
+        }
+
+        var xiaohua = new Teddy({
+            name: "小花",
+            type: "泰迪",
+            age: 10,
+            color: "红色"
+        });
+        // 构造函数构造出的对象有一个__proto__属性，指向构造出这个对象的构造函数的原型
+        // console.log(xiaohua.__proto__ == Teddy.prototype); // true
+        // console.log(xiaohua.name);
+        // console.log(xiaohua.type);
+        // console.log(xiaohua.color);
+
+        // console.log(xiaohua instanceof Teddy); // true
+        // console.log(xiaohua instanceof Object); // true
+    </script>
+    <!-- class 语法  -->
+    <script>
+        class Person1{
+            // class属性添加
+            constructor(name, sex, age){
+                this.name = name;
+                this.sex = sex;
+                this.age = age;
+            }
+            showSelf(){
+                console.log(`我叫${this.name}，今${this.age}年，是一名${this.sex}孩`);
+            }
+        }
+        class Worker1 extends Person1{
+            constructor(name, sex, age, job){
+                super(name, sex, age);
+                this.job = job;
+            }
+            showJob(){
+                console.log(this.job);
+            }
+        } 
+        var cw1 = new Worker1('he','nan',22,'none');
+        // console.log(cw1.name);
+        // cw1.showJob();
+    </script>
+</body>
+</html>

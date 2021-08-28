@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div id="div1">
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <p id="p1">p</p>
+        <em>em</em>
+        <h3>h3</h3>
+        <strong>strong</strong>
+        <h6>h6</h6>
+        <h2>h2</h2>
+    </div>
+    <h5>h5</h5>
+    <h1>h1</h1>
+    <script>
+        /* 
+            节点操作的方法 
+            siblings() 用来除当前节点外，所有的兄弟节点
+            nextAll() prevAll()
+            parentsUntil() nextUntil() prevUntil()
+        */
+
+        // $("#p1").siblings().css("backgroundColor", "blue");
+        // $("#p1").siblings("h2").css("backgroundColor", "blue");
+        // $("#p1").nextAll().css("backgroundColor", "blue");
+        // $("#p1").prevAll().css("backgroundColor", "blue");
+        // $("#p1").prevAll("h1").css("backgroundColor", "blue");
+        // $("#p1").nextUntil("strong").css("backgroundColor", "orange");
+        // $("#p1").prevUntil("h1").css("backgroundColor", "orange");
+        $("#p1").parentsUntil("body").css("backgroundColor", "green");
+    </script>
+</body>
+</html>

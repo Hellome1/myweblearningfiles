@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/bootstrap.css">
+    <script src="../function/myfunc.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        .describe { position: absolute; display: none;}
+
+        #div1 { width: 100px; height: 100px; background-color: red; overflow: hidden;}
+        #div2 { width: 50px; height: 50px; background-color: blue; margin: 25px auto;}
+
+        /* body{ background-color: #020202;} */
+        #mouseMoveImg { width: 100px; height: 100px; background: url(../img/timg.gif) no-repeat; background-size: cover; position: absolute;}
+
+        #mouseDots div { width: 20px; height: 20px; background-color: red; position: absolute; border-radius: 50%;}
+
+        .drag { width: 100px; height: 100px; background-color: red; position: absolute;}
+
+        .pubArea { width: 229px; position: absolute; left: 200px; top: 150px; display: none;}
+        .pubArea .pubArea_head { width: 229px; display: flex; justify-content: space-between; border: 1px solid grey; border-radius: 3px; background-color: white;}
+        .disArea { width: 400px; height: 700px; margin: 150px auto; border: 1px solid black;}
+        .disArea div { width: 100%; padding: 5px; background-color: red;}
+        .disArea div::after { content: ''; display: block; clear: both;}
+        .disArea div button { float: right;}
+    </style>
+</head>
+<body>
+    <!-- <div class="container px-5">
+        <div class="mx-5 p-5 bg-dark text-white vh-100">
+            <h1>hello</h1>
+            <h2 class="describe">world</h2>
+        </div>
+    </div> -->
+    <!-- <div id="div1">
+        <div id="div2"></div>
+    </div> -->
+
+    <!-- <div id="mouseMoveImg"></div> -->
+
+    <!-- <div id="mouseDots">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div> -->
+
+    <!-- 拖拽 -->
+    <!-- <div class="drag"></div> -->
+
+    <!-- 拖拽和事件委托 -->
+    <!-- <button class="btnpub">发布</button>
+    <div class="pubArea">
+        <div class="pubArea_head">
+            <button id="pubArea_submit">提交</button>
+            <button id="pubArea_close">关闭</button>
+        </div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <div class="disArea">
+    </div> -->
+   <script>
+        // let h = document.getElementsByTagName('h1')[0];
+        // let des = document.getElementsByClassName('describe')[0];
+        // h.onmouseover = function(){
+        //     des.style.display = 'block';
+        // }
+        // h.onmousemove = function(ev){
+        //     let e = ev || window.event;
+        //     des.style.left = e.clientX + 'px';
+        //     des.style.top = e.clientY + 5 + 'px';
+        // }
+        // h.onmouseout = function(){
+        //     des.style.display = 'none';
+        // }
+
+        // let div1 = document.getElementById('div1');
+        // let div2 = document.getElementById('div2');
+        // div1.onclick = function(ev){
+        //     let e = ev || window.event;
+        //     alert(this.id);
+        // }
+        // div2.onclick = function(ev){
+        //     let e = ev || window.event;
+        //     alert(this.id);
+        //     stopBubble(e);
+        // }
+
+        // let img = document.getElementById('mouseMoveImg');
+        // document.onmousemove = function(ev){
+        //     let e = ev || window.event;
+        //     img.style.left = e.clientX - 25 + 'px';
+        //     img.style.top = e.clientY - 25 + 'px';
+        // }
+
+        // let divs = document.querySelectorAll('#mouseDots div');
+        // document.onmousemove = function(ev){
+        //     let e = ev || window.event;
+        //     for(let i = divs.length - 1; i > 0; i--){
+        //         divs[i].style.left = divs[i - 1].offsetLeft + 'px';
+        //         divs[i].style.top = divs[i - 1].offsetTop + 'px';
+        //     }
+
+        //     divs[0].style.left = e.clientX + 'px';
+        //     divs[0].style.top = e.clientY + 'px';
+        // }
+
+        // let dragNode = document.getElementsByClassName('drag')[0];
+        // drag(dragNode);
+
+        // let btnpub = document.getElementsByClassName('btnpub')[0];
+        // let pubArea = document.getElementsByClassName('pubArea')[0];
+        // let disArea = document.getElementsByClassName('disArea')[0];
+        // let submit = document.getElementById('pubArea_submit');
+        // let close = document.getElementById('pubArea_close');
+        // let textArea = pubArea.getElementsByTagName('textarea')[0];
+        // drag(pubArea);
+        // btnpub.onclick = function(){
+        //     pubArea.style.display = 'block';
+        // }
+        // close.onclick = function(){
+        //     pubArea.style.display = 'none';
+        // }
+        // submit.onclick = function(){
+        //     publish();
+        // }
+        // disArea.onclick = function(ev){
+        //     let e = ev || window.event;
+        //     let target = e.target || window.event.srcElement;
+        //     if(target.nodeName.toLowerCase() == 'button'){
+        //         disArea.removeChild(target.parentNode);
+        //     }
+        // }
+
+        // textArea.addEventListener('keyup',isPub);
+        // function isPub(ev){
+        //     let e = ev || window.event;
+        //     if(e.keyCode == 13){
+        //         publish();
+        //     }
+        // }
+        // function publish(){
+        //     let text = textArea.value;
+        //     textArea.value = '';
+        //     let newNode = document.createElement('div');
+        //     let closeBtn = document.createElement('button');
+        //     newNode.innerHTML = text;
+        //     newNode.style.backgroundColor = randomColor();
+        //     closeBtn.innerHTML = 'x';
+        //     newNode.appendChild(closeBtn);
+        //     disArea.appendChild(newNode);
+        // }
+   </script>
+</body>
+</html>

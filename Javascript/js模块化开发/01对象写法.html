@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var moduleA = {
+            count: 10,
+            showA: function(){
+                this.count += 10;
+                console.log(this.count);
+            },
+            showB: function(){
+                this.count *= 20;
+                console.log(this.count);
+            }
+        }
+
+        var moduleB = {
+            count: 50,
+            showA: function(){
+                this.count += 100;
+                console.log(this.count);
+            },
+            showB: function(){
+                this.count /= 20;
+                console.log(this.count);
+            }
+        }
+
+        moduleA.showA();
+        moduleA.showB();
+        moduleB.showA();
+        moduleB.showB();
+    </script>
+</body>
+</html>

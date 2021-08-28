@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 button{ width: 100px; height: 30px; background-color: grey; font-size: 16px; color: white;}
+        #div1 div { width: 350px; height: 350px; background-color: grey; border: 1px solid black; display: none;}
+        #div1 .active { background-color: orange; color: blue;}
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <button class="active">HTML5</button>
+        <button>JavaScript</button>
+        <button>JQuery</button>
+        <div style="display: block;">HTML5是构建Web内容的一种语言描述方式。HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。HTML产生于1990年，1997年HTML4成为互联网标准，并广泛应用于互联网应用的开发。</div>
+        <div>JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。</div>
+        <div>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。</div>
+    </div>
+    <script>
+        let oDiv = document.getElementById("div1");
+        let aBtns = oDiv.getElementsByTagName("button");
+        let aDivs = oDiv.getElementsByTagName("div");
+
+        // 通过循环添加点击事件
+        for(var i = 0; i < aBtns.length; i++){
+            // 添加自定义属性，记录当前下标
+            aBtns[i].index = i;
+            aBtns[i].onclick = function(){
+                // 清除按钮所有样式，隐藏div
+                for(var j = 0; j < aBtns.length; j++){
+                    aBtns[j].className = '';
+                    aDivs[j].style.display = 'none';
+                }
+
+                // 点中的按钮为active,对应的div显示
+                this.className = 'active';
+                aDivs[this.index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

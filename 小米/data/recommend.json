@@ -1,0 +1,207 @@
+{
+    "code": 200,
+    "msg": "success",
+    "data": [
+     {
+      "info": {
+       "product_id": 9072,
+       "category_id": 1329,
+       "commodity_id": 1184800004,
+       "goods_list": [
+        2184800004
+       ],
+       "name": "黑鲨游戏 Type-C 耳机",
+       "price": "99",
+       "market_price": "99",
+       "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a2889874bdd0d3565f0dbf7bcc56abc1.jpg",
+       "comments": "6333"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_0#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9072\u0026bid=3038456.0\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 5828,
+       "category_id": 639,
+       "commodity_id": 1171900017,
+       "goods_list": [
+        2171900028
+       ],
+       "name": "手机USB micro 数据线  ",
+       "price": "9.9",
+       "market_price": "9.9",
+       "image": "http://i8.mifile.cn/b2c-mimall-media/64de04b0cb774f0b33ed4a00df0f9c3c.jpg",
+       "comments": "48.7万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_1#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=5828\u0026bid=3038456.1\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9530,
+       "category_id": 303,
+       "commodity_id": 1191200019,
+       "goods_list": [
+        2191200018
+       ],
+       "name": "米家智能压力IH电饭煲1S 3L",
+       "price": "999",
+       "market_price": "1099",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07390d2d89220f2e3f06710360ec1077.jpg",
+       "comments": "1.8万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_2#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9530\u0026bid=3038456.2\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9849,
+       "category_id": 1330,
+       "commodity_id": 1192100015,
+       "goods_list": [
+        2192100015
+       ],
+       "name": "小爱老师 4G版",
+       "price": "999",
+       "market_price": "999",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27a4c031437fd27d2063977a4c1650c3.jpg",
+       "comments": "3.1万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_3#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9849\u0026bid=3038456.3\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9726,
+       "category_id": 1190,
+       "commodity_id": 1191800001,
+       "goods_list": [
+        2191800001
+       ],
+       "name": "米家空调伴侣2",
+       "price": "59",
+       "market_price": "79",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74f5975a77c6d9fcf67e294c47561994.jpg",
+       "comments": "14.6万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_4#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9726\u0026bid=3038456.4\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9540,
+       "category_id": 632,
+       "commodity_id": 1191300010,
+       "goods_list": [
+        2191300008,
+        2191300007
+       ],
+       "name": "米家防蓝光护目镜 Pro",
+       "price": "149",
+       "market_price": "149",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/39ab0576f66275a0ce9793a628976c8f.jpg",
+       "comments": "7.3万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_5#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9540\u0026bid=3038456.5\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9144,
+       "category_id": 711,
+       "commodity_id": 1185000014,
+       "goods_list": [],
+       "name": "变频 | 米家互联网空调 1.5匹",
+       "price": "2399",
+       "market_price": "2699",
+       "image": "https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/2c5854c18a9078a2b1809dbee6b7dbd8.jpg",
+       "comments": "50.5万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_6#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9144\u0026bid=3038456.6\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 9932,
+       "category_id": 972,
+       "commodity_id": 1192200029,
+       "goods_list": [
+        2192200016,
+        2192200017
+       ],
+       "name": "照片打印机彩色相纸",
+       "price": "59",
+       "market_price": "59",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecf96d63d48c90af6867bdd673df7284.jpg",
+       "comments": "14.9万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_7#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=9932\u0026bid=3038456.7\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 7530,
+       "category_id": 886,
+       "commodity_id": 1175100002,
+       "goods_list": [
+        2175100001
+       ],
+       "name": "知吾煮汤锅 米家定制",
+       "price": "99",
+       "market_price": "99",
+       "image": "http://i8.mifile.cn/b2c-mimall-media/91b546daa8c9797bb2602c236178c852.jpg",
+       "comments": "20.1万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_8#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=7530\u0026bid=3038456.8\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     },
+     {
+      "info": {
+       "product_id": 5500,
+       "category_id": 303,
+       "commodity_id": 1201400007,
+       "goods_list": [
+        2201400003
+       ],
+       "name": "米家智能IH电饭煲 4L",
+       "price": "469",
+       "market_price": "599",
+       "image": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1062c89f8b84ac8e1898cdc8db52ee3a.jpg",
+       "comments": "44.7万"
+      },
+      "traceid": "CartRec-jR9+VBHvY/be6fJg1XQPsg==",
+      "logcode": "reccom_Cart_0_9#eid=180:16:0:0:0:0:0:0:0:0\u0026traceId=CartRec-jR9+VBHvY/be6fJg1XQPsg==\u0026pid=5500\u0026bid=3038456.9\u0026page=cartbuy",
+      "eid": "180:16:0:0:0:0:0:0:0:0",
+      "algorithm": 11,
+      "ext": null
+     }
+    ]
+   }
+   

@@ -1,0 +1,47 @@
+#play {
+  width: 375px;
+  height: 130px;
+  border: 1px solid black;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#play ul, #play ol {
+  list-style: none;
+}
+
+#play ul {
+  position: absolute;
+}
+
+#play ul li {
+  height: 130px;
+}
+
+#play ol {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+#play ol li {
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  float: left;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #a03300;
+  color: #a03300;
+  user-select: none;
+}
+
+#play ol li.active {
+  width: 22px;
+  height: 22px;
+  background-color: #e76610;
+  margin: 4px;
+  color: white;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>写文章</title>
+    <%- include head %>
+
+    
+  </head>
+  <body>
+    <%- include('bar', { username: username}) %>
+
+    <div id="write">
+        <form action="/article/add" method="POST">
+          <input type="hidden" name="id" value="<%=item.id%>">
+          <input type="hidden" name="page" value="<%=item.page%>">
+            <input type="text" name="title" placeholder="请输入文章标题" required value="<%=item.title%>">
+            <textarea id="editor_id" name="content" style="width:800px;height:300px;">
+                <%=item.content%>
+            </textarea>
+            <% if(item.id){ %>
+              <input class="button" type="submit" value="修改">
+            <% }else{ %>
+              <input class="button" type="submit" value="发布">
+            <% } %>
+        </form>
+    </div>
+
+    <script charset="utf-8" src="/kindeditor/kindeditor-all.js"></script>
+    <script charset="utf-8" src="/kindeditor/lang/zh-CN.js"></script>
+    <script>
+            KindEditor.ready(function(K) {
+                    window.editor = K.create('#editor_id');
+            });
+    </script>
+  </body>
+</html>

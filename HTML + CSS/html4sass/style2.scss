@@ -1,0 +1,133 @@
+.box { width: 200px;}
+
+// 不会被编译
+
+/*
+    会被编译 
+*/
+
+$number: 123px;
+$key: margin;
+$i: 2;
+
+.box#{$i}{
+    width: $number;
+    height: $number;
+    #{$key}: auto;
+}
+
+.box3 {
+    height: $number; // less的number取值456px,sass作用域有顺序
+    $number: 456px;
+    width: $number;
+}
+
+ul {
+    list-style: none;
+    li{
+        float: left;
+        div{ margin: 10px;}
+        p{ margin: 20px;}
+    }
+    &:hover {
+        color: red;
+        font: {
+            size: 10px;
+            weight: bold;
+            family: 宋体;
+        }
+    }
+}
+
+$num: 100px;
+
+.box4{
+    width: $num * 3;
+    // sass 单位不同无法运算
+    // height: $num + 20em;
+    font: 20px / 1.5;
+    // 默认 / 是分割
+    padding: (20px / 1.5);
+    color: #010203 * 2;
+}
+
+@function sum($n,$m){
+    @return $n + $m;
+}
+
+.box5{
+    width: round(3.4px);
+    height: percentage(0.2);
+    margin: random();
+    // sass sqrt
+    // padding: sqrt(25%);
+    font-size: sum(4px, 5px);
+}
+
+@mixin show {
+    display: block;
+}
+@mixin hide($color) {
+    display: none;
+    color: $color;
+}
+
+.box6 {
+    width: 100px;
+    @include show;
+    @include hide(blue);
+}
+
+%line {
+    display: inline;
+}
+
+.box7 {
+    @extend %line;
+}
+.box8 {
+    @extend %line;
+}
+
+$background: (
+    a : url(a.png),
+    b : url(b.png)
+);
+$transform: (
+    a: scale(2),
+    b: rotate(30deg)
+);
+
+.box9 {
+    background: map-values($background);
+    transform: zip(map-values($transform)...);
+}
+
+.box10 {
+    width: 100px;
+    @media all and (min-width: 768px){
+        width: 600px;
+    }
+    @media all and (min-width: 1440px){
+        width: 900px;
+    }
+}
+
+$count: 3;
+
+.box1{
+    @if($count > 4){
+        width: 100px + $count;
+    }
+    @else{
+        width: 10px + $count;
+    }
+}
+
+@for $i from 0 through 2 {
+    .box-#{$i}{
+        width: 100px + $i;
+    }
+}
+
+@import './reset.scss';

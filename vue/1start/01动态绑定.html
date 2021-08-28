@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red { background-color: red;}
+        .yellow { background-color: yellow;}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <div style="background-color: yellow;">11111</div>
+        <button @click="handleClick">click</button>
+        <div :class="isActive ? 'red' : 'yellow'">动态三目</div>
+        <div :class="classobj">动态对象</div>
+        <div :class="classarr">动态数组</div>
+
+        <div :style="'background-color:'+(isActive?'red':'yellow')">动态style三目</div>
+        <div :style="styleobj">动态style对象</div>
+        <div :style="stylearr">动态style数组</div>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: "#box",
+            data: {
+                isActive: true,
+                classobj: {
+                    a: true,
+                    b: true
+                },
+                classarr: ["a", "b"],
+                styleobj: {
+                    backgroundColor: "yellow"
+                },
+                stylearr: [{backgroundColor:"red"}]
+            },
+            methods:{
+                handleClick(){
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

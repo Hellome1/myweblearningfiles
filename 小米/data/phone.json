@@ -1,0 +1,9 @@
+[{"id":1,"src":"./images/phone/5a260090e0e08770b0bd865845a4b4ab.webp","title":"小米11","desc":"晓龙888 | 2K四曲面屏","price":"3999元起"},
+    {"id":2,"src":"./images/phone/4e75e528fb468aee107f551179aa0799.webp","title":"Note 9 Pro","desc":"一亿像素夜景相机，120Hz六档变速高刷屏","price":"1599元起"},
+    {"id":3,"src":"./images/phone/de2f71a797a74e1ca70f1fb4570bc026.webp","title":"Note 9","desc":"天玑 800U处理器，5000mAh电池","price":"1299元起"},
+    {"id":4,"src":"./images/phone/13f10e47913f9dc82e6c6a6199f413cd.webp","title":"Note 9 4G","desc":"6000mAh长续航","price":"999元起"},
+    {"id":5,"src":"./images/phone/d880ff45a9a3b70527770e01521fc939.webp","title":"小米10 至尊版","desc":"120X 变焦/120W秒充/120Hz屏幕","price":"5299元起"},
+    {"id":6,"src":"./images/phone/7cf7a05df86a858a1f391a0378d8c27d.webp","title":"Redmi K30S 至尊纪念版","desc":"144Hz[7档]变速高刷屏","price":"2599元起"},
+    {"id":7,"src":"./images/phone/3b19bf0e7e599c1bbbce510fb0dbc8bc.webp","title":"Redmi K30 至尊版","desc":"120Hz弹出全面屏，天玑1000+旗舰处理器","price":"1999元起"},
+    {"id":8,"src":"./images/phone/237942bfcaf2bbe82fbe966c2f584d69.webp","title":"腾讯黑鲨3S","desc":"骁龙865处理器，120Hz刷新率","price":"3999元"}
+]

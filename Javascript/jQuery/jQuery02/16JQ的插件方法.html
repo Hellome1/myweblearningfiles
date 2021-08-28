@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        div { width: 100px; height: 100px; background-color: orange; position: absolute;}
+        p,em { position: absolute;}
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>p</p>
+    <em>em</em>
+    <script>
+        /* 
+            $.extend() 拓展工具方法 $.xxx()
+            $.fn.extend() 拓展JQ方法 $().xxx()
+        */
+
+        $.extend({
+            aaa: function(){
+                alert("工具");
+            }
+        })
+
+        $.fn.extend({
+            aaa: function(){
+                alert("JQ方法");
+            },
+            drag: function(){
+                // this.css("backgroundColor", "red");
+
+                this.mousedown(function(ev){
+                    var offsetX = ev.clientX - $(this).offset().left;
+                    var offsetY = ev.clientY - $(this).offset().top;
+
+                    var _this = this;
+
+                    $(document).mousemove(function(ev){
+                        $(_this).css({
+                            left: ev.clientX - offsetX,
+                            top: ev.clientY - offsetY
+                        })
+                    })
+                })
+                $(document).mouseup(function(){
+                    $(document).off("mousemove");
+                })
+                
+                return this;
+            }
+        })
+
+        // $.aaa();
+        // $("div").aaa();
+        $("div,p,em").drag().css("backgroundColor", "blue").mouseover(function(){
+            $(this).css("backgroundColor", "yellow");
+        }).mouseout(function(){
+            $(this).css("backgroundColor", "red");
+        });
+    </script>
+</body>
+</html>

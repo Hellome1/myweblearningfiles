@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博文尚美</title>
+    <link rel="stylesheet" href="bowenshangmei/common.css">
+    <style>
+        * { margin: 0; padding: 0;}
+        a { text-decoration: none; color: #b1b1b1;}
+        p { color: #b1b1b1;}
+        img { display: block;}
+        li { list-style: none;}
+
+        .l { float: left;}
+        .r { float: right;}
+        .clear { clear: both;}
+
+        #banner { position: relative; width: 100%; margin-top: 80px;}
+        #banner .bannerContainer { width: 100%; height: 500px; margin: 0 auto; overflow: hidden; position: relative;}
+        #banner .bannerArea{position: absolute; left: 0; white-space: nowrap; font-size: 0;}
+        #banner .bannerArea a {display: inline-block;}
+        #banner #dot { width: 100%; position: absolute; bottom: 22px; font-size: 0px; text-align: center;}
+        #banner img { width: 1440px; height: 500px; margin: 0 240px;}
+        #banner #dot div { width: 12px; height: 12px; border: 2px solid white; border-radius: 50%; display:inline-block; box-sizing: border-box; margin-left: 9px; cursor: pointer;}
+        #banner #dot div:nth-of-type(1) { margin-left: 0; background-color: white;}
+        .title { background: url(imgbowenshangmei/titbg.jpg) no-repeat center 0; width: 500px; height: 44px; margin: 0 auto; text-align: center; font-size: 18px; margin-top: 60px;}
+        .title p:nth-of-type(1) { margin-bottom: 8px; color: #555555;}
+
+        #ourServices { min-height: 428px; overflow: hidden;}
+        .services { margin-top: 40px; color: #777777;}
+        .services h4 { margin-top: 40px; color: #777777; clear: both; margin-bottom: 20px;}
+        .services p { font-size: 14px; clear: both;}
+        .services .service { text-align: center; float: left; width: 250px; margin: 10px 10px; padding-bottom: 30px;}
+        .services .logo { margin: 0 auto; overflow: hidden; width: 102px; height: 102px;}
+        .services .service:hover { border-bottom: 3px solid #68c4b5;}
+
+        #case { background-color: #f8f8f8; min-height: 460px; overflow: hidden;}
+        #case .title{ margin-top: 50px;}
+        #case ul { overflow: hidden; margin-top: 42px;}
+        #case ul li { float: left; margin: 0 10px; position: relative; cursor: pointer;}
+        #case ul li .img { position: absolute; display: none;}
+        #case ul li:hover .img { display: inline;}
+        #case .button { width: 165px; height: 36px; margin: 40px auto; border-radius: 36px; background-color: #68c4b5; clear: left; text-align: center;}
+        #case .button:hover { background-color: #53b5a3;}
+        #case .button:hover a { text-decoration: underline;}
+        #case .button a { height: 36px; line-height: 36px; color: white; font-size: 14px;}
+
+        #news { overflow: hidden; min-height: 410px;}
+        #news .title { margin-top: 54px; padding-bottom: 55px;}
+        #news dl dt { float: left;}
+        #news dl dd { float: left; margin: 10px 0;}
+        #news .date { float: left; width: 79px; height: 74px; border-right: 1px solid #e3e3e3; text-align: center;}
+        #news .date h3 { font-size: 36px; font-weight: bold; color: #68c4b5; height: 50px; line-height: 50px;}
+        #news .date p { font-size: 18px;}
+        #news .content { float: left; width: 340px; padding-left: 16px; box-sizing: border-box;}
+        #news .content h3{ font-size: 16px; height: 30px; line-height: 30px;}
+        #news .content h3 a{ color: #666666;}
+        #news .content h3 a:hover { text-decoration: underline;}
+        #news .content p{ font-size: 12px; height: 20px; line-height: 20px; margin-top: 6px;}
+
+        #footer { height: 56px; background-color: #68c4b5;}
+        #footer p { font-size: 12px; height: 56px; line-height: 56px; color: white; float: left;}
+        #footer .href { float: right;}
+        #footer .href a { color: white; height: 56px; line-height: 56px; border-right: 1px solid white; font-size: 12px; padding: 0 10px;}
+        #footer .href a:hover { text-decoration: underline;}
+        #footer .href a:nth-of-type(4) { border-right: none;}
+
+        #thelast { background-color: #eeeeee; overflow: hidden;}
+        #thelast .container{ padding: 20px 0 ;}
+        #thelast p { display: inline; font-size: 12px; color: #777777; height: 30px; line-height: 30px;}
+        #thelast a { font-size: 12px; border-right: 1px solid #777777; color: #777777; padding: 0 9px; height: 30px; line-height: 30px;}
+        #thelast a:hover { text-decoration: underline;}
+        #thelast .last { border: none;}
+    </style>
+</head>
+<body>
+    <div id="navigationBar">
+        <div class="container">
+            <div id="logo">
+                <a href="#">
+                    <img src="imgbowenshangmei/logo.png" alt="">
+                </a>
+            </div>
+            <div id="content">
+                <a href="#" style="color: #68c4b5;">HOME</a>
+                <a href="#">PORTFOLIO</a>
+                <a href="#">ABOUT</a>
+                <a href="#">SERVICES</a>
+                <a href="#">NEWS&EVENTS</a>
+                <a href="#">CONTACT</a>
+            </div>
+        </div>
+    </div>
+    <div id="banner">
+        <div id="bC" class="bannerContainer">
+            <ul class="bannerArea">
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105240603.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105318954.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105423471.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105500969.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105240603.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105318954.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105423471.jpg" alt="" />
+                </a>
+                <a href="#">
+                    <img src="imgbowenshangmei/20141118105500969.jpg" alt="" />
+                </a>
+            </ul>
+        </div>
+        <div id="dot">
+            <div class="is" onclick="c1()"></div>
+            <div class="is" onclick="c2()"></div>
+            <div class="is" onclick="c3()"></div>
+            <div class="is" onclick="c4()"></div>
+        </div>
+    </div>
+    <div id="ourServices" class="container">
+        <div class="title">
+            <p>服务范围</p>
+            <p style="font-size: 10px;">OUR SERVICES</p>
+        </div>
+        <div class="services">
+            <div class="service">
+                <div class="logo">
+                    <img src="imgbowenshangmei/web1.png" alt="">
+                </div>
+                <h4>1.WEB DISIGN</h4>
+                <p>企业品牌网站设计/手机网站制作</p>
+                <p>动画网站创意设计</p>
+            </div>
+            <div class="service">
+                <div class="logo">
+                    <img src="imgbowenshangmei/graphic1.png" alt="">
+                </div>
+                <h4>2.GRAPHIC DISIGN</h4>
+                <p>标志LOGO设计/产品宣传册设计</p>
+                <p>企业广告/海报设计</p>
+            </div>
+            <div class="service">
+                <div class="logo">
+                    <img src="imgbowenshangmei/e-bussiness1.png" alt="">
+                </div>
+                <h4>3.E-BUSINESS PLAN</h4>
+                <p>淘宝/天猫装修设计及运营推广</p>
+                <p>企业微博/微信营销</p>
+            </div>
+            <div class="service">
+                <div class="logo">
+                    <img src="imgbowenshangmei/mail1.png" alt="">
+                </div>
+                <h4>4.MAILBOX AGENTS</h4>
+                <p>腾讯/网易企业邮箱品牌代理</p>
+                <p>个性化邮箱定制开发</p>
+            </div>
+        </div>
+    </div>
+    <div id="case" class="Wcontainer">
+        <div class="container">
+            <div class="title">
+                <p style="color:#68c4b5;">{客户案例}</p>
+                <p style="font-size: 10px;">With the best professional technology,to design the best innovative web site</p>
+            </div>
+            <ul>
+                <li><img src="imgbowenshangmei/caselock.png" class="img"/><img src="imgbowenshangmei/1.jpg" /></li>
+                <li><img src="imgbowenshangmei/caselock.png" class="img"/><img src="imgbowenshangmei/2.jpg" /></li>
+                <li><img src="imgbowenshangmei/caselock.png" class="img"/><img src="imgbowenshangmei/3.jpg" /></li>
+            </ul>
+            <div class="button">
+                <a href="#">VIEW MORE</a>
+            </div>
+        </div>
+    </div>
+    <div id="news" class="container">
+        <div class="title">
+            <p>最新资讯</p>
+            <p style="font-size: 10px;">THE LASTEST NEWS</p>
+        </div>
+        <dl>
+            <dt>
+                <img src="imgbowenshangmei/newsimg.jpg" alt="">
+            </dt>
+            <dd>
+                <div class="date">
+                    <h3>18</h3>
+                    <p>Aug</p>
+                </div>
+                <div class="content">
+                    <h3>
+                        <a href="#">漳州西恩视觉婚纱摄影网站建设</a>
+                    </h3>
+                    <p>漳州西恩视觉婚纱摄影隶属西恩视觉文化传播有限公司旗下婚纱摄影品牌，由国内著名摄影师冬晖CHAN...</p>
+                </div>
+            </dd>
+             <dd>
+                <div class="date">
+                    <h3>16</h3>
+                    <p>Aug</p>
+                </div>
+                <div class="content">
+                    <h3>
+                        <a href="#">网站数据统计用哪种比较好?</a>
+                    </h3>
+                    <p>网站数据统计代码是平常网站建设过程中最受用户青睐的数据统计工具，几乎每个用户的网站程序都会...</p>
+                </div>
+            </dd>
+            <dd>
+                <div class="date">
+                    <h3>14</h3>
+                    <p>Aug</p>
+                </div>
+                <div class="content">
+                    <h3>
+                        <a href="#">厦门网站建设服务的内容主要有哪些？</a>
+                    </h3>
+                    <p>大多数用户建网站由于都是头一次接触，对于网站建设并不了解，往往会误认为找网站建设公司建网站...</p>
+                </div>
+            </dd>
+            <dd>
+                <div class="date">
+                    <h3>12</h3>
+                    <p>Aug</p>
+                </div>
+                <div class="content">
+                    <h3>
+                        <a href="#">海石景观股份有限公司网站设计案例解析</a>
+                    </h3>
+                    <p>此次网站整体设计采用扁平化的的风格、简约式排版，网站主视觉区采用大面积的视觉效果图，以动画...</p>
+                </div>
+            </dd>
+           
+        </dl>
+    </div>
+    <div id="footer" class="Wcontainer">
+        <div class="container">
+            <p>Copyright 2006- 2014 Bowenshangmei Culture All Rights Reserved</p>
+            <div class="href">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div id="thelast" class="Wcontainer">
+        <div class="container">
+            <p>Links:</p>
+            <a href="#">深圳网站建设</a>
+            <a href="#">重庆网站建设</a>
+            <a href="#">成都网站建设</a>
+            <a href="#">广州网站建设</a>
+            <a href="#">天津网站建设</a>
+            <a href="#">服务器租用</a>
+            <a href="#">赣州网站建设</a>
+            <a href="#">郑州网络公司</a>
+            <a href="#">湖北网站建设</a>
+            <a href="#">济南网站建设</a>
+            <a href="#">网站建设</a>
+            <a href="#">淄博网站建设</a>
+            <a href="#">厦门网站建设</a>
+            <a href="#">网站托管</a>
+            <a href="#">广告中国</a>
+            <a href="#">广州网站优化</a>
+            <a href="#">南京网站建设</a>
+            <a href="#">东莞网络公司</a>
+            <a href="#" class="last">昆明网络公司</a>
+        </div>
+    </div>
+    <script>
+        function start(){
+            let banners = document.getElementsByClassName('bannerArea');
+            let banner = banners[0];
+            let bC = document.getElementById('bC');
+            bC.timer = setInterval(() => {
+                move(banner, {left: banner.offsetLeft - 1920}, function(){
+                    if(banner.offsetLeft <= -1920 * 4){
+                        banner.style.left = 0 + 'px';
+                    }
+            })} , 5000)
+        }
+
+        function move(banner, obj, func){
+            console.log(1);
+            clearInterval(banner.timer);
+            let num = obj.left / 1920;
+            let divs = document.getElementsByClassName('is');
+            console.log(num);
+            switch(num){
+                case -1:
+                    divs[0].style.background = 'none';
+                    divs[1].style.background = 'white';
+                    divs[2].style.background = 'none';
+                    divs[3].style.background = 'none';
+                    break;
+                case -2:
+                    divs[0].style.background = 'none';
+                    divs[1].style.background = 'none';
+                    divs[2].style.background = 'white';
+                    divs[3].style.background = 'none';
+                    break;
+                case -3:
+                    divs[0].style.background = 'none';
+                    divs[1].style.background = 'none';
+                    divs[2].style.background = 'none';
+                    divs[3].style.background = 'white';
+                    break;
+                case -4:
+                    divs[0].style.background = 'white';
+                    divs[1].style.background = 'none';
+                    divs[2].style.background = 'none';
+                    divs[3].style.background = 'none';
+                    break;
+                case 0:
+                    divs[0].style.background = 'white';
+                    divs[1].style.background = 'none';
+                    divs[2].style.background = 'none';
+                    divs[3].style.background = 'none';
+                    break;
+            }
+            banner.timer = setInterval(() => {
+                let iCur = banner.offsetLeft;
+                for(let attr in obj){
+                    let speed = (iCur - obj[attr]) / 9;
+                    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                    if(speed == 0){
+                        clearInterval(banner.timer);
+                        if(func){
+                            func.call(banner);
+                        }
+                    }else{
+                        banner.style.left = iCur - speed + 'px';
+                    }
+                }
+            }, 20);
+        }
+
+        function c1(){
+            let banners = document.getElementsByClassName('bannerArea');
+            let banner = banners[0];
+            move(banner, { left: 0});
+            let bC = document.getElementById('bC');
+            clearInterval(bC.timer);
+            start();
+        }
+
+        function c2(){
+            let banners = document.getElementsByClassName('bannerArea');
+            let banner = banners[0];
+            move(banner, { left: -1440});
+            let bC = document.getElementById('bC');
+            clearInterval(bC.timer);
+            start();
+        }
+
+        function c3(){
+            let banners = document.getElementsByClassName('bannerArea');
+            let banner = banners[0];
+            move(banner, { left: -1440 * 2});
+            let bC = document.getElementById('bC');
+            clearInterval(bC.timer);
+            start();
+        }
+
+        function c4(){
+            let banners = document.getElementsByClassName('bannerArea');
+            let banner = banners[0];
+            move(banner, { left: -1440 * 3});
+            let bC = document.getElementById('bC');
+            clearInterval(bC.timer);
+            start();
+        }
+
+        function stop(){
+            let bC = document.getElementById('bC');
+            clearInterval(bC.timer);
+            bC.timer = null;
+        }
+
+        var ser = document.getElementsByClassName('service');
+        var Hov = document.getElementsByClassName('logo');
+        for(let i = 0; i < Hov.length; i++){
+            if(i == 0){
+                ser[i].onmouseover = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/webdo.png';
+                }
+                ser[i].onmouseout = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/web1.png';
+                }
+            }
+            if(i == 1){
+                ser[i].onmouseover = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/graphicdo.png';
+                }
+                ser[i].onmouseout = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/graphic1.png';
+                }
+            }
+            if(i == 2){
+                ser[i].onmouseover = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/e-bussinessdo.png';
+                }
+                ser[i].onmouseout = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/e-bussiness1.png';
+                }
+            }
+            if(i == 3){
+                ser[i].onmouseover = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/maildo.png';
+                }
+                ser[i].onmouseout = function(){
+                    Hov[i].children[0].src = 'imgbowenshangmei/mail1.png';
+                }
+            }
+        }
+
+        window.onmousewheel = function(){
+            let BAN = document.getElementById('banner');
+            let bC = document.getElementById('bC');
+            console.log(document.documentElement.scrollTop)
+            if(document.documentElement.scrollTop > 600){
+                if(bC.timer){
+                    stop();
+                }
+            }else{
+                if(!bC.timer){
+                    start();
+                }
+            }
+        }
+
+        document.addEventListener('visibilitychange', function () {
+            var isHidden = document.hidden;
+            let bC = document.getElementById('bC');
+            if (isHidden) {
+                //失去焦点
+                if(bC.timer){
+                    stop();
+                }
+            }
+            else {
+                //未失去焦点
+                if(!bC.timer){
+                    start();
+                }
+            }
+        });
+
+        start();
+    </script>
+</body>
+</html>

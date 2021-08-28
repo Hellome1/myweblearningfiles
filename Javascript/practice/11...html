@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slide { position: relative; width: 600px; height: 30px; border: 1px solid black; margin: 100px auto;}
+        #block { width: 30px; height: 30px; background-color: blue; position: absolute; left: 100px;}
+        #full { width: 100px; height: 30px; background-color: orange; position: absolute; top: 0; left: 0;}
+    </style>
+</head>
+<body>
+    <!-- localStorage -->
+    <!-- <button>删除</button>
+    <script>
+        if(!window.localStorage){
+            alert("当前页面不支持localStorage")
+        }else{
+            // localStorage.setItem("a", "1");
+            // localStorage.b = '2';
+            // localStorage["c"] = "3";
+
+            console.log(localStorage.getItem("a"));
+            console.log(localStorage.b);
+            console.log(localStorage["c"]);
+        }
+
+        let btn = document.getElementsByTagName("button")[0];
+        btn.onclick = function(){
+            localStorage.removeItem("a");
+            localStorage.removeItem("b");
+            localStorage.removeItem("c");
+        }
+    </script> -->
+
+    <!-- 滑动条 -->
+    <!-- <div id="slide">
+        <div id="full"></div>
+        <div id="block"></div>
+    </div>
+    <script>
+        let slide = document.getElementById("slide");
+        let full = document.getElementById("full");
+        let block = document.getElementById("block");
+
+        if(!window.localStorage){
+            alert("该浏览器不支持localStorage!")
+        }else{
+            //去除本地存储的滑动条的位置
+            let l = localStorage.getItem("slide") ? localStorage.getItem("slide") : 0;
+            block.style.left = l + 'px';
+            full.style.width = l + 'px';
+        }
+
+        block.onmousedown = function(ev){
+            let e = ev || window.event;
+            let offsetX = e.clientX - block.offsetLeft;
+
+            document.onmousemove = function(ev){
+                let e = ev || window.event;
+                let l = e.clientX - offsetX;
+                // 限制出界
+                if(l < 0){
+                    l = 0;
+                }
+                if(l > slide.offsetWidth - block.offsetWidth){
+                    l = slide.offsetWidth - block.offsetWidth;
+                }
+                block.style.left = l + 'px';
+                full.style.width = l + 'px';
+                if(!window.localStorage){
+                    alert("该浏览器不支持localStorage!")
+                }else{
+                    localStorage.setItem("slide", l);
+                }
+            }
+        }
+
+        document.onmouseup = function(){
+            document.onmousemove = null;
+        }
+
+        //测试完毕清除localStorage
+        localStorage.removeItem("slide");
+    </script> -->
+
+    <!-- <script>
+        let person = {
+            name: 'aaa',
+            show: () => {console.log(this)}
+        }
+        person.show(); // window
+    </script> -->
+
+    <!-- <script>
+        // 浅拷贝：只拷贝地址
+        // 深拷贝：遇到复合数据类型，重新生成一份进行拷贝
+        var obj1 = {
+            a: 10
+        }
+        var obj2 = {
+            b: 20,
+            c: 30
+        }
+        var obj3 = {
+            d: 40,
+            f: ["hello", "world", true]
+        }
+        Object.assign(obj1,obj2,obj3);
+        obj2.b = 100;
+        obj3.f.push('xxx');
+        console.log(obj1);
+    </script> -->
+
+    <!-- 词典 -->
+    <!-- <input type="text">
+    <div></div>
+    <script>
+        let dictionary = new Map();
+        dictionary.set('张三','sb');
+        let search = document.getElementsByTagName("input")[0];
+        let display = document.getElementsByTagName("div")[0];
+        search.onkeyup = function(){
+            let value = dictionary.get(search.value);
+            if(value){
+                display.innerHTML = value;
+            }else{
+                display.innerHTML = "查无此词";
+            }
+        }
+    </script> -->
+
+    
+</body>
+</html>

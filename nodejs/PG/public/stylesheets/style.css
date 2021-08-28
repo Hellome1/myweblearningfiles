@@ -1,0 +1,71 @@
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #eee;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  transition: .3s;
+  text-decoration: none;
+}
+a:hover {
+  color:rgb(255, 102, 0);
+}
+input { outline: none; padding: 2px 3px;}
+
+#bar { background-color:rgba(0, 247, 255, 0.356); padding: 15px 10px;}
+#bar .container { max-width: 1440px; margin: 0 auto;}
+#bar .container a { padding: 0 5px;}
+#bar .container .wrapper { float: right;}
+
+#article_head {max-width: 1226px; margin: 0 auto; background-color:rgba(255, 0, 64, 0.384);}
+.article {margin: 0 auto; padding: 20px 10px; max-width: 1226px; background-color:rgba(255, 0, 64, 0.384);}
+.article .row { margin: 10px 0;}
+.article .head span,.article .row span{ display: inline-block; width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.article .head span:nth-of-type(3),.article .row span:nth-of-type(3) {
+  width: 200px;
+}
+.article .head span:nth-of-type(4),.article .row span:nth-of-type(4) {
+  width: 200px;
+}
+.article .operate {float: right; padding-right: 20px;}
+.article .pages a { margin: 0 3px;}
+@media screen and (min-width: 1000px) {
+  #article_head { background: none; font-size: 24px;}
+  .article { margin: 30px auto;}
+  .article span { margin: 0 20px;}
+  .article .pages { margin-left: 20px;}
+}
+
+#login { width: 500px; margin: 30px auto;}
+#login .title { background-color: rgba(0, 183, 255, 0.5);
+ height: 50px; line-height: 50px; padding-left: 20px; margin: 0;}
+#login form { background-color: rgba(255, 0, 0, 0.5); padding: 10px;}
+#login form .username { display: block; margin: 0 auto;}
+#login form .password { display: block; margin: 10px auto;}
+#login form .login { display: block; margin: 0 auto;width: 100px; height: 30px; line-height: 30px;}
+#login .question { margin: 0 auto; text-align: center; height: 30px; line-height: 30px; font-size: 12px; background-color: rgba(255, 0, 0, 0.6);}
+#login .question a:hover { color:rgb(0, 110, 255);}
+
+#register { width: 500px; margin: 30px auto;}
+#register .title { background-color: rgba(0, 183, 255, 0.5);
+ height: 50px; line-height: 50px; padding-left: 20px; margin: 0;}
+#register form { background-color: rgba(255, 0, 0, 0.5); padding: 10px;}
+#register form .username { display: block; margin: 0 auto;}
+#register form .password { display: block; margin: 10px auto;}
+#register form .register { display: block; margin: 0 auto;width: 100px; height: 30px; line-height: 30px;}
+#register .question { margin: 0 auto; text-align: center; height: 30px; line-height: 30px; font-size: 12px; background-color: rgba(255, 0, 0, 0.6);}
+#register .question a:hover { color:rgb(0, 110, 255);}
+
+#write { margin: 20px auto; max-width: 800px;}
+#write input { outline: none; padding: 3px 5px;}
+#write .button {margin-top: 5px; font-size: 16px; padding: 5px 15px; float: right; border: none; border-radius: 5px; background-color:rgba(0, 183, 255, 0.5); cursor: pointer;}
+#write .button:hover { background-color:rgba(255, 102, 0, 0.6)}
+
+#detail { max-width: 1226px; margin: 0 auto; padding: 15px 25px;}
+#detail .title { font-size: 16px; font-weight: bold; margin: 5px 0;}
+#detail span { font-size: 12px; padding-right: 5px;}
+#detail p { margin: 10px 5px;}

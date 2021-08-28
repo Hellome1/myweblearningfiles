@@ -1,0 +1,429 @@
+$orange1: #ff6700;
+
+#main {
+    min-height: 800px;
+    .head {
+        border-bottom: 2px solid $orange1;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 102px;
+            .l {
+                .img {
+                    float: left;
+                    width: 48px;
+                    height: 48px;
+                    margin-right: 48px;
+                    cursor: pointer;
+                    background: url(../images/mi-logo.png) no-repeat, url(../images/mi-home.png) no-repeat -80px; 
+                    background-color: #ff6700;
+                    transition: .2s;
+                    &:hover {
+                        background: url(../images/mi-logo.png) no-repeat 80px, url(../images/mi-home.png) no-repeat;
+                        background-color: #ff6700;
+                    }
+                }
+                .info {
+                    float: left;
+                    line-height: 48px;
+                    .title {
+                        font-size: 28px;
+                        font-weight: 400;
+                        color: #424242;
+                    }
+                    .desc {
+                        font-size: 12px;
+                        color: #757575;
+                        margin-left: 15px;
+                    }
+                }
+            }
+            .r {
+                height: 40px;
+                line-height: 40px;
+                color: #b0b0b0;
+                a {
+                    display: inline;
+                    padding: 0 5px;
+                    font-size: 12px;
+                    color: #757575;
+                    transition: .2s;
+                    &:hover {
+                        color: $orange1;
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        background-color: #f5f5f5;
+        padding: 38px 0;
+        user-select: none;
+        .container{
+            .goods_details {
+                margin-bottom: 80px;
+                .goods_list {
+                    background-color: white;
+                    display: flex;
+                    flex-wrap: wrap;
+                    color: #424242;
+                    .check {
+                        width: 110px;
+                        display: flex;
+                        align-items: center;
+                        i {
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            border: 1px solid #e0e0e0;
+                            color: white;
+                            margin: 0 15px 0 24px;
+                            line-height: 18px;
+                            text-align: center;
+                            font-size: 20px;
+                            cursor: pointer;
+                        }
+                        i.active {
+                            border-color: $orange1;
+                            background-color: $orange1;
+                        }
+                    }
+                    .img {
+                        width: 120px;
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            margin-top: 18px;
+                        }
+                    }
+                    .name {
+                        width: 380px;
+                    }
+                    .price {
+                        width: 158px;
+                        text-align: center;
+                    }
+                    .num {
+                        width: 150px;
+                        text-align: center;
+                    }
+                    .total {
+                        width: 201px;
+                        padding-right: 81px;
+                        text-align: right;
+                    }
+                    .action {
+                        width: 80px;
+                        text-align: center;
+                    }
+                }
+                .titles {
+                    height: 70px;
+                    line-height: 70px;
+                    border-bottom: 1px solid #e0e0e0;
+                    padding-right: 26px;
+                }
+                .body {
+                    min-height: 116px;
+                    line-height: 116px;
+                    padding-right: 26px;
+                    padding-bottom: 20px;
+                    .img { cursor: pointer;}
+                    .name {
+                        font-size: 18px;
+                        font-weight: 400;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        cursor: pointer;
+                    }
+                    .price {
+                        font-size: 16px;
+                    }
+                    .num {
+                        display: flex;
+                        align-items: center;
+                        .num_btn {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 150px;
+                            height: 40px;
+                            line-height: 38px;
+                            border: 1px solid #e0e0e0;
+                            .ic {
+                                display: inline-block;
+                                width: 38px;
+                                height: 38px;
+                                font-size: 20px;
+                                color: #757575;
+                                cursor: pointer;
+                                transition: .3s;
+                                &:hover {
+                                    background-color: #e0e0e0;
+                                }
+                            }
+                            input {
+                                width: 72px;
+                                height: 38px;
+                                border-width: 0;
+                                padding: 0;
+                                font-size: 16px;
+                                outline: none;
+                                text-align: center;
+                                color: #424242;
+                            }
+                        }
+                    }
+                    .total {
+                        font-size: 16px;
+                        color: $orange1;
+                    }
+                    .action {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .ic {
+                            width: 24px;
+                            height: 24px;
+                            line-height: 24px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: .3s;
+                            i {
+                                font-size: 16px;
+                                color: #757575;
+                            }
+                            &:hover {
+                                background-color: #e53935;
+                                i {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                    .services_box {
+                        width: 1100px;
+                        height: 100px;
+                        margin-left: 100px;
+                        background-color: #f5f5f5;
+                        display: flex;
+                        line-height: 100px;
+                        color: #424242;
+                        .ser_img {
+                            width: 132px;
+                            img {
+                                width: 60px;
+                                height: 60px;
+                                margin: 20px 0 0 20px;
+                            }
+                        }
+                        .ser_name {
+                            width: 380px;
+                            h3 {
+                                line-height: 16px;
+                                margin-top: 30px;
+                                color: #424242;
+                                font-weight: normal;
+                            }
+                            p {
+                                line-height: 16px;
+                                margin-top: 10px;
+                                font-size: 12px;
+                                color: #757575;
+                            }
+                        }
+                        .ser_price {
+                            width: 158px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                        .ser_num {
+                            width: 150px;
+                            text-align: center;
+                            font-size: 16px;
+                        }
+                        .ser_total {
+                            width: 201px;
+                            padding-right: 81px;
+                            text-align: right;
+                            font-size: 16px;
+                            color: $orange1;
+                        }
+                        .ser_action {
+                            width: 80px;
+                            text-align: center;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .ic {
+                                width: 24px;
+                                height: 24px;
+                                line-height: 24px;
+                                border-radius: 50%;
+                                cursor: pointer;
+                                transition: .3s;
+                                i {
+                                    font-size: 16px;
+                                    color: #757575;
+                                }
+                                &:hover {
+                                    background-color: #e53935;
+                                    i {
+                                        color: white;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .submit {
+                    display: flex;
+                    justify-content: space-between;
+                    background-color: white;
+                    align-items: center;
+                    height: 50px;
+                    margin-top: 20px;
+                    .left_area {
+                        a {
+                            float: left;
+                            margin-left: 32px;
+                            color: #757575;
+                            transition: .3s;
+                            &:hover {
+                                color: $orange1;
+                            }
+                        }
+                        .goods_info {
+                            float: left;
+                            margin-left: 16px;
+                            padding-left: 16px;
+                            border-left: 1px solid #eee;
+                            color: #757575;
+                            span {
+                                color: $orange1;
+                                margin: 2px;
+                            }
+                        }
+                    }
+                    .right_area {
+                        height: 50px;
+                        line-height: 50px;
+                        color: $orange1;
+                        .total{
+                            float: left;
+                            span {
+                                font-size: 30px;
+                            }
+                        }
+                        .pay {
+                            float: left;
+                            width: 202px;
+                            height: 50px;
+                            margin-left: 50px;
+                            font-size: 18px;
+                            color: white;
+                            background-color: $orange1;
+                            transition: .3s;
+                            text-align: center;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #f25807;
+                            }
+                        }
+                    }
+                }
+            }
+            .section2 {
+                margin-top: 42px;
+                position: relative;
+                border-top: 1px solid #e0e0e0;
+                .header {
+                    text-align: center;
+                    h2 {
+                        font-size: 30px;
+                        font-weight: 400;
+                        color: #757575;
+                        position: absolute;
+                        height: 40px;
+                        line-height: 40px;
+                        top: -20px;
+                        left: 372px;
+                        width: 482px;
+                        background-color: #f5f5f5;
+                    }
+                    margin-bottom: 50px;
+                }
+                .goods_list {
+                    ul {
+                        width: 1240px;
+                        li {
+                            float: left;
+                            width: 234px;
+                            height: 300px;
+                            background-color: white;
+                            position: relative;
+                            overflow: hidden;
+                            margin: 14px 14px 0 0;
+                            a {
+                                width: 100%;
+                                height: 100%;
+                                text-align: center;
+                                img {
+                                    width: 140px;
+                                    height: 140px;
+                                    margin: 40px auto 20px;
+                                }
+                                .title {
+                                    color: #333;
+                                    margin: 0 10px 10px;
+                                    height: 18px;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    overflow: hidden;
+                                }
+                                .price {
+                                    margin-bottom: 10px;
+                                    color: $orange1;
+                                }
+                                .thumbs_up {
+                                    color: #757575;
+                                }
+                                .action {
+                                    position: absolute;
+                                    width: 100%;
+                                    bottom: 16px;
+                                    transform: translate3d(0, 200%, 0);
+                                    opacity: 0;
+                                    transition: .3s;
+                                    button {
+                                        width: 120px;
+                                        height: 28px;
+                                        line-height: 28px;
+                                        border: 1px solid $orange1;
+                                        background-color: white;
+                                        color: $orange1;
+                                        cursor: pointer;
+                                        font-size: 12px;
+                                        transition: .2s;
+                                        &:hover {
+                                            color: white;
+                                            background-color: $orange1;
+                                        }
+                                    }
+                                }
+                                &:hover {
+                                    .action{
+                                        opacity: 1;
+                                        transform: translate3d(0,0,0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

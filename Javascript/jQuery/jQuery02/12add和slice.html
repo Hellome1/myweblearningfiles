@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        #div1 {width: 100px; height: 100px; background-color: red;}
+        #div2 {width: 200px; height: 200px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <div>div</div>
+    <span>span</span>
+    <p>p</p>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+    <script>
+        /* 
+            add() 可以将多个选择器拼接在一起
+            slice() slice(start, end) [start, end)
+            获取指定范围内获取到的元素节点
+        */
+
+        /* $("div").css("backgroundColor", "red")
+        .click(function(){
+            alert("单机");
+        })
+        .mouseover(function(){
+            $(this).css("backgroundColor", "orange");
+        })
+        .mouseout(function(){
+            $(this).css("backgroundColor", "blue");
+        })
+
+        $("span").css("backgroundColor", "red")
+        .click(function(){
+            alert("单机");
+        })
+        .mouseover(function(){
+            $(this).css("backgroundColor", "orange");
+        })
+        .mouseout(function(){
+            $(this).css("backgroundColor", "blue");
+        })
+
+        $("ul li").css("backgroundColor", "red")
+        .click(function(){
+            alert("单机");
+        })
+        .mouseover(function(){
+            $(this).css("backgroundColor", "orange");
+        })
+        .mouseout(function(){
+            $(this).css("backgroundColor", "blue");
+        }) */
+
+        // $("div").add("span").add("ul li") // $("div,span,ul li")
+        /* $("div,span,ul li")
+        .css("backgroundColor", "red")
+        .click(function(){
+            alert("单机");
+        })
+        .mouseover(function(){
+            $(this).css("backgroundColor", "orange");
+        })
+        .mouseout(function(){
+            $(this).css("backgroundColor", "blue");
+        }) */
+
+        $("ul li").slice(1, 4).css("backgroundColor", "red");
+    </script>
+</body>
+</html>

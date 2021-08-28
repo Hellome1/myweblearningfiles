@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-1.10.2.min.js"></script>
+    <style>
+        #div1 {width: 100px; height: 100px; background-color: red; border: 1px solid black; padding: 8px; margin: 10px;}
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        // width() innerWidth() outerWidth()
+        /* 
+            offsetWidth width + border + padding
+
+        */
+
+        // alert($("#div1").css("width")); //"100px"字符串
+        alert($("#div1").width());
+        alert($("#div1").innerWidth()); // width + padding
+        // alert($("#div1").outerWidth()); // width + border + padding
+        alert($("#div1").outerWidth(true)); // width + border + padding + margin
+    </script>
+</body>
+</html>

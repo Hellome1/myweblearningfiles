@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <weixinauthor></weixinauthor>
+        <weixinuser></weixinuser>
+    </div>
+
+    <script>
+        let bus = new Vue();
+
+        Vue.component("weixinauthor",{
+            template: `
+                <div>
+                    <input type="text" ref="mytext">
+                    <button @click="handlePub">发布</button>
+                </div>
+            `,
+            methods:{
+                handlePub(){
+                    bus.$emit("weixinmessage", this.$refs.mytext.value);
+                }
+            }
+        })
+
+        Vue.component("weixinuser",{
+            template: `
+                <div>
+                    微信用户
+                </div>
+            `,
+            mounted(){
+                bus.$on("weixinmessage", (data) => {
+                    console.log("收到了消息", data)
+                })
+            }
+        })
+
+        let vm = new Vue({
+            el:"#box"
+        })
+    </script>
+</body>
+</html>

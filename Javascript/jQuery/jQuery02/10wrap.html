@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+</head>
+<body>
+    <div>
+        <span>span</span>
+    </div>
+    <span>span</span>
+    <span>span</span>
+    <span>span</span>
+    <script>
+        /* 
+            wrap() 每一个获取到的元素都单独包装
+            wrapAll() 整体包装
+            wrapInner() 内部包装
+            unwrap()    没有参数 删除上面一层包装，不包括body节点
+        */
+
+        // $("span").wrap("<p class='box' title='hello'></p>");
+        // $("span").wrapAll("<p class='box' title='hello'></p>");
+        // $("span").wrapAll("<p class='box' title='hello'></p>");
+        // $("span").wrapInner("<p class='box' title='hello'></p>");
+        $("span").unwrap();
+    </script>
+</body>
+</html>
