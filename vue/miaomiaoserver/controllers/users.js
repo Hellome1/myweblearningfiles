@@ -36,6 +36,7 @@ var login = async (req, res, next) => {
       })
     }
   } else {
+    console.log('false')
     res.send({
       msg: '登录失败',
       code: -1

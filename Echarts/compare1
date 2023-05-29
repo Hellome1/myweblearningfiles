@@ -1,0 +1,202 @@
+[
+    {
+        "deptNum": 40,
+        "deptDesc": "华西院区产科医疗单元"
+    },
+    {
+        "deptNum": 34,
+        "deptDesc": "锦江院区产科医疗单元"
+    },
+    {
+        "deptNum": 27,
+        "deptDesc": "华西院区小儿血液科医疗单元"
+    },
+    {
+        "deptNum": 22,
+        "deptDesc": "华西院区病员中心"
+    },
+    {
+        "deptNum": 15,
+        "deptDesc": "锦江院区妇科门诊"
+    },
+    {
+        "deptNum": 15,
+        "deptDesc": "锦江院区生殖内分泌科医疗单元"
+    },
+    {
+        "deptNum": 11,
+        "deptDesc": "华西院区妇科医疗单元"
+    },
+    {
+        "deptNum": 10,
+        "deptDesc": "锦江院区妇科医疗单元"
+    },
+    {
+        "deptNum": 9,
+        "deptDesc": "锦江院区超声科"
+    },
+    {
+        "deptNum": 9,
+        "deptDesc": "锦江院区小儿外科医疗单元"
+    },
+    {
+        "deptNum": 7,
+        "deptDesc": "华西院区妇科一区护理单元（南8楼）"
+    },
+    {
+        "deptNum": 7,
+        "deptDesc": "锦江院区日间手术护理单元"
+    },
+    {
+        "deptNum": 6,
+        "deptDesc": "锦江院区急诊妇产科"
+    },
+    {
+        "deptNum": 5,
+        "deptDesc": "华西院区妇科门诊"
+    },
+    {
+        "deptNum": 5,
+        "deptDesc": "锦江院区日间手术医疗单元"
+    },
+    {
+        "deptNum": 5,
+        "deptDesc": "锦江院区生殖男科门诊"
+    },
+    {
+        "deptNum": 4,
+        "deptDesc": "华西院区理疗室"
+    },
+    {
+        "deptNum": 4,
+        "deptDesc": "锦江院区产科一区护理单元（7楼）"
+    },
+    {
+        "deptNum": 4,
+        "deptDesc": "锦江院区麻醉科医疗单元"
+    },
+    {
+        "deptNum": 4,
+        "deptDesc": "锦江院区小儿感染科医疗单元"
+    },
+    {
+        "deptNum": 3,
+        "deptDesc": "华西院区小儿肾脏科医疗单元"
+    },
+    {
+        "deptNum": 3,
+        "deptDesc": "锦江院区生殖医学科（不孕不育及试管婴儿）门诊"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "华西院区小儿消化科医疗单元"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "华西院区小儿遗传代谢内分泌科医疗单元"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "华西院区新生儿科医疗单元"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区产科二区护理单元（8楼）"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区妇科特需护理单元（15楼）"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区妇科一区护理单元（13楼）"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区妇科肿瘤放化疗科医疗单元"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区PICU医疗单元"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区新生儿科护理单元（11楼）"
+    },
+    {
+        "deptNum": 2,
+        "deptDesc": "锦江院区病员中心"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "华西院区产科二区护理单元（北5楼）"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "产科6楼"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "华西院区妇产科ICU护理单元"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "华西院区PICU医疗单元"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "华西院区生殖医学科（不孕不育及试管婴儿）门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "华西院区小儿消化科门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江特需门诊儿科"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江特需门诊妇科"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区产科LDR护理单元（6楼）"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区妇产科ICU医疗单元"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区妇科二区护理单元（14楼）"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区妇科肿瘤放化疗科门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区辅助助孕监测门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区生殖内分泌科门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区生殖男科医疗单元"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区特需遗传咨询门诊"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区小儿心血管科医疗单元"
+    },
+    {
+        "deptNum": 1,
+        "deptDesc": "锦江院区新生儿科重症监护室护理单元（10楼）"
+    }
+]

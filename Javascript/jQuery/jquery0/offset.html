@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        .container {position: relative;}
+        div.container {width: 200px; height: 200px; background-color: pink;}
+        .inner { width: 100px; height: 100px; border: 1px solid black; margin: 10px; overflow: auto;}
+        .innest {width: 200px; height: 200px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <div class="innest"></div>
+        </div>
+    </div>
+    <script>
+        // console.log($("div").offset());
+        // $("div").offset(function(ind, coo){
+        //     console.log(coo);
+        //     let newO = new Object;
+        //     newO.left = coo.left + 10;
+        //     newO.top = coo.top + 20;
+        //     console.log(newO);
+        //     return newO;
+        // });
+
+        // $(".inner").offsetParent().prepend("The closest parent that is positioned.");
+
+        // console.log($(".innest").position());
+
+        // console.log($(".inner").scrollLeft());
+        // $(".inner").scrollLeft(50);
+
+        // console.log($(".inner").scrollTop());
+        // $(".inner").scrollTop(50);
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const nodemailer = require('nodemailer')
 
-mongoose.connect('mongodb://admin:admin888@localhost:port/miaomiao', { useNewUrlParser: true, useUnifiedTopology: true}, function (err) {
+mongoose.connect('mongodb://admin:admin888@localhost/miaomiao', { useNewUrlParser: true, useUnifiedTopology: true}, function (err) {
     if (err) {
         console.log('错误');
         throw err;

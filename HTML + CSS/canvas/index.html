@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="height: 3000px;">
+  <div class="container">
+    <canvas id="canv" width="500" height="300" style=" border: 1px solid black;"></canvas>
+  </div>
+  <script>
+    let canv = document.getElementById('canv');
+    let c = canv.getContext('2d');
+
+    // c.fillStyle = '#FF0000';
+    // c.fillRect(10, 10, 100, 100);
+
+    // c.moveTo(0, 0);
+    // c.lineTo(60, 0);
+    // c.lineTo(60, 30);
+    // c.lineTo(0, 30);
+    // c.lineTo(0, 0);
+    // c.stroke();
+    // c.font = '30px Arial';
+    // let text = '城府';
+    // c.fillText(text, 0, 27);
+    // console.log(c.measureText(text));
+    // c.fillText(c.measureText(text).width, 20, 100);
+
+    let arr = [
+      {x: 2, y: 1, w: 496, h: 298, text: ''},
+      {x: 0, y: 20, w: 30, h: 16, text: '吾日'},
+      {x: 50, y: 20, w: 50, h: 16, text: '吾日三醒吾身'},
+      {x: 100, y: 20, w: 80, h: 100, text: '有良田美池桑竹之属'},
+      {x: 10, y: 100, w: 150, h: 130, text: 'Hello'}
+    ]
+
+    c.textBaseline = 'top';
+
+    for (let i = 0; i < arr.length; i++) {
+      c.font = '16px Arial';
+      let txts = arr[i].text.split(''),
+        textWidth = c.measureText(arr[i].text).width,
+        minPadding = 3,
+        paddingX = (arr[i].w - textWidth) / 2,
+        singleTextHeight = 16,
+        paddingY = (arr[i].h - singleTextHeight) / 2,
+        txt = '',
+        finalTxts = [],
+        textHeight = singleTextHeight;
+      if (paddingX < minPadding) {
+        for (let j = 0; j < txts.length; j++) {
+          let trytxt = txt;
+          trytxt += txts[j];
+          let trytxtWidth = c.measureText(trytxt).width,
+            trytxtPadding = (arr[i].w - trytxtWidth) / 2;
+          if (trytxtPadding < minPadding) {
+            if (txt) j--;
+            finalTxts.push(txt);
+            textHeight += singleTextHeight;
+            txt = '';
+          } else if (j === txts.length - 1 && j) {
+            txt += txts[j];
+            finalTxts.push(txt);
+            txt = '';
+          } else {
+            txt += txts[j];
+          }
+
+          let txtWidth = c.measureText(txt).width,
+              txtPadding = (arr[i].w - txtWidth) / 2;
+          if (paddingX > 0) {
+            paddingX = Math.min(paddingX, txtPadding);
+          } else {
+            paddingX = txtPadding;
+          }
+        }
+      }
+      let height = Math.max(arr[i].h, textHeight + minPadding * 2);
+      let newPadding = (height - textHeight) / 2;
+      paddingY = paddingY > 0 ? paddingY : 0;
+      if (newPadding > 0) {
+        paddingY = Math.floor(newPadding);
+      }
+      if (finalTxts.length) {
+        for (let j = 0; j < finalTxts.length; j++) {
+          c.fillText(finalTxts[j], arr[i].x + paddingX, arr[i].y + paddingY + 2 + j * singleTextHeight);
+        }
+      } else {
+        c.fillText(arr[i].text, arr[i].x + paddingX, arr[i].y + paddingY + 2);
+      }
+
+      c.moveTo(arr[i].x, arr[i].y);
+      c.lineTo(arr[i].x + arr[i].w, arr[i].y);
+      c.lineTo(arr[i].x + arr[i].w, arr[i].y + height);
+      c.lineTo(arr[i].x, arr[i].y + height);
+      c.lineTo(arr[i].x, arr[i].y);
+      c.stroke();
+    }
+
+    // function drawFrameWithText(canvasObj, left_top_position, width, height, text) {
+    //   let height_1 = drawText(canvasObj, left_top_position, width, height);
+    //   drawFrame(canvasObj, left_top_position, width, height_1);
+    // }
+    // function drawFrame(canvasObj, left_top_position, width, height) {
+    //   let x = left_top_position.x,
+    //     y = left_top_position.y;
+    //   canvasObj.moveTo(x, y);
+    //   canvasObj.lineTo(x + width, y);
+    //   canvasObj.lineTo(x + width, y + height);
+    //   canvasObj.lineTo(x, y + height);
+    //   canvasObj.lineTo(x, y);
+    // }
+    // function drawText(canvasObj, ) {
+    //   let textWidth = 
+    // }
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "echartslearn",
+  "version": "1.0.0",
+  "description": "learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "czy",
+  "license": "ISC",
+  "dependencies": {
+    "echarts": "^5.2.2"
+  }
+}

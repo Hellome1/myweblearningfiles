@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-1.10.2.min.js"></script>
+    <style>
+        #div1 { width: 200px; height: 200px; border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <p>d</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <!-- <img src="hello.png" alt=""> -->
+    <form action="">
+        <input type="text" id="input1">
+    </form>
+    <script>
+        // $("#div1").bind("click", { myName: "funcC"}, function(ev){
+        //     console.log(ev.data.myName);
+        // })
+
+        // $("#div1").bind("myEvent", function(){
+        //     console.log("myEvent");
+        // })
+        // $(document).click(function(){
+        //     $("#div1").trigger("myEvent");
+        // })
+
+        // $("#input1").blur({ eventData: "eventData msg"},function(ev){
+        //     console.log("blur", ev.data.eventData);
+        // }).blur();
+        // $("#input1").change({ eventData: "eventData msg"},function(ev){
+        //     console.log("change", ev.data.eventData);
+        // }).change();
+        // $("#input1").contextmenu({ eventData: "eventData msg"},function(ev){
+        //     console.log("contextmenu", ev.data.eventData);
+        // }).contextmenu();
+        // $("#input1").dblclick({ eventData: "eventData msg"},function(ev){
+        //     console.log("dblclick", ev.data.eventData);
+        // }).dblclick();
+    </script>
+    <script>
+        // $("#div1").delegate("li", "click", function(ev){
+        //     console.log("li");
+        //     ev.stopPropagation();
+        // })
+        // $("#div1").delegate("ul", "click", function(ev){
+        //     console.log("ul");
+        //     ev.stopPropagation();
+        // })
+        // $("#div1").on("click", "li", function(ev){
+        //     console.log("li");
+        // });
+
+        // $("p").click(function(){
+        //     console.log("P");
+        // })
+        // $("p").die(); // before 1.7
+        // $("p").off(); // after 1.7
+
+        // $("img").error(function(){
+        //     alert("error");
+        // })
+
+        // $("#div1").click(function(ev){
+        //     if(ev.currentTarget === this) console.log("div1");
+        // })
+        // $("p").click(function(ev){
+        //     if(ev.currentTarget === this) console.log("p");
+        // })
+
+        // $("#div1").click({newData: "I THINK"}, function(ev){
+        //     console.log(ev.data);
+        // })
+
+        // $("#div1").on("click", "li", "tata", function(ev){
+        //     // console.log("click", ev.data);
+        //     $(ev.delegateTarget).css("backgroundColor", "#985749");
+        // })
+
+        // $("#div1").on("click", "li", "tata", function(ev){
+        //     console.log(ev.isDefaultPrevented());
+        //     ev.preventDefault();
+        //     console.log(ev.isDefaultPrevented());
+        // })
+
+        // $( "#div1" ).click(function( ev ) {
+        //     console.log(ev.isImmediatePropagationStopped());
+        //     ev.stopImmediatePropagation();
+        //     console.log(ev.isImmediatePropagationStopped());
+        // });
+
+        // $( "#div1" ).click(function( ev ) {
+        //     console.log(ev.isPropagationStopped());
+        //     ev.stopPropagation();
+        //     console.log(ev.isPropagationStopped());
+        // });
+
+        // $("#div1").click(function(ev){
+        //     console.log("click", ev.metaKey);
+        // })
+
+        // $("#div1").click(function(ev){
+        //     $("p").trigger("rabbit.BB");
+        // })
+        // $("p").on("rabbit.BB", function(ev){
+        //     console.log(ev.namespace);
+        // })
+
+        // $(document.body).css("height", 3000).on("click", function(ev){
+        //     console.log("X", ev.pageX, "Y", ev.pageY);
+        // })
+
+        // $("form").on("submit", function(ev){
+        //     ev.preventDefault();
+        // }).submit();
+
+        // $("#div1").on("mouseover", function(ev){
+        //     console.log("mousein", ev.relatedTarget);
+        // })
+
+        // let i = 0;
+        // $("#div1").on("click", function(ev){
+        //     i++;
+        //     console.log("mousein", ev.result);
+        //     return i; // undefined;
+        // })
+        // $("#div1").on("click", function(ev){
+        //     i++;
+        //     console.log("mousein", ev.result);
+        //     return i; // i
+        // })
+
+        // $( "p" ).click(function( event ) {
+        //     event.stopImmediatePropagation();
+        // });
+        // $( "p" ).click(function( event ) {
+        //     // This function won't be executed
+        //     $( this ).css( "background-color", "#f00" );
+        // });
+
+        // $("#div1").click(function(){
+        //     console.log("div");
+        // })
+        // $("li").click(function(ev){
+        //     ev.stopPropagation();
+        // })
+
+        // $("#div1").click(function(ev){
+        //     console.log(ev.target);
+        // })
+
+        // $("#div1").click(function(ev){
+        //     console.log(ev.timeStamp);
+        // })
+
+        // $("#div1").on("click mouseover", function(ev){
+        //     console.log(ev.type);
+        // })
+
+        // $("#input1").on("keyup click", function(ev){
+        //     console.log(ev.which);
+        // })
+    </script>
+    <script>
+        // $("input").focus(function(){
+        //     console.log("focus");
+        // }).focus();
+        // $("input").focusin(function(){
+        //     console.log("focusin");
+        // }).focusin();
+        // $("input").focusout(function(){
+        //     console.log("focusout");
+        // }).blur(function(){
+        //     console.log("blur");
+        // })
+        // .focusout();
+        
+        // $("#div1").hover(function(){
+        //     console.log("hover");
+        // })
+
+        // The $.holdReady() method allows the caller to delay jQuery's ready event.
+        // $.holdReady( true );
+        // $.getScript( "myplugin.js", function() {
+        //     $.holdReady( false );
+        // });
+
+        // let bear = {
+        //     sound: "woooo",
+        //     action: function(){
+        //         console.log(this, this.sound);
+        //     }
+        // }
+        // $("#div1")
+        // .click($.proxy(bear.action, bear))
+        // .click(bear.action);
+
+        // Listen for document ready using jQuery.when.
+        // $.when( $.ready ).then(function() {
+        //     // Document is ready.
+        // });
+        // Typical usage involving another promise, using jQuery.when.
+        // $.when(
+        //     $.getJSON( "ajax/test.json" ),
+        //     $.ready
+        // ).done(function( data ) {
+        //     // Document is ready.
+        //     // Value of test.json is passed as `data`.
+        // });
+
+        // $("#input1").keydown(function(){
+        //     console.log("keydown");
+        // }).keydown();
+        // $("#input1").keypress(function(){
+        //     console.log("keypress");
+        // }).keypress();
+        // $("#input1").keyup(function(){
+        //     console.log("keyup");
+        // }).keyup();
+
+        // $(window).load(function(){
+        //     console.log("loaded");
+        // })
+
+        // $("#div1").mousedown(function(){
+        //     console.log("mousedown");
+        // }).mousedown();
+        // $("#div1").mouseenter(function(){
+        //     console.log("mouseenter");
+        // }).mouseenter();
+        // $("#div1").mouseleave(function(){
+        //     console.log("mouseleave");
+        // }).mouseleave();
+        // $("#div1").mousemove(function(){
+        //     console.log("mousemove");
+        // }).mousemove();
+        // $("#div1").mouseout(function(){
+        //     console.log("mouseout");
+        // }).mouseout();
+        // $("#div1").mouseover(function(){
+        //     console.log("mouseover");
+        // }).mouseover();
+        // $("#div1").mouseup(function(){
+        //     console.log("mouseup");
+        // }).mouseup();
+
+        // $("#div1").mouseup(function(){
+        //     console.log("mouseup");
+        // }).mouseup().off();
+
+        // $("#div1").on("mouseup",function(){
+        //     console.log("mouseup");
+        // })
+        // $("#div1").one("mouseup",function(){
+        //     console.log("mouseup");
+        // })
+        // $("#div1").ready(function(){
+        //     console.log("div1 ready");
+        // })
+        // $(window).resize(function(){
+        //     console.log("resize");
+        // }).resize();
+
+        // $(document).ready(function(){
+        //     $(document.body).css("height", 3000);
+        //     $(window).scroll(function(){
+        //         console.log("scroll");
+        //     })
+        // })
+
+        // $("input").val("newval").select(function(){
+        //     console.log("select");
+        // }).select();
+
+        // $("form").submit(function(ev){
+        //     console.log("submit");
+        //     ev.preventDefault();
+        // }).submit();
+
+        // $(document).click(function(){
+        //     $("#div1").toggle(function(){
+        //         console.log("toggle");
+        //     })
+        // })
+
+        // $("#div1").click(function(){
+        //     console.log("click");
+        // }).trigger("click");
+
+        // $("#input1").focus(function(){
+        //     console.log("focus");
+        // })
+        // // .trigger("focus");
+        // .triggerHandler("focus");
+
+        // function talk(){
+        //     console.log("talk");
+        // }
+        // function run(){
+        //     console.log("run");
+        // }
+        // $("#div1").on("click", talk)
+        // .on("click", run)
+        // .unbind();
+
+        // function specificFunc(){
+        //     console.log("click");
+        // }
+        // $("#div1").delegate("li", "click", specificFunc)
+        // // .undelegate();
+        // .undelegate("li", "click", specificFunc);
+        // }) 
+    </script>
+</body>
+</html>

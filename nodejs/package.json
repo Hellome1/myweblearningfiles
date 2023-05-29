@@ -16,6 +16,8 @@
     "socket.io": "^3.1.1"
   },
   "dependencies": {
-    "multiparty": "^4.2.2"
+    "body-parse": "^0.1.0",
+    "multiparty": "^4.2.2",
+    "superagent": "^8.0.9"
   }
 }
