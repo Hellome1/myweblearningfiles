@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/node_modules/react/umd/react.development.js" type="text/javascript"></script>
+  <script src="/node_modules/react-dom/umd/react-dom.development.js" type="text/javascript"></script>
+  <script src="/node_modules/babel-standalone/babel.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class Count extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          count: 0
+        }
+        this.addOne = this.addOne.bind(this);
+        this.destroy = this.destroy.bind(this);
+        this.force = this.force.bind(this);
+        console.log('constructor');
+      }
+
+      addOne() {
+        const { count } = this.state;
+        this.setState({
+          count: count + 1
+        })
+      }
+
+      destroy() {
+        ReactDOM.unmountComponentAtNode(document.getElementById('app'))
+      }
+
+      force() {
+        this.forceUpdate();
+      }
+
+      static getDerivedStateFromProps(props, state) {
+        // 罕见，当组件状态只取决于props时使用
+        console.log('getDerivedStateFromProps');
+        // console.log(state);
+        // console.log(props);
+        return null;
+      }
+
+      // UNSAFE_componentWillMount() {
+      //   console.log('componentWillMount')
+      // }
+
+      componentDidMount() {
+        console.log('componentDidMount')
+      }
+
+      shouldComponentUpdate() {
+        console.log('shouldComponentUpdate');
+        return true; // 设为false阻止更新
+      }
+
+      // UNSAFE_componentWillUpdate() {
+      //   console.log('componentWillUpdate');
+      // }
+
+      getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log(prevProps, prevState);
+        console.log('getSnapshotBeforeUpdate');
+        return { c: 1 };
+      }
+
+      componentDidUpdate(prevProps, prevState, snapshotvalue) {
+        console.log(prevProps, prevState, snapshotvalue);
+        console.log('componentDidUpdate');
+      }
+
+      componentWillUnmount() {
+        console.log('componentWillUnmount');
+      }
+
+      render() {
+        console.log('render');
+        return (
+          <div>
+            <span className="showCount">计数：{this.state.count} </span>
+            <button onClick={this.addOne}>+1</button>
+            <button onClick={this.destroy}>清除组件</button>
+            <button onClick={this.force}>强制更新</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Count name="ct" />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
