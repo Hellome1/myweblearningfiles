@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/node_modules/react/umd/react.development.js" type="text/javascript"></script>
+  <script src="/node_modules/react-dom/umd/react-dom.development.js" type="text/javascript"></script>
+  <script src="/node_modules/babel-standalone/babel.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class Form extends React.Component {
+
+        state = {
+          username: '',
+          password: ''
+        }
+
+        handleSubmit = (event) => {
+            event.preventDefault();
+            const {username, password} = this.state;
+            console.log('username', username);
+            console.log('password', password);
+        }
+
+        saveUsername = (event) => {
+          this.setState({
+            username: event.target.value
+          })
+        }
+
+        savePassword = (event) => {
+          this.setState({
+            password: event.target.value
+          });
+        }
+
+        render() {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    用户名：<input type="text" name="username" onChange={this.saveUername} />
+                    密码：   <input type="password" name="password" onChange={this.savePassword} />
+                    <button>登录</button>
+                </form>
+            )
+        }
+    }
+
+    ReactDOM.render(<Form />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
