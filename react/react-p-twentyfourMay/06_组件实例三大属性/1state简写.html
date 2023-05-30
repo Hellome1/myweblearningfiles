@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/node_modules/react/umd/react.development.js" type="text/javascript"></script>
+  <script src="/node_modules/react-dom/umd/react-dom.development.js" type="text/javascript"></script>
+  <script src="/node_modules/babel-standalone/babel.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class Weather extends React.Component {
+        // 会往实例对象赋值一个属性
+        // 初始化状态
+        state = {
+            weather: '热'
+        }
+        render() {
+            const { weather } = this.state;
+            return (
+                <div>
+                    <h1 onClick={this.change}>今天天气{weather}</h1>
+                </div>
+            )
+        }
+
+        // 利用箭头函数 this 会向上查找
+        // 自定义方法
+        change = () => {
+            this.setState({
+                weather: this.state.weather === '冷' ? '热' : '冷'
+            })
+        }
+    }
+    ReactDOM.render(<Weather />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>

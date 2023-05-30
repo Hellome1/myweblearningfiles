@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/node_modules/react/umd/react.development.js" type="text/javascript"></script>
+  <script src="/node_modules/react-dom/umd/react-dom.development.js" type="text/javascript"></script>
+  <script src="/node_modules/babel-standalone/babel.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class Weather extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                weather: '热'
+            };
+            // 这里实例赋值一个强制绑定了 this 的方法
+            this.change = this.change.bind(this);
+        }
+        change() {
+            // 该方法不是直接实例调用，而是 dom 调用，又 babel 类方法默认开启严格模式，this 如果不处理默认为 undefind
+            // react 状态不能直接更改，需要借助内置 api
+            this.setState({
+                weather: this.state.weather === '冷' ? '热' : '冷'
+            })
+        }
+        render() {
+            const { weather } = this.state;
+            return (
+                <div>
+                    <h1 onClick={this.change}>今天天气{weather}</h1>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(<Weather />, document.getElementById('app'));
+  </script>
+</body>
+
+</html>
