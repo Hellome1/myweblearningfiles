@@ -80,7 +80,124 @@
       }
     }
 
-    ReactDOM.render(<Count />, document.getElementById('app'))
+    // ReactDOM.render(<Count />, document.getElementById('app'))
+    class A extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          car: 'jike'
+        }
+        this.changeCar = this.changeCar.bind(this);
+        console.log('A-constructor');
+      }
+
+      destroy() {
+        ReactDOM.unmountComponentAtNode(document.getElementById('app'))
+      }
+
+      force() {
+        this.forceUpdate();
+      }
+
+      UNSAFE_componentWillMount() {
+        console.log('A-componentWillMount')
+      }
+
+      componentDidMount() {
+        console.log('A-componentDidMount')
+      }
+
+      shouldComponentUpdate() {
+        console.log('A-shouldComponentUpdate');
+        return true; // 设为false阻止更新
+      }
+
+      UNSAFE_componentWillUpdate() {
+        console.log('A-componentWillUpdate');
+      }
+
+      componentDidUpdate() {
+        console.log('A-componentDidUpdate');
+      }
+
+      componentWillUnmount() {
+        console.log('A-componentWillUnmount');
+      }
+
+      changeCar() {
+        this.setState({
+          car: 'newcar'
+        })
+      }
+
+      render() {
+        console.log('A-render')
+        return (
+          <div>
+            <span>父组件</span>
+            <button onClick={this.changeCar}>改变车</button>
+            <button onClick={this.destroy}>清除A</button>
+            <B carname={this.state.car} />
+          </div>
+        )
+      }
+    }
+    class B extends React.Component {
+      constructor(props) {
+        super(props);
+        this.destroy = this.destroy.bind(this);
+        console.log('B-constuctor');
+      }
+
+      UNSAFE_componentWillReceiveProps() {
+        console.log('B-componentWillReceiveProps');
+      }
+
+      destroy() {
+        ReactDOM.unmountComponentAtNode(document.getElementById('app'))
+      }
+
+      force() {
+        this.forceUpdate();
+      }
+
+      UNSAFE_componentWillMount() {
+        console.log('B-componentWillMount')
+      }
+
+      componentDidMount() {
+        console.log('B-componentDidMount')
+      }
+
+      shouldComponentUpdate() {
+        console.log('B-shouldComponentUpdate');
+        return true; // 设为false阻止更新
+      }
+
+      UNSAFE_componentWillUpdate() {
+        console.log('B-componentWillUpdate');
+      }
+
+      componentDidUpdate() {
+        console.log('B-componentDidUpdate');
+      }
+
+      componentWillUnmount() {
+        console.log('B-componentWillUnmount');
+      }
+
+      render() {
+        console.log('B-render');
+        return (
+          <div>
+            <span>接收到的车: {this.props.carname}</span>
+            <button onClick={this.destroy}>清除B</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<A />, document.getElementById('app'))
   </script>
 </body>
 

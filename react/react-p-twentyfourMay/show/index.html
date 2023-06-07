@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/node_modules/react/umd/react.development.js" type="text/javascript"></script>
+  <script src="/node_modules/react-dom/umd/react-dom.development.js" type="text/javascript"></script>
+  <script src="/node_modules/babel-standalone/babel.js" type="text/javascript"></script>
+  <style>
+    .newsList {
+      margin: 0;
+      padding: 0;
+      height: 210px;
+      width: 100px;
+      background-color: #eee;
+      overflow: auto;
+      list-style: none;
+    }
+
+    .newsItem {
+      margin: 0;
+      padding: 0;
+      height: 30px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class NewsList extends React.Component {
+      state = { newsArr: [] }
+
+      componentDidMount() {
+        // setInterval(() => {
+        //   const { newsArr } = this.state;
+        //   const news = '新闻' + (newsArr.length + 1);
+        //   this.setState({
+        //     newsArr: [news, ...newsArr]
+        //   })
+        // }, 500)
+      }
+
+      // getSnapshotBeforeUpdate() {
+      //   console.log(this.refs.list.scrollHeight);
+      //   return this.refs.list.scrollHeight;
+      // }
+
+      // componentDidUpdate(prevProps, prevState, height) {
+      //   // this.refs.list.scrollTop += this.refs.list.scrollTop - height;
+      // }
+
+      render() {
+        const { newsArr } = this.state;
+        return (
+          <ul className="newsList" ref="list">
+            {newsArr.map((itm, index) => <li key={itm} className="newsItem">{itm}</li>)}
+          </ul>
+        )
+      }
+    }
+
+    ReactDOM.render(<NewsList />, document.getElementById('app'))
+  </script>
+</body>
+
+</html>
