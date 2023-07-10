@@ -1,0 +1,47 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "id": "1",
+      "menuCode": "systemManage",
+      "menuDesc": "系统管理",
+      "type": "menu",
+      "component": "",
+      "route": "",
+      "limits": "",
+      "icon": "systemManage.svg",
+      "menuOrder": "1",
+      "creator": "admin",
+      "children": [
+        {
+          "id": "101",
+          "menuCode": "menuManage",
+          "menuDesc": "菜单管理",
+          "type": "menu",
+          "component": "Layout/systemManage/MenuManage",
+          "route": "systemManage/menuManage",
+          "limits": "",
+          "icon": "menuManage.svg",
+          "menuOrder": "2",
+          "creator": "admin",
+          "children": []
+        },
+        {
+          "id": "102",
+          "menuCode": "roleManage",
+          "menuDesc": "角色管理",
+          "type": "menu",
+          "component": "Layout/systemManage/RoleManage",
+          "route": "systemManage/roleManage",
+          "limits": "",
+          "icon": "roleManage.svg",
+          "menuOrder": "3",
+          "creator": "admin",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "msg": "请求成功",
+  "total": 1
+}

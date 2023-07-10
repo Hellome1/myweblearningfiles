@@ -1,0 +1,23 @@
+/* ** 颜色 ** */
+$primary-color: #00b96b; // 主颜色 - 覆盖antd主题颜色
+$primary-change-bg-color: repeating-linear-gradient(135deg, #ccc 0px, #ddd 700px); // 主渐变背景
+$highlight-danger: rgb(254, 83, 83);
+
+$dark-bg-color: #eee; //背景色-深
+$darker-bg-color: #ccc; //背景色-较深
+$darkest-bg-color: #aaa; //背景色-最深
+
+$light-bg-color: #fff; //背景色-浅
+
+$sidebar-dark: #001529; //侧边栏黑色
+$slot-color: white; //插槽颜色
+
+$border1: 1px solid #eee; // 边框一
+/* -- 颜色 -- */
+
+/* ** 字体大小 ** */
+$xs-fs: 12px;
+$s-fs: 14px;
+$m-fs: 16px;
+$l-fs: 18px;
+/* -- 字体大小 -- */

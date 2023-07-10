@@ -1,0 +1,119 @@
+.header-wrapper {
+
+  .header {
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: $border1;
+  
+    .header-inner {
+      flex-grow: 1;
+      .user-info {
+        float: right;
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+  
+        > *:not(:last-child) {
+          margin-right: 10px;
+        }
+        .slogan {
+          font-size: $s-fs;
+          .name {
+            color: $primary-color;
+            font-size: $m-fs;
+          }
+        }
+        .avatar-group {
+          position: relative;
+  
+          .img-cliper {
+            width: 50px; 
+            height: 50px;
+            border: 3px solid $primary-color;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            vertical-align: middle;
+            border-radius: 3px;
+            img {
+              position: relative;
+              height: 50px;
+            }
+          }
+          
+          .avatar-fns-container {
+            position: absolute;
+            top: 50px;
+            right: -10px;
+            padding-bottom: 10px;
+  
+            .avatar-fns {
+              position: relative;
+              top: 10px;
+              padding: 8px 10px;
+              border: 1px solid $dark-bg-color;
+              background-color: $light-bg-color;
+    
+              &::before {
+                content: '';
+                display: block;
+                background-color: inherit;
+                position: absolute;
+                top: -5px;
+                right: 20px;
+                z-index: 1;
+                width: 10px;
+                height: 10px;
+                transform: rotateZ(45deg);
+                border-top: 1px solid $dark-bg-color;
+                border-left: 1px solid $dark-bg-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .header-remain-area {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 5px;
+    background-color: $light-bg-color;
+    box-shadow: 1px 1px 8px rgb(195, 195, 195);
+    text-align: left;
+
+    .header-tabs-itm {
+      padding: 3px 10px 3px 15px;
+      margin-left: 3px;
+      border: $border1;
+      font-size: $m-fs;
+      user-select: none;
+      cursor: pointer;
+
+      &.active {
+        background-color: $dark-bg-color;
+      }
+      .routine-dot {
+        width: 8px;
+        border: $border1;
+        border-radius: 50%;
+        vertical-align: unset;
+        box-shadow: 0px 0px 2px #000;
+      }
+      .tabs-close-btn {
+        margin-left: 5px;
+        cursor: pointer;
+        transition: color .3s;
+        font-size: $xs-fs;
+        vertical-align: unset;
+
+        &:hover {
+          color: $highlight-danger;
+        }
+      }
+    }
+  }
+}
