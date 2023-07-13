@@ -1,32 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
-  <button onclick="sendTest()">发送测试</button>
+  <button onclick="sendCreate()">创建测试数据</button><br/>
+  <button onclick="read()">获取数据</button><br>
+  <button onclick="del()">删除数据</button><br>
+  <button onclick="update()">更新数据</button><br>
   <script>
-    function sendTest() {
+    // const url = 'http://127.0.0.1:3000/create';
+    function _XHR({ method = 'GET', url, asyncFlag = false, headers, body }) {
       const xhr = new XMLHttpRequest();
-      const url = 'http://127.0.0.1:3000/create';
       let res = '';
-      xhr.open('GET', url, false);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      let postbody = [
-        {
-          text: 'hello'
-        }
-      ];
-      xhr.onreadystatechange = function() {
-        if (xhr.status === 200) {
-          res = xhr.responseText;
-          debugger;
+      xhr.open(method, url, asyncFlag);
+      if (headers) {
+        for (var k in headers) {
+          xhr.setRequestHeader(k, headers[k]);
         }
       }
-      xhr.send(JSON.stringify(postbody));
+      xhr.onreadystatechange = function () {
+        if (xhr.status === 200) {
+          res = xhr.responseText;
+        }
+      }
+      xhr.send(JSON.stringify(body));
+      return res;
+    }
+
+    function sendCreate() {
+      const opt = {
+        url: 'http://127.0.0.1:3000/menus/create',
+        method: 'POST',
+        body: {
+          "id": "1",
+          "menuCode": "systemManage",
+          "menuDesc": "系统管理",
+          "type": "menu",
+          "component": "",
+          "route": "",
+          "limits": "",
+          "icon": "systemManage.svg",
+          "menuOrder": "1",
+          "creator": "admin"
+        },
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      let res = _XHR(opt);
+      console.log(res);
+    }
+    function read() {
+      const opt = {
+        url: 'http://127.0.0.1:3000/menus/',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      let res = _XHR(opt);
+      console.log(res);
+    }
+    function del() {
+      const opt = {
+        url: 'http://127.0.0.1:3000/menus/delete',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      let res = _XHR(opt);
+      console.log(res);
+    }
+    function update() {
+      const opt = {
+        url: 'http://127.0.0.1:3000/menus/update',
+        method: 'POST',
+        body: {
+          // id: '1',
+          newContent: {
+            "menuDesc": "系统管理1",
+          }
+        },
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      let res = _XHR(opt);
+      console.log(res);
     }
   </script>
 </body>
+
 </html>

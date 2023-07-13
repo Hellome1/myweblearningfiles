@@ -1,53 +1,27 @@
 import express from 'express'
 import bodyParser from 'body-parser';
-import { Handle } from './connect.js';
 import config from './config/config.js';
 
+import menuServer from './apis/menus.js';
+
+/* 生成一个express实例用于开启服务接口 */
 const app = express();
 
+/* body-parser 中间件解析请求body参数 */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+/* 返回头设置 */
 app.all('*', (req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*'); 
-  next();
+  res.setHeader('Access-Control-Allow-Origin', '*'); // 允许跨域
+  res.setHeader('Access-Control-Allow-Headers', '*'); // 允许设置任意请求头
+  next(); // 继续处理
 })
 
+/* 从配置获取mongodb链接地址 */
 const { uri } = config;
 
-app.get('/create', async (req, res) => {
-  const { body } = req;
-  console.log(body);
-  const hdIns = new Handle(uri);
-  await hdIns.select('BEM', 'menus').create(body);
-  const result = hdIns.lastResult;
-  res.send(result);
-})
-
-app.get('/read', async (req, res) => {
-  const hdIns = new Handle(uri);
-  await hdIns.select('BEM', 'menus').read();
-  hdIns.close();
-  let result = hdIns.lastResult;
-  if (result instanceof Object) result = JSON.stringify(result);
-  res.send(result);
-})
-
-app.get('/update', async (req, res) => {
-  const hdIns = new Handle(uri);
-  await hdIns.select('BEM', 'menus').update()
-  hdIns.close();
-  const result = hdIns.lastResult;
-  res.send(result);
-})
-
-app.get('/delete', async (req, res) => {
-  const hdIns = new Handle(uri);
-  await hdIns.select('BEM', 'menus').delete({});
-  hdIns.close();
-  const result = hdIns.lastResult;
-  res.send(result);
-})
+/* 开启菜单服务接口 */
+menuServer(app, uri);
 
 app.listen(3000, (err) => {
   if (err) throw err;

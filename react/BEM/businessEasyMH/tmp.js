@@ -1,3 +1,6 @@
+/**
+ * @description 用来临时测试代码
+ */
 import { MongoClient } from "mongodb";
 
 // Replace the uri string with your MongoDB deployment's connection string.
@@ -9,14 +12,15 @@ async function run() {
   try {
     const database = client.db("BEM");
     const myColl = database.collection("menus");
-    // create a document to insert
-    const doc = {
-      title: "Record of a Shriveled Datum",
-      content: "No bytes, no problem. Just insert a document, in MongoDB",
+    
+    const cursor = myColl.find();
+    // print a message if no documents were found
+    if ((await myColl.countDocuments()) === 0) {
+      console.log("No documents found!");
     }
-    const result = await myColl.findOne();
-
-    console.log(result);
+    for await (const doc of cursor) {
+      console.log(doc);
+    }
   } finally {
     await client.close();
   }
