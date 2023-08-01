@@ -103,5 +103,7 @@ const App = (props) => {
 
 export default connect(
   (state) => ({ menus: state.extraRoutes }),
-  { addTabs }
+  { 
+    addTabs
+  }
 )(App);

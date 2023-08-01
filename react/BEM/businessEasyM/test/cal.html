@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let sum = 0;
+    let year = 15;
+    let save = 8;
+    let per = 0.05;
+    for (var i = 0; i < year; i++) {
+      sum += save;
+      sum = sum * (1 + per);
+    }
+    console.log(sum);
+  </script>
+</body>
+</html>

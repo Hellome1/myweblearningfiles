@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import './index.scss'
 import Sidebar from './Siderbar'
 import Header from './Header'
 
-export default function Index(props) {
-
+export default function Index() {
   return (
     <div id='layout'>
       <Sidebar />

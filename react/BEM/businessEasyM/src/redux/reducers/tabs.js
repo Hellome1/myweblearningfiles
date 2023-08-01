@@ -1,4 +1,4 @@
-import { ADDTABS, DELETETABS } from "../constants";
+import { ADDTABS, CLEARTABS, DELETETABS } from "../constants";
 
 const initState = [];
 export default function(prevState=initState, action) {
@@ -15,6 +15,8 @@ export default function(prevState=initState, action) {
     case DELETETABS:
       // 删除标签
       return prevState.filter(pItm => pItm.desc != data.desc);
+    case CLEARTABS:
+      return initState;
     default:
       return prevState;
   }

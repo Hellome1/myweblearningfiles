@@ -2,7 +2,11 @@ import express from 'express'
 import bodyParser from 'body-parser';
 import config from './config/config.js';
 
+/* 接口 */
 import menuServer from './apis/menus.js';
+import roleServer from './apis/roles.js';
+import userServer from './apis/users.js';
+import loginServer from './apis/login.js';
 
 /* 生成一个express实例用于开启服务接口 */
 const app = express();
@@ -22,6 +26,10 @@ const { uri } = config;
 
 /* 开启菜单服务接口 */
 menuServer(app, uri);
+/* 角色接口 */
+roleServer(app, uri);
+userServer(app, uri);
+loginServer(app, uri);
 
 app.listen(3000, (err) => {
   if (err) throw err;

@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     req({
-      url: 'roles.json',
+      url: '/roles/',
       method: 'get'
     }).then(res => {
       setData(handleData(res.data));

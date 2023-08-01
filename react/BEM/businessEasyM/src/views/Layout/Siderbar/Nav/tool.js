@@ -24,7 +24,7 @@ export function searchMenuFromKeyValue(kvObj, menus) {
         objInd = curObj.ind,
         cur = curObj.value;
       if (!cur) {
-        console.error('没有当前节点！');
+        console.warn('没有当前节点！');
         return false;
       }
       if (cur[k] === v) return true;

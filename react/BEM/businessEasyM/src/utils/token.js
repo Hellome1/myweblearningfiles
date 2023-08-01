@@ -16,11 +16,11 @@ export const getToken = () => {
 export const setToken = (token) => {
   TOKEN = token; // 设置内存的token
   setBaseToken();
-  /* 根据token请求菜单并保存到store中 */
+  // /* 根据token请求菜单并保存到store中 */
   const res = getMenus();
   const {data: menus} = res;
   store.dispatch(addRoutes(menus));
-  /* --- - --- */
+  // /* --- - --- */
 }
 
 // 设置session的token，保证刷新不会丢失，设置token到请求头
@@ -39,8 +39,11 @@ export const logout = () => {
 // 获取token的方法
 export const login = (userInfo) => {
   return server({
-    url: '/token.json',
-    method: 'get',
-    data: userInfo
+    url: '/login',
+    method: 'post',
+    data: userInfo,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   })
 }

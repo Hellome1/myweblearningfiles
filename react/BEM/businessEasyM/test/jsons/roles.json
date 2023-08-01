@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "roleCode": "admin",
+    "roleDesc": "系统管理员",
+    "perms": ["*"]
+  },
+  {
+    "id": "2",
+    "roleCode": "developer",
+    "roleDesc": "研发人员",
+    "perms": ["1", "101", "102"]
+  },
+  {
+    "id": "3",
+    "roleCode": "tourist",
+    "roleDesc": "游客",
+    "perms": ["3"]
+  }
+]

@@ -1,29 +1,15 @@
 /**
  * @description 用来临时测试代码
  */
-import { MongoClient } from "mongodb";
+import jwt from 'jsonwebtoken';
 
-// Replace the uri string with your MongoDB deployment's connection string.
-const uri = "mongodb://127.0.0.1:27017";
+const secret = 'IUKJJSZW+LL26643';
+const token = jwt.sign({
+  username: 'czy',
+  pwd: 123
+}, secret);
 
-const client = new MongoClient(uri);
+console.log(token);
 
-async function run() {
-  try {
-    const database = client.db("BEM");
-    const myColl = database.collection("menus");
-    
-    const cursor = myColl.find();
-    // print a message if no documents were found
-    if ((await myColl.countDocuments()) === 0) {
-      console.log("No documents found!");
-    }
-    for await (const doc of cursor) {
-      console.log(doc);
-    }
-  } finally {
-    await client.close();
-  }
-}
-
-run().catch(console.dir);
+const info = jwt.verify(token, secret);
+console.log(info);

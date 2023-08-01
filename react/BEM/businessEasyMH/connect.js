@@ -1,3 +1,6 @@
+/**
+ * @description 用于mongodb数据库连接和操作
+ */
 import { MongoClient } from "mongodb";
 
 /* 新建一个操作类 */
@@ -7,8 +10,21 @@ export function Handle(uri) {
 
 Handle.prototype.log = async function (logObj) {
   const { type, result } = logObj;
-  console.log('type：', type, 'result：', result);
-  this.lastResult = result;
+  console.log(`----------------------------------------------------`);
+  console.log(`------------------type：${type}----------------------`);
+  console.log('result：', result);
+  console.log(`------------------------END-----------------------------`)
+  console.log(`--------------------------------------------------------`)
+  /* 包装返回值 */
+  if (type === 'read') {
+    let resResult = '';
+    if ('string' === typeof result) resResult = JSON.parse(result);
+    else resResult = [ result ];
+    this.lastResult = { code: 200, data: resResult, msg: '操作成功' };
+  } else {
+    this.lastResult = { code: 200, msg: result };
+  }
+
   if (type === 'read') logObj.result = '读取数据';
   await this.logs.insertOne(logObj);
 }
@@ -71,17 +87,20 @@ Handle.prototype.CRUD = async function ({ type, data, isMany, query = {}, option
       case 'read':
       default:
         if (isMany) {
-          result = '';
-          const cursor = coll.find();
+          result = '[';
+          filter = filter || {};
+          const cursor = coll.find(filter);
           if ((await coll.countDocuments()) === 0) {
             console.log("No documents found!");
           }
           for await (const doc of cursor) {
-            result += JSON.stringify(doc);
+            result += JSON.stringify(doc) + ',';
           }
+          if (result[result.length - 1] === ',') result = result.substring(0, result.length - 1)
+          result += ']';
           logInfo = result;
         } else {
-          result = await coll.findOne(query, option);
+          result = await coll.findOne(filter, option);
           logInfo = result;
         }
         break;

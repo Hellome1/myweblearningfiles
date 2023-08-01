@@ -1,11 +1,4 @@
 import { legacy_createStore as createStore, combineReducers } from 'redux'
-
-import routesReducer from '../reducers/routes'
-import tabsReducer from '../reducers/tabs'
-
-const reducer = combineReducers({
-  extraRoutes: routesReducer,
-  tabs: tabsReducer
-})
+import reducer from '../reducers/index';
 
 export default createStore(reducer)

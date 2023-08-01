@@ -8,10 +8,27 @@
 </head>
 
 <body>
-  <button onclick="sendCreate()">创建测试数据</button><br/>
-  <button onclick="read()">获取数据</button><br>
-  <button onclick="del()">删除数据</button><br>
-  <button onclick="update()">更新数据</button><br>
+  <hr>
+  <h3>菜单</h3>
+  <button onclick="menuCreate()">创建测试数据</button><br />
+  <button onclick="reqGet('/menus/')">获取数据</button><br>
+  <button onclick="reqPost('/menus/delete/')">删除数据</button><br>
+  <button onclick="menuUpdate()">更新数据</button><br>
+  <hr>
+  <h3>角色</h3>
+  <button onclick="roleCreate()">创建测试数据</button><br />
+  <button onclick="reqGet('/roles/')">获取数据</button><br>
+  <button onclick="reqPost('/roles/delete/')">删除数据</button><br>
+  <button onclick="roleUpdate()">更新数据</button><br>
+  <hr>
+  <h3>用户</h3>
+  <button onclick="userCreate()">创建测试数据</button><br />
+  <button onclick="reqGet('/users/')">获取数据</button><br>
+  <button onclick="reqPost('/users/delete/')">删除数据</button><br>
+  <button onclick="userUpdate()">更新数据</button><br>
+  <hr>
+  <h3>登陆测试</h3>
+  <button onclick="loginTest()">登录</button>
   <script>
     // const url = 'http://127.0.0.1:3000/create';
     function _XHR({ method = 'GET', url, asyncFlag = false, headers, body }) {
@@ -25,19 +42,18 @@
       }
       xhr.onreadystatechange = function () {
         if (xhr.status === 200) {
-          res = xhr.responseText;
+          res = JSON.parse(xhr.responseText);
         }
       }
       xhr.send(JSON.stringify(body));
       return res;
     }
 
-    function sendCreate() {
-      const opt = {
-        url: 'http://127.0.0.1:3000/menus/create',
-        method: 'POST',
-        body: {
+    function menuCreate() {
+      const data = [
+        {
           "id": "1",
+          "patientId": "0",
           "menuCode": "systemManage",
           "menuDesc": "系统管理",
           "type": "menu",
@@ -48,44 +64,142 @@
           "menuOrder": "1",
           "creator": "admin"
         },
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      let res = _XHR(opt);
-      console.log(res);
-    }
-    function read() {
-      const opt = {
-        url: 'http://127.0.0.1:3000/menus/',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      let res = _XHR(opt);
-      console.log(res);
-    }
-    function del() {
-      const opt = {
-        url: 'http://127.0.0.1:3000/menus/delete',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      let res = _XHR(opt);
-      console.log(res);
-    }
-    function update() {
-      const opt = {
-        url: 'http://127.0.0.1:3000/menus/update',
-        method: 'POST',
-        body: {
-          // id: '1',
-          newContent: {
-            "menuDesc": "系统管理1",
-          }
+        {
+          "id": "101",
+          "parentId": "1",
+          "menuCode": "menuManage",
+          "menuDesc": "菜单管理",
+          "type": "menu",
+          "component": "Layout/systemManage/MenuManage",
+          "route": "systemManage/menuManage",
+          "limits": "",
+          "icon": "menuManage.svg",
+          "menuOrder": "2",
+          "creator": "admin"
         },
+        {
+          "id": "102",
+          "parentId": "1",
+          "menuCode": "roleManage",
+          "menuDesc": "角色管理",
+          "type": "menu",
+          "component": "Layout/systemManage/RoleManage",
+          "route": "systemManage/roleManage",
+          "limits": "",
+          "icon": "roleManage.svg",
+          "menuOrder": "3",
+          "creator": "admin"
+        },
+        {
+          "id": "3",
+          "parentId": "0",
+          "menuCode": "youke",
+          "menuDesc": "游客菜单",
+          "type": "menu",
+          "component": "Layout/systemManage/RoleManage",
+          "route": "systemManage/roleManage",
+          "limits": "",
+          "icon": "roleManage.svg",
+          "menuOrder": "3",
+          "creator": "admin"
+        }
+      ];
+      reqPost('/menus/create', data)
+    }
+    function menuUpdate() {
+      const data = {
+        // id: 1,
+        newContent: {
+          "menuDesc": "系统管理1"
+        }
+      }
+      reqPost('/menus/update', data);
+    }
+    function roleCreate() {
+      const data = [
+        {
+          "id": "1",
+          "roleCode": "admin",
+          "roleDesc": "系统管理员",
+          "perms": ["*"]
+        },
+        {
+          "id": "2",
+          "roleCode": "developer",
+          "roleDesc": "研发人员",
+          "perms": ["1", "101", "102"]
+        },
+        {
+          "id": "3",
+          "roleCode": "tourist",
+          "roleDesc": "游客",
+          "perms": ["3"]
+        }
+      ];
+      reqPost('/roles/create', data)
+    }
+    function roleUpdate() {
+      const data = {
+        // id: 1,
+        newContent: {
+          "menuDesc": "系统管理1"
+        }
+      }
+      reqPost('/roles/update', data);
+    }
+    function userCreate() {
+      const data = [
+        {
+          "id": "1",
+          "nicknameCode": "zhaoyang",
+          "nickname": "朝阳",
+          "username": "zy",
+          "password": "123456",
+          "roles": ["1"]
+        },
+        {
+          "id": "2",
+          "nicknameCode": "ceshiyouke",
+          "nickname": "测试游客",
+          "username": "ces",
+          "password": "123456",
+          "roles": ["3"]
+        }
+      ]
+      reqPost('/users/create', data)
+    }
+    function userUpdate() {
+      const data = {
+        // id: 1,
+        newContent: {
+          "password": "654321"
+        }
+      }
+      reqPost('/users/update', data);
+    }
+    function loginTest() {
+      const data = {
+        username: 'zy',
+        password: '123456'
+      }
+      reqPost('/login/', data)
+    }
+
+    function reqPost(path, data) {
+      const opt = {
+        url: 'http://127.0.0.1:3000' + path,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+      if (data) opt.body = data;
+      let res = _XHR(opt);
+      console.log(res);
+    }
+    function reqGet(path) {
+      const opt = {
+        url: 'http://127.0.0.1:3000' + path,
         headers: {
           'Content-Type': 'application/json'
         }

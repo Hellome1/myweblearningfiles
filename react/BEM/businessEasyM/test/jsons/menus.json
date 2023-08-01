@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1",
+    "patientId": "0",
+    "menuCode": "systemManage",
+    "menuDesc": "系统管理",
+    "type": "menu",
+    "component": "",
+    "route": "",
+    "limits": "",
+    "icon": "systemManage.svg",
+    "menuOrder": "1",
+    "creator": "admin"
+  },
+  {
+    "id": "101",
+    "parentId": "1",
+    "menuCode": "menuManage",
+    "menuDesc": "菜单管理",
+    "type": "menu",
+    "component": "Layout/systemManage/MenuManage",
+    "route": "systemManage/menuManage",
+    "limits": "",
+    "icon": "menuManage.svg",
+    "menuOrder": "2",
+    "creator": "admin"
+  },
+  {
+    "id": "102",
+    "parentId": "1",
+    "menuCode": "roleManage",
+    "menuDesc": "角色管理",
+    "type": "menu",
+    "component": "Layout/systemManage/RoleManage",
+    "route": "systemManage/roleManage",
+    "limits": "",
+    "icon": "roleManage.svg",
+    "menuOrder": "3",
+    "creator": "admin"
+  },
+  {
+    "id": "3",
+    "parentId": "0",
+    "menuCode": "youke",
+    "menuDesc": "游客菜单",
+    "type": "menu",
+    "component": "Layout/systemManage/RoleManage",
+    "route": "systemManage/roleManage",
+    "limits": "",
+    "icon": "roleManage.svg",
+    "menuOrder": "3",
+    "creator": "admin"
+  }
+]

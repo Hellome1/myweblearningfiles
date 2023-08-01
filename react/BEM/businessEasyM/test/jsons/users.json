@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "nicknameCode": "zhaoyang",
+    "nickname": "朝阳",
+    "username": "zy",
+    "password": "123456",
+    "roles": ["1"]
+  },
+  {
+    "id": "2",
+    "nicknameCode": "ceshiyouke",
+    "nickname": "测试游客",
+    "username": "ces",
+    "password": "123456",
+    "roles": ["3"]
+  }
+]
